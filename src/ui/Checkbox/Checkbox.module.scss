@@ -1,0 +1,15 @@
+.label {
+	@apply flex items-center gap-2 w-full cursor-pointer;
+}
+
+.input {
+	@apply relative appearance-none w-4 md:w-5 lg:w-6 h-4 md:h-5 lg:h-6 border-2 border-gray rounded-5 checked:bg-primary checked:border-primary checked:hover:bg-hover hover:border-hover focus:outline-none transition-colors duration-200;
+
+	&.round {
+		@apply rounded-full;
+	}
+}
+
+.input:checked:after {
+	@apply content-[''] block absolute bottom-[30%] left-[25%] w-2/4 h-3/4 border-2 border-transparent border-r-typo-white border-b-typo-white origin-[50%_50%] rotate-45;
+}

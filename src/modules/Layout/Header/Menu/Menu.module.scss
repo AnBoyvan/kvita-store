@@ -1,0 +1,19 @@
+.menu {
+	@apply absolute lg:hidden top-14 md:top-[64px] left-0 pt-16 px-6 flex flex-col items-center bg-bg-secondary w-80 h-[calc(100dvh-56px)] md:h-[calc(100dvh-72px)] -translate-x-full transition-transform duration-300;
+
+	&.open {
+		@apply flex translate-x-0 lg:hidden;
+	}
+}
+
+.item {
+	@apply w-full h-12 flex flex-col items-start justify-center mb-[2px] border-b-[1px] border-gray-light font-semibold;
+}
+
+.link {
+	@apply flex justify-center items-center w-full h-full mb-[2px] hover:bg-hover hover:text-white rounded-10 transition-colors duration-200;
+}
+
+.switcher {
+	@apply absolute top-5 right-5;
+}

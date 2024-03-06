@@ -1,0 +1,51 @@
+.wrapper {
+	@apply w-full flex flex-col;
+}
+
+.label {
+	@apply pb-0.5 font-secondary font-semibold;
+}
+
+.inputWrapper {
+	@apply relative;
+}
+
+.input {
+	@apply w-full h-9 md:h-11 lg:h-12 rounded-10 border-2 border-gray transition-all duration-200;
+
+	&.withIcon {
+		@apply pl-11;
+	}
+
+	&:focus {
+		@apply border-active outline-none;
+	}
+
+	&.valid {
+		@apply border-success;
+	}
+
+	&.error {
+		@apply border-error;
+	}
+}
+
+.errorMessage {
+	@apply absolute -bottom-4 left-2.5 text-10 md:text-12 text-error overflow-hidden;
+}
+
+.icon {
+	@apply absolute left-2 top-1/2 -translate-y-1/2 transition-all duration-200;
+
+	&.valid {
+		@apply text-success;
+	}
+
+	&.error {
+		@apply text-error;
+	}
+}
+
+.passwordBtn {
+	@apply absolute right-2 top-1/2 -translate-y-1/2 transition-all duration-200 text-gray;
+}

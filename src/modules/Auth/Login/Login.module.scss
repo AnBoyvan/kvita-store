@@ -1,0 +1,20 @@
+.form {
+	@apply w-full flex flex-col items-center  gap-4 md:gap-5;
+}
+
+.link {
+	@apply p-0 font-normal self-start;
+
+	&:hover {
+		@apply text-hover;
+	}
+
+	&:active,
+	&.active {
+		@apply text-active;
+	}
+
+	&:disabled {
+		@apply text-gray;
+	}
+}

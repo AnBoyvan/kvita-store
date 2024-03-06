@@ -1,0 +1,21 @@
+.label {
+	@apply flex items-center gap-2 w-full cursor-pointer;
+}
+
+.input {
+	@apply relative appearance-none w-4 md:w-5 lg:w-6 h-4 md:h-5 lg:h-6 border-2 border-gray rounded-full checked:border-primary hover:border-hover focus:outline-none transition-all duration-200;
+
+	&:disabled {
+		@apply hover:border-gray-light border-gray-light checked:after:bg-gray-light checked:after:block hover:after:bg-gray-light;
+	}
+
+	&:disabled + span {
+		@apply text-gray-light;
+	}
+
+	@apply checked:after:bg-primary checked:after:block hover:after:bg-hover;
+}
+
+.input:after {
+	@apply content-[''] absolute w-3/4 h-3/4 bg-transparent rounded-full top-[12.5%] left-[12.5%] hidden;
+}

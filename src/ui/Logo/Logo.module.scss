@@ -1,0 +1,11 @@
+.logo {
+	@apply relative flex transition-colors duration-200 hover:text-hover gap-1 md:gap-2 lg:gap-2.5;
+}
+
+.iconWrapper {
+	@apply relative h-[30px] md:h-10 lg:h-[50px] w-[30px] md:w-10 lg:w-[50px];
+}
+
+.name {
+	@apply inline h-[30px] md:h-10 lg:h-[50px] w-[82px] md:w-[110px] lg:w-[138px];
+}
