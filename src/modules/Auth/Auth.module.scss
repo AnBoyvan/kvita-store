@@ -1,3 +1,7 @@
 .auth {
-	@apply flex flex-col items-center gap-4 md:gap-5 w-[300px] md:w-[350px];
+	@apply flex flex-col items-center gap-4 w-[290px] md:w-[350px];
+}
+
+.button {
+	@apply text-14;
 }

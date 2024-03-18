@@ -6,7 +6,7 @@ import './globals.scss';
 import { Providers } from './providers';
 import { Header } from '@/modules/Layout/Header/Header';
 import { Modal } from '@/components/Modal/Modal';
-import { useModal } from '@/hooks/useModal';
+import { Footer } from '@/modules/Layout/Footer/Footer';
 
 const openSans = Open_Sans({
 	subsets: ['latin', 'cyrillic'],
@@ -53,12 +53,8 @@ export default function RootLayout({
 					<Modal />
 					<Header />
 					{children}
-					<Toaster
-						position="top-right"
-						richColors
-						closeButton
-						duration={1500}
-					/>
+					<Footer />
+					<Toaster position="top-right" richColors closeButton duration={1500} />
 				</Providers>
 			</body>
 		</html>

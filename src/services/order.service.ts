@@ -1,61 +1,42 @@
-import { axiosWithAuth } from '@/api/interceptors';
-import { API } from '@/config/api-routes.config';
-import {
-	IOrder,
-	IOrderCreate,
-	IOrderResponse,
-	IOrderUpdate,
-} from '@/interfaces/order.interfaces';
-import { IRemoveResponse } from '@/interfaces/root.interfaces';
+import { API } from '@/configs/api-routes.config';
+import { IOrder, IOrderCreate, IOrderResponse, IOrderUpdate } from '@/interfaces/order.interface';
+import { AxiosInstance } from 'axios';
+import { IRemoveResponse } from '@/interfaces/root.interface';
 
 export const orderService = {
-	async create(data: IOrderCreate) {
-		const response = await axiosWithAuth.post<IOrder>(
-			`${API.ORDERS}`,
-			data,
-		);
+	async create(data: IOrderCreate, instance: AxiosInstance) {
+		const response = await instance.post<IOrder>(`${API.ORDERS}`, data);
 
 		return response.data;
 	},
 
-	async find(query: string = '') {
-		const response = await axiosWithAuth.get<IOrderResponse>(
-			`${API.ORDERS}?${query}`,
-		);
+	// async find(query: string = '') {
+	// 	const response = await axiosAuth.get<IOrderResponse>(`${API.ORDERS}?${query}`);
 
-		return response.data;
-	},
+	// 	return response.data;
+	// },
 
-	async findOwn() {
-		const response = await axiosWithAuth.get<IOrder[]>(
-			`${API.ORDERS}/own`,
-		);
+	// async findOwn() {
+	// 	const response = await axiosAuth.get<IOrder[]>(`${API.ORDERS}/own`);
 
-		return response.data;
-	},
+	// 	return response.data;
+	// },
 
-	async findById(id: string) {
-		const response = await axiosWithAuth.get<IOrder>(
-			`${API.ORDERS}/${id}`,
-		);
+	// async findById(id: string) {
+	// 	const response = await axiosAuth.get<IOrder>(`${API.ORDERS}/${id}`);
 
-		return response.data;
-	},
+	// 	return response.data;
+	// },
 
-	async update(id: string, data: IOrderUpdate) {
-		const response = await axiosWithAuth.patch<IOrder>(
-			`${API.ORDERS}/${id}`,
-			data,
-		);
+	// async update(id: string, data: IOrderUpdate) {
+	// 	const response = await axiosAuth.patch<IOrder>(`${API.ORDERS}/${id}`, data);
 
-		return response.data;
-	},
+	// 	return response.data;
+	// },
 
-	async remove(id: string) {
-		const response = await axiosWithAuth.delete<IRemoveResponse>(
-			`${API.ORDERS}/${id}`,
-		);
+	// async remove(id: string) {
+	// 	const response = await axiosAuth.delete<IRemoveResponse>(`${API.ORDERS}/${id}`);
 
-		return response.data;
-	},
+	// 	return response.data;
+	// },
 };

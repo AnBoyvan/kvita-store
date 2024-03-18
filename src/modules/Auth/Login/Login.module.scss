@@ -1,9 +1,9 @@
 .form {
-	@apply w-full flex flex-col items-center  gap-4 md:gap-5;
+	@apply w-full flex flex-col items-center  gap-4;
 }
 
 .link {
-	@apply p-0 font-normal self-start;
+	@apply p-0 font-normal self-start text-14;
 
 	&:hover {
 		@apply text-hover;

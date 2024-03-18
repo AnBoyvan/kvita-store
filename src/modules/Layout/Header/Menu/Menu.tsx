@@ -1,29 +1,42 @@
 import clsx from 'clsx';
 import styles from './Menu.module.scss';
 import { MenuProps } from './Menu.props';
-import { NAVIGATION } from '@/config/navigation.config';
-import Link from 'next/link';
 import { ThemeSwitcher } from '@/ui/ThemeSwitcher/ThemeSwitcher';
+import { Navigation } from '@/components/Navigation/Navigation';
+import { LogoutButton } from '@/modules/Auth/LogoutButton/LogoutButton';
+import { Button } from '@/ui/Button/Button';
+import { Icon } from '@/ui/Icon/Icon';
+import { useContext, useState } from 'react';
+import { ModalContext } from '@/hooks/useModal';
+import debounce from 'lodash.debounce';
 
-export const Menu: React.FC<MenuProps> = ({ open, close, ...props }) => {
-	const handleClick = () => {
-		if (close) close(false);
+export const Menu: React.FC<MenuProps> = () => {
+	const [close, setSlose] = useState<boolean>(false);
+	const { closeModal } = useContext(ModalContext);
+
+	const handleClose = () => {
+		setSlose(true);
+		closeModalWindow();
 	};
 
-	const nav = NAVIGATION.map(({ page, title }) => {
-		return (
-			<li key={page} className={styles.item}>
-				<Link href={page} className={styles.link} onClick={handleClick}>
-					{title}
-				</Link>
-			</li>
-		);
-	});
+	const handleMenuOverlayClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+		if (e.target === e.currentTarget) handleClose();
+	};
+
+	const closeModalWindow = debounce(() => {
+		closeModal();
+	}, 300);
 
 	return (
-		<div className={clsx(styles.menu, open && styles.open)}>
-			{nav}
-			<ThemeSwitcher className={styles.switcher} />
+		<div className={styles.menuOverlay} onClick={handleMenuOverlayClick}>
+			<div className={clsx(styles.menu, close && styles.close)}>
+				<Button mode="simple" className={styles.closeBtn} onClick={handleClose}>
+					<Icon name="X" />
+				</Button>
+				<ThemeSwitcher className={styles.switcher} />
+				<Navigation action={handleClose} className={styles.nav} />
+				<LogoutButton />
+			</div>
 		</div>
 	);
 };

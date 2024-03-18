@@ -3,9 +3,9 @@
 }
 
 .promo {
-	@apply bg-[url('/pic/star.png')] bg-contain flex justify-center items-center w-12 md:w-16 h-12 md:h-16 text-10 md:text-12 text-typo-white font-bold absolute bottom-0 left-0;
+	@apply bg-[url('/pic/star.png')] bg-contain flex justify-center items-center w-12 md:w-16 h-12 md:h-16 text-10 md:text-12 text-typo-white absolute bottom-0 left-0;
 }
 
 .count {
-	@apply h-4 w-4 flex justify-center items-center bg-success  rounded-full text-8 font-bold text-typo-white;
+	@apply absolute h-4 w-4 flex justify-center items-center bg-success  rounded-full text-8 font-bold text-typo-white;
 }

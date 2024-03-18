@@ -3,5 +3,9 @@
 }
 
 .modal {
-	@apply relative p-4 md:p-6 lg:p-8  bg-bg-secondary rounded-10;
+	@apply relative p-4 md:p-6 max-h-full  bg-bg-secondary rounded-10 overflow-scroll;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
 }

@@ -1,9 +1,9 @@
 .label {
-	@apply flex items-center gap-2 w-full cursor-pointer;
+	@apply flex items-center gap-2 cursor-pointer;
 }
 
 .input {
-	@apply relative appearance-none w-4 md:w-5 lg:w-6 h-4 md:h-5 lg:h-6 border-2 border-gray rounded-5 checked:bg-primary checked:border-primary checked:hover:bg-hover hover:border-hover focus:outline-none transition-colors duration-200;
+	@apply relative appearance-none w-5 h-5 text-base border-2 border-gray rounded-5 checked:bg-primary checked:border-primary checked:hover:bg-hover hover:border-hover focus:outline-none transition-colors duration-200;
 
 	&.round {
 		@apply rounded-full;

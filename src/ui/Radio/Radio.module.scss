@@ -3,7 +3,7 @@
 }
 
 .input {
-	@apply relative appearance-none w-4 md:w-5 lg:w-6 h-4 md:h-5 lg:h-6 border-2 border-gray rounded-full checked:border-primary hover:border-hover focus:outline-none transition-all duration-200;
+	@apply relative appearance-none w-5 h-5 text-base border-2 border-gray rounded-full checked:border-primary hover:border-hover focus:outline-none transition-all duration-200;
 
 	&:disabled {
 		@apply hover:border-gray-light border-gray-light checked:after:bg-gray-light checked:after:block hover:after:bg-gray-light;

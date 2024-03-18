@@ -54,12 +54,6 @@
 	}
 
 	body {
-		@apply bg-bg-primary text-typo-primary font-primary min-h-svh;
-
-		font-size: 14px;
-
-		@media (min-width: 768px) {
-			font-size: 16px;
-		}
+		@apply bg-bg-primary flex flex-col w-full text-typo-primary font-primary min-h-screen text-14 md:text-base;
 	}
 }

@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+import withPlaiceholder from '@plaiceholder/next';
+
 const nextConfig = {
 	transpilePackages: ['lucide-react'],
 	reactStrictMode: true,
@@ -12,4 +14,4 @@ const nextConfig = {
 	},
 };
 
-export default nextConfig;
+export default withPlaiceholder(nextConfig);

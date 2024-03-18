@@ -1,0 +1,14 @@
+.contacts {
+	@apply flex flex-col gap-6 items-center;
+}
+
+.phone {
+	@apply flex flex-row gap-2.5 items-center hover:text-hover font-secondary transition-colors duration-200;
+}
+.social {
+	@apply flex flex-row gap-4;
+}
+
+.link {
+	@apply p-0 h-10 w-10 flex justify-center items-center transition-colors duration-200 hover:text-hover;
+}

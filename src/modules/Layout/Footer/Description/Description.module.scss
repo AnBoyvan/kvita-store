@@ -1,0 +1,11 @@
+.description {
+	@apply flex flex-col justify-center items-center gap-4;
+}
+
+.title {
+	@apply text-16 md:text-18 lg:text-20 font-secondary font-semibold  hover:text-hover transition-colors duration-200;
+}
+
+.address {
+	@apply text-14 md:text-16 lg:text-18 hover:text-hover transition-colors duration-200;
+}

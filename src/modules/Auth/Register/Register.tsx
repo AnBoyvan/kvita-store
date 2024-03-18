@@ -2,9 +2,16 @@ import { Button } from '@/ui/Button/Button';
 import { Input } from '@/ui/Input/Input';
 import styles from './Register.module.scss';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { IRegisterForm } from '@/interfaces/auth.interfaces';
+import { IRegisterForm } from '@/interfaces/auth.interface';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { registerSchema } from '@/utils/validation/authSchemas';
+import { useContext } from 'react';
+import { ModalContext } from '@/hooks/useModal';
+import { authService } from '@/services/auth.service';
+import { errorCatch } from '@/utils/helpers/error';
+import { toast } from 'sonner';
+import { signIn } from 'next-auth/react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export const Register: React.FC = () => {
 	const {
@@ -14,7 +21,7 @@ export const Register: React.FC = () => {
 		watch,
 		reset,
 	} = useForm<IRegisterForm>({
-		mode: 'all',
+		mode: 'onChange',
 		defaultValues: {
 			name: '',
 			phone: '',
@@ -25,10 +32,28 @@ export const Register: React.FC = () => {
 		resolver: yupResolver(registerSchema),
 	});
 
-	// const { register: reg } = useAuth();
+	const { closeModal } = useContext(ModalContext);
+	const params = useSearchParams();
+	const router = useRouter();
 
-	const onSubmit: SubmitHandler<IRegisterForm> = ({ confirmPassword, ...data }) => {
-		// reg.mutate(data);
+	const onSubmit: SubmitHandler<IRegisterForm> = async ({ confirmPassword, ...data }) => {
+		try {
+			await authService.register(data);
+			const res = await signIn('credentials', {
+				login: data.email,
+				password: data.password,
+				redirect: false,
+			});
+			if (res && res.error) toast.error(res.error, { closeButton: false });
+			if (res && !res.error) {
+				reset();
+				closeModal();
+				const callbackUrl = params.get('callbackUrl');
+				if (callbackUrl) router.push(callbackUrl);
+			}
+		} catch (error) {
+			toast.error(errorCatch(error), { closeButton: false });
+		}
 	};
 
 	return (

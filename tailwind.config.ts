@@ -39,6 +39,9 @@ const config: Config = {
 				'10': '10px',
 				'20': '20px',
 				'50': '50px',
+				'70': '70px',
+				'150': '150px',
+				'200': '200px',
 			},
 			fontSize: {
 				'8': '0.5rem',
@@ -57,10 +60,32 @@ const config: Config = {
 				'40': '2.5rem',
 				'44': '2.75rem',
 				'48': '3rem',
+				'56': '3.5rem',
+				'64': '4rem',
 			},
 			boxShadow: {
 				hov: '0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);',
 				act: '0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);',
+			},
+			keyframes: {
+				openMenu: {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(0)' },
+				},
+				closeMenu: {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-100%)' },
+				},
+				like: {
+					'0%': { transform: 'scale(0)' },
+					'50%': { transform: 'scale(1.2)' },
+					'100%': { transform: 'scale(1)' },
+				},
+			},
+			animation: {
+				openMenu: 'openMenu 0.3s ease-in-out forwards',
+				closeMenu: 'closeMenu 0.3s ease-in-out forwards',
+				like: 'like 0.4s ease forwards',
 			},
 		},
 	},

@@ -8,23 +8,24 @@ import { useState } from 'react';
 import { Register } from './Register/Register';
 import { Login } from './Login/Login';
 import { CloseModalButton } from '@/components/Modal/CloseModalButton/CloseModalButton';
+import { GoogleButton } from './GoogleButton/GoogleButton';
 
 export const Auth: React.FC = () => {
 	const [isLoginForm, setAuthToggle] = useState<boolean>(false);
 
 	const changeAuthToggle = () => {
-		setAuthToggle(!isLoginForm ? false : true);
+		setAuthToggle(isLoginForm ? false : true);
 	};
 
 	return (
 		<div className={styles.auth}>
-			<CloseModalButton />
-			<Htag tag="h2">{isLoginForm ? 'Вхід' : 'Реєстрація'}</Htag>
+			<Htag tag="h2">{!isLoginForm ? 'Вхід' : 'Реєстрація'}</Htag>
 			{!isLoginForm ? <Login /> : <Register />}
-			<Button mode="link" onClick={changeAuthToggle}>
+			<Button mode="link" onClick={changeAuthToggle} className={styles.button}>
 				{!isLoginForm ? 'Зареєструватися' : 'Я вже зареєстрований'}
 			</Button>
 			<Divider />
+			<GoogleButton />
 		</div>
 	);
 };

@@ -1,0 +1,23 @@
+.container {
+	@apply absolute top-2 right-2 block cursor-pointer select-none  hover:scale-110;
+}
+
+.input {
+	@apply absolute opacity-0 cursor-pointer h-0 w-0;
+}
+
+.icon {
+	@apply animate-like stroke-primary;
+
+	&.hide {
+		@apply hidden;
+	}
+}
+
+.liked {
+	@apply fill-primary stroke-primary animate-like;
+
+	&.hide {
+		@apply hidden;
+	}
+}

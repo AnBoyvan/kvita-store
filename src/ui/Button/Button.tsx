@@ -12,9 +12,7 @@ export const Button: React.FC<ButtonProps> = ({
 	className,
 	...props
 }: ButtonProps) => {
-	const handleClick = (
-		event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-	) => {
+	const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
 		event.currentTarget.blur();
 		props.onClick;
 	};

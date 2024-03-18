@@ -15,6 +15,7 @@ export const Logo = ({ ...props }): JSX.Element => {
 					style={{
 						objectFit: 'contain',
 					}}
+					sizes="100%"
 				/>
 			</div>
 			<div className={styles.name}>

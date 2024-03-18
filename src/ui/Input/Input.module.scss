@@ -3,7 +3,7 @@
 }
 
 .label {
-	@apply pb-0.5 font-secondary font-semibold;
+	@apply pb-0.5 font-secondary text-14;
 }
 
 .inputWrapper {
@@ -11,7 +11,7 @@
 }
 
 .input {
-	@apply w-full h-9 md:h-11 lg:h-12 rounded-10 border-2 border-gray transition-all duration-200;
+	@apply w-full px-2 h-10  rounded-10 border-2 border-gray transition-all duration-200 text-base;
 
 	&.withIcon {
 		@apply pl-11;
@@ -31,7 +31,7 @@
 }
 
 .errorMessage {
-	@apply absolute -bottom-4 left-2.5 text-10 md:text-12 text-error overflow-hidden;
+	@apply absolute -bottom-4 left-2.5 text-12 text-error overflow-hidden;
 }
 
 .icon {

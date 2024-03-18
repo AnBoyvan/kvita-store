@@ -1,0 +1,7 @@
+.footer {
+	@apply self-end mt-auto w-full bg-black flex flex-col md:flex-row gap-8 md:justify-between p-8 text-typo-white;
+}
+
+.nav {
+	@apply flex flex-col gap-4 items-center font-secondary;
+}

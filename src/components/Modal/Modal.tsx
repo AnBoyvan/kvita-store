@@ -1,25 +1,35 @@
 'use client';
 
 import { ModalContext } from '@/hooks/useModal';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import styles from './Modal.module.scss';
 
 export const Modal: React.FC = props => {
-	const { modalContent, closeModal, isOpen } = useContext(ModalContext);
+	const { modalContent, closeModal, isOpen, modalOverlay } = useContext(ModalContext);
 
-	const handleOverlayClick = (
-		e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-	) => {
-		if (e.target === e.currentTarget) {
-			closeModal();
-		}
+	const handleMouseDown = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+		if (e.target === e.currentTarget) closeModal();
 	};
+
+	useEffect(() => {
+		const handlePopState: () => void = () => {
+			window.history.go(1);
+			closeModal();
+		};
+
+		window.addEventListener('popstate', handlePopState);
+
+		return () => {
+			window.removeEventListener('popstate', handlePopState);
+		};
+	}, [closeModal]);
 
 	return (
 		<>
 			{isOpen && (
-				<div className={styles.overlay} onClick={handleOverlayClick}>
-					<div className={styles.modal}>{modalContent}</div>
+				<div className={styles.overlay} onMouseDown={handleMouseDown}>
+					{modalOverlay && <>{modalOverlay}</>}
+					{modalContent && <div className={styles.modal}>{modalContent}</div>}
 				</div>
 			)}
 		</>

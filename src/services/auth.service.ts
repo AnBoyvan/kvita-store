@@ -1,45 +1,27 @@
-import { axiosClassic, axiosWithAuth } from '@/api/interceptors';
-import { API } from '@/config/api-routes.config';
-import { IAuthResponse, ILoginForm, IRegisterRequest } from '@/interfaces/auth.interfaces';
-import { getRefreshToken, removeTokens, saveTokens } from './auth-token.service';
+import { axiosClassic } from '@/api/axios';
+import { API } from '@/configs/api-routes.config';
+import { IAuthResponse, IRegisterRequest, ILoginForm } from '@/interfaces/auth.interface';
+import { errorCatch } from '@/utils/helpers/error';
+import { toast } from 'sonner';
 
 export const authService = {
+	async exist(email: string) {
+		const response = await axiosClassic.post<boolean>(`${API.AUTH}/exist`, { email });
+		return response.data;
+	},
+
+	async signIn(email: string) {
+		const response = await axiosClassic.post<IAuthResponse>(`${API.AUTH}/signin`, { email });
+		return response.data;
+	},
+
 	async register(data: IRegisterRequest) {
 		const response = await axiosClassic.post<IAuthResponse>(`${API.AUTH}/register`, data);
-
-		const { user, ...rest } = response.data;
-
-		if (response.data.accessToken) {
-			saveTokens(rest);
-		}
-
-		return user;
+		return response.data;
 	},
 
 	async login(data: ILoginForm) {
 		const response = await axiosClassic.post<IAuthResponse>(`${API.AUTH}/login`, data);
-
-		const { user, ...rest } = response.data;
-
-		if (response.data.accessToken) {
-			saveTokens(rest);
-		}
-
-		return user;
-	},
-
-	async refreshToken() {
-		const refreshToken = getRefreshToken();
-		const response = await axiosClassic.post<IAuthResponse>(`${API.AUTH}/access-token`, {
-			refreshToken,
-		});
-
-		const { user, ...rest } = response.data;
-
-		if (response.data.accessToken) {
-			saveTokens(rest);
-		}
-
-		return user;
+		return response.data;
 	},
 };

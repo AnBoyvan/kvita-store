@@ -1,0 +1,39 @@
+.form {
+	@apply w-full flex flex-col items-center  gap-4;
+}
+
+.title {
+	@apply text-center;
+}
+
+.contacts {
+	@apply w-full flex flex-col md:flex-row items-center  gap-4;
+}
+
+.contactsTitle {
+	@apply text-center md:w-[250px];
+}
+
+.contactFields {
+	@apply w-full flex flex-col items-center  gap-4;
+}
+
+.wrapper {
+	@apply w-full flex flex-col items-start;
+}
+
+.comment {
+	@apply w-full mt-1 px-2 h-auto rounded-10 border-2 border-gray transition-all duration-200 text-base resize-none;
+
+	&:focus {
+		@apply border-active outline-none;
+	}
+
+	&.valid {
+		@apply border-success;
+	}
+
+	&.error {
+		@apply border-error;
+	}
+}

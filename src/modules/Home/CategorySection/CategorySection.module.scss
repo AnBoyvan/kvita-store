@@ -1,0 +1,15 @@
+.section {
+	@apply flex flex-col gap-4 md:gap-8 items-start;
+}
+
+.title {
+	@apply font-secondary font-bold text-24 md:text-28 lg:text-32;
+}
+
+.list {
+	@apply grid grid-rows-[1fr] auto-rows-[0] grid-cols-2  md:grid-cols-4 lg:grid-cols-5 gap-x-4 md:gap-x-6 w-full overflow-hidden;
+}
+
+.button {
+	@apply self-end;
+}

@@ -1,0 +1,7 @@
+.link {
+	@apply flex justify-center items-center hover:text-hover font-semibold transition-colors duration-200;
+
+	&.active {
+		@apply text-active;
+	}
+}
