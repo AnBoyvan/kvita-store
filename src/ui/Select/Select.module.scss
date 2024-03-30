@@ -1,0 +1,39 @@
+.select {
+	@apply relative;
+
+	&.products {
+		@apply w-48 p-3 flex justify-start items-center rounded-10 border-2 border-gray transition-all duration-200 text-base;
+	}
+}
+
+.current {
+	@apply cursor-pointer w-full h-full;
+}
+
+.list {
+	@apply absolute top-full left-0 w-full rounded-10 hidden flex-col bg-bg-secondary translate-y-1 z-10;
+
+	&.open {
+		@apply flex;
+	}
+}
+
+.input {
+	@apply appearance-none;
+}
+
+.label {
+	@apply cursor-pointer;
+
+	&.products {
+		@apply p-2 transition-all duration-200 text-base hover:text-hover;
+	}
+}
+
+.icon {
+	@apply absolute right-2 top-1/2 -translate-y-1/2 transition-all duration-200 pointer-events-none;
+
+	&.open {
+		@apply rotate-180;
+	}
+}

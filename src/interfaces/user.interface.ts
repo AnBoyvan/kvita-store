@@ -19,6 +19,7 @@ export interface IUser extends IBase {
 	discount: number;
 	cart: ICartItem[];
 	verify: boolean;
+	favorite: [];
 }
 
 export interface ISessionUser extends IUser {
@@ -45,4 +46,20 @@ export interface IUserResponse {
 export interface IUserRemoveResponse {
 	user: IUser;
 	message: string;
+}
+
+export interface IUserState {
+	_id: string;
+	isLoggedIn: boolean;
+	role: string;
+	favorite: string[];
+	name: string;
+	email: string;
+	phone: string;
+	discount: number;
+}
+export interface IUserStore {
+	user: IUserState;
+	updateUser: (data: IUserState) => void;
+	updateFavorite: (data: string[]) => void;
 }

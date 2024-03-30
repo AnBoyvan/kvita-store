@@ -1,8 +1,8 @@
-import { axiosClassic } from '@/api/axios';
+import { axiosAuth, axiosClassic } from '@/api/axios';
 import { API } from '@/configs/api-routes.config';
 import { IAuthResponse, IRegisterRequest, ILoginForm } from '@/interfaces/auth.interface';
-import { errorCatch } from '@/utils/helpers/error';
-import { toast } from 'sonner';
+import { IUser } from '@/interfaces/user.interface';
+
 
 export const authService = {
 	async exist(email: string) {
@@ -22,6 +22,11 @@ export const authService = {
 
 	async login(data: ILoginForm) {
 		const response = await axiosClassic.post<IAuthResponse>(`${API.AUTH}/login`, data);
+		return response.data;
+	},
+
+	async current() {
+		const response = await axiosAuth.get<IUser>(`${API.AUTH}/current`);
 		return response.data;
 	},
 };

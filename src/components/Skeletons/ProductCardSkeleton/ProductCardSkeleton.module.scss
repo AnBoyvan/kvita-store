@@ -1,0 +1,23 @@
+.card {
+	@apply relative flex flex-col h-full rounded-10 overflow-hidden;
+}
+
+.image {
+	@apply w-full h-0 pt-[100%] bg-gray animate-pulse;
+}
+
+.info {
+	@apply flex flex-col items-center gap-3 md:gap-4 h-full p-3 lg:p-4 bg-bg-secondary;
+}
+
+.name {
+	@apply w-[80%] h-6 bg-gray rounded-10 animate-pulse;
+}
+
+.price {
+	@apply w-[30%] h-6 bg-gray rounded-10 animate-pulse;
+}
+
+.button {
+	@apply w-full h-11 bg-gray rounded-10 animate-pulse;
+}

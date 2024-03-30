@@ -1,9 +1,6 @@
-import { axiosClassic } from '@/api/axios';
+import { axiosAuth, axiosClassic } from '@/api/axios';
 import { API } from '@/configs/api-routes.config';
 import { ITags } from '@/interfaces/admin.interface';
-import { useAxiosAuth } from '@/hooks/useAuthAxios';
-
-const axiosAuth = useAxiosAuth();
 
 export const adminService = {
 	async getTags() {

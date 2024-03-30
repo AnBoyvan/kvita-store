@@ -11,8 +11,8 @@ export interface ICartItem {
 
 export interface ICartStore {
 	cart: ICartItem[];
-	updateStore: (data: ICartItem[]) => void;
-	addToStore: (data: ICartItem) => void;
-	removeFromStore: (id: string) => void;
-	clearStore: () => void;
+	updateCartStore: (data: ICartItem[]) => void;
+	addToCartStore: (data: ICartItem) => void;
+	removeFromCartStore: (id: string) => void;
+	clearCartStore: () => void;
 }

@@ -1,4 +1,4 @@
-import { axiosClassic } from '@/api/axios';
+import { axiosAuth, axiosClassic } from '@/api/axios';
 import { API } from '@/configs/api-routes.config';
 import {
 	IUser,
@@ -7,23 +7,22 @@ import {
 	IUserUpdate,
 	IUserUpdateByAdmin,
 } from '@/interfaces/user.interface';
-import { AxiosInstance } from 'axios';
 
 export const userService = {
-	// async find(query: string) {
-	// 	const response = await axiosAuth.get<IUserResponse>(`${API.USERS}?${query}`);
+	async find(query: string) {
+		const response = await axiosAuth.get<IUserResponse>(`${API.USERS}?${query}`);
 
-	// 	return response.data;
-	// },
+		return response.data;
+	},
 
-	// async findById(id: string) {
-	// 	const response = await axiosAuth.get<IUser>(`${API.USERS}/${id}`);
+	async findById(id: string) {
+		const response = await axiosAuth.get<IUser>(`${API.USERS}/${id}`);
 
-	// 	return response.data;
-	// },
+		return response.data;
+	},
 
-	async updateByUser(data: IUserUpdate, instance: AxiosInstance) {
-		const response = await instance.patch<IUser>(`${API.USERS}`, data);
+	async updateByUser(data: IUserUpdate) {
+		const response = await axiosAuth.patch<IUser>(`${API.USERS}`, data);
 
 		return response.data;
 	},
@@ -45,15 +44,15 @@ export const userService = {
 		return response.data;
 	},
 
-	// async updateByAdmin(id: string, data: IUserUpdateByAdmin) {
-	// 	const response = await axiosAuth.patch<IUser>(`${API.USERS}/${id}`, data);
+	async updateByAdmin(id: string, data: IUserUpdateByAdmin) {
+		const response = await axiosAuth.patch<IUser>(`${API.USERS}/${id}`, data);
 
-	// 	return response.data;
-	// },
+		return response.data;
+	},
 
-	// async remove(id: string) {
-	// 	const response = await axiosAuth.delete<IUserRemoveResponse>(`${API.USERS}/${id}`);
+	async remove(id: string) {
+		const response = await axiosAuth.delete<IUserRemoveResponse>(`${API.USERS}/${id}`);
 
-	// 	return response.data;
-	// },
+		return response.data;
+	},
 };

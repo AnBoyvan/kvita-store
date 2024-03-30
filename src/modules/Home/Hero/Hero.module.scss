@@ -3,7 +3,7 @@
 }
 
 .heroWrapper {
-	@apply mx-auto px-4 md:px-6 lg:px-8 pb-6 md:pb-8 lg:pb-0 flex flex-col lg:flex-row-reverse gap-2.5 lg:gap-0 max-w-7xl;
+	@apply mx-auto px-4 md:px-6 lg:px-8 pb-6 md:pb-8 lg:pb-0 flex flex-col lg:flex-row-reverse gap-2.5 lg:gap-0 max-w-[1600px];
 }
 
 .img {

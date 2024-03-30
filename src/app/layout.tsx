@@ -7,6 +7,7 @@ import { Providers } from './providers';
 import { Header } from '@/modules/Layout/Header/Header';
 import { Modal } from '@/components/Modal/Modal';
 import { Footer } from '@/modules/Layout/Footer/Footer';
+import { CurrentUser } from '@/components/CurrentUser/CurrentUser';
 
 const openSans = Open_Sans({
 	subsets: ['latin', 'cyrillic'],
@@ -30,6 +31,9 @@ const markScript = Marck_Script({
 });
 
 export const metadata: Metadata = {
+	icons: {
+		icon: './favicon.ico',
+	},
 	title: {
 		default: SITE_NAME,
 		template: `%s | ${SITE_NAME}`,
@@ -50,11 +54,12 @@ export default function RootLayout({
 		>
 			<body>
 				<Providers>
-					<Modal />
 					<Header />
 					{children}
 					<Footer />
 					<Toaster position="top-right" richColors closeButton duration={1500} />
+					<Modal />
+					<CurrentUser />
 				</Providers>
 			</body>
 		</html>

@@ -1,4 +1,3 @@
-import { useAuth } from '@/hooks/useAuth';
 import { OrderFormProps } from './OrderFormProps';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -10,17 +9,14 @@ import { Checkbox } from '@/ui/Checkbox/Checkbox';
 import Htag from '@/components/Htag/Htag';
 import { Button } from '@/ui/Button/Button';
 import { orderService } from '@/services/order.service';
-import { useAxiosAuth } from '@/hooks/useAuthAxios';
 import { toast } from 'sonner';
-import { AxiosError } from 'axios';
 import { useContext } from 'react';
 import { ModalContext } from '@/hooks/useModal';
 import { useCart } from '@/hooks/useCart';
-import { axiosClassic } from '@/api/axios';
+import { useUserStore } from '@/store/user.store';
 
 export const OrderForm: React.FC<OrderFormProps> = ({ cart, total, discountSum }) => {
-	const { user, isLoggedIn } = useAuth();
-	const axiosAuth = useAxiosAuth();
+	const { user } = useUserStore();
 	const { closeModal } = useContext(ModalContext);
 	const { clearCart } = useCart();
 
@@ -68,8 +64,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ cart, total, discountSum }
 			deliveryAddress,
 		};
 		try {
-			const instance = isLoggedIn ? axiosAuth : axiosClassic;
-			const result = await orderService.create(newOrder, instance);
+			const result = await orderService.create(newOrder);
 			if (result) toast.success('Замовлення відправлено', { closeButton: false });
 			await clearCart();
 			reset();

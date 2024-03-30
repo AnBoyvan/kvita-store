@@ -1,9 +1,7 @@
-import { axiosClassic } from '@/api/axios';
+import { axiosAuth, axiosClassic } from '@/api/axios';
 import { API } from '@/configs/api-routes.config';
 import { IReview, IReviewCreate } from '@/interfaces/review.interface';
 import { IRemoveResponse } from '@/interfaces/root.interface';
-import { useAxiosAuth } from '@/hooks/useAuthAxios';
-const axiosAuth = useAxiosAuth();
 
 export const reviewService = {
 	async create(data: IReviewCreate) {

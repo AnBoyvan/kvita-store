@@ -68,13 +68,21 @@ const config: Config = {
 				act: '0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);',
 			},
 			keyframes: {
-				openMenu: {
+				openMenuLeft: {
 					'0%': { transform: 'translateX(-100%)' },
 					'100%': { transform: 'translateX(0)' },
 				},
-				closeMenu: {
+				closeMenuLeft: {
 					'0%': { transform: 'translateX(0)' },
 					'100%': { transform: 'translateX(-100%)' },
+				},
+				openMenuRight: {
+					'0%': { transform: 'translateX(100%)' },
+					'100%': { transform: 'translateX(0)' },
+				},
+				closeMenuRight: {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(100%)' },
 				},
 				like: {
 					'0%': { transform: 'scale(0)' },
@@ -83,8 +91,10 @@ const config: Config = {
 				},
 			},
 			animation: {
-				openMenu: 'openMenu 0.3s ease-in-out forwards',
-				closeMenu: 'closeMenu 0.3s ease-in-out forwards',
+				openMenuLeft: 'openMenuLeft 0.3s ease-in-out forwards',
+				closeMenuLeft: 'closeMenuLeft 0.3s ease-in-out forwards',
+				openMenuRight: 'openMenuRight 0.3s ease-in-out forwards',
+				closeMenuRight: 'closeMenuRight 0.3s ease-in-out forwards',
 				like: 'like 0.4s ease forwards',
 			},
 		},

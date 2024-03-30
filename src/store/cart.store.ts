@@ -9,20 +9,20 @@ export const useCartStore = create<ICartStore>()(
 		persist(
 			(set, get) => ({
 				cart: [],
-				updateStore: (data: ICartItem[]) => {
+				updateCartStore: (data: ICartItem[]) => {
 					set({ cart: data }, false, 'updateCart');
 				},
-				addToStore: (data: ICartItem) => {
+				addToCartStore: (data: ICartItem) => {
 					set({ cart: [...get().cart, data] }, false, 'addToCart');
 				},
-				removeFromStore: (id: string) => {
+				removeFromCartStore: (id: string) => {
 					set(
 						{ cart: [...get().cart.filter(({ productId }) => productId !== id)] },
 						false,
 						'removeFromCart',
 					);
 				},
-				clearStore: () => {
+				clearCartStore: () => {
 					set({ cart: [] }, false, 'clearCart');
 				},
 			}),

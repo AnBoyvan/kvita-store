@@ -63,6 +63,8 @@ export interface IProductUpdate {
 export interface IProductResponse {
 	result: IProduct[];
 	count: number;
+	minProductPrice: number;
+	maxProductPrice: number;
 }
 
 export interface IProductsForMain {

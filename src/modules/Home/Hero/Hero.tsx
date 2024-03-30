@@ -1,5 +1,5 @@
 import styles from './Hero.module.scss';
-import hero from '../../../../public/pic/hero.jpg';
+import hero from '../../../../public/images/hero.jpg';
 import Image from 'next/image';
 import { LinkButton } from '@/ui/LinkButton/LinkButton';
 import { PAGES } from '@/configs/pages-url.config';

@@ -1,0 +1,15 @@
+.pagination {
+	@apply inline-flex flex-row p-2 gap-3 rounded-full shadow-hov;
+}
+
+.page {
+	@apply flex justify-center items-center h-7 w-7 rounded-full text-12 hover:bg-hover hover:text-typo-white;
+}
+
+.active {
+	@apply bg-active text-typo-white;
+}
+
+.disabled {
+	@apply text-gray hover:bg-transparent hover:text-gray cursor-default;
+}

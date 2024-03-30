@@ -1,5 +1,5 @@
 'use client';
 
-export default function GlobalError() {
+export default function GlobalErrorPage() {
 	return <div>Error</div>;
 }

@@ -1,3 +1,3 @@
-export default function ProductsDashboard() {
+export default function ProductsDashboardPage() {
 	return <div>Favorites</div>;
 }

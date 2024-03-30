@@ -1,0 +1,23 @@
+.menuOverlay {
+	@apply absolute top-0 left-0 h-screen w-screen;
+}
+
+.menu {
+	@apply pt-24 px-6 flex flex-col items-center bg-bg-secondary w-80 h-full;
+
+	&.left {
+		@apply animate-openMenuLeft;
+
+		&.close {
+			@apply animate-closeMenuLeft;
+		}
+	}
+
+	&.right {
+		@apply ml-auto animate-openMenuRight;
+
+		&.close {
+			@apply animate-closeMenuRight;
+		}
+	}
+}

@@ -6,11 +6,8 @@ export default function PublicLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<div className="max-w-7xl">
-			<Container>
-				<div>container</div>
-				{children}
-			</Container>
+		<div className="max-w-[1600px] w-full  mx-auto">
+			<Container>{children}</Container>
 		</div>
 	);
 }

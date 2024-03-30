@@ -1,21 +1,5 @@
-.form {
-	@apply absolute top-40;
-}
-
-.input {
-	@apply pl-6 rounded-tl-20 rounded-tr-50 rounded-br-20 rounded-bl-50 bg-bg-primary h-12 w-80 md:w-[400px] border-2 border-gray transition-all duration-200 text-base;
-
-	&:focus {
-		@apply border-active outline-none;
-	}
-}
-
-.resetBtn {
-	@apply absolute top-0 right-16 h-full;
-}
-
-.submitBtn {
-	@apply absolute top-0 right-0 h-full w-16;
+.search {
+	@apply absolute top-40 w-80 md:w-[400px];
 }
 
 .list {

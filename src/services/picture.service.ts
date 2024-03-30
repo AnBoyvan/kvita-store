@@ -1,11 +1,8 @@
-import { axiosClassic } from '@/api/axios';
+import { axiosAuth, axiosClassic } from '@/api/axios';
 import { API } from '@/configs/api-routes.config';
 import { IPicture, IPictureCreate } from '@/interfaces/picture.interface';
 import { IRemoveResponse } from '@/interfaces/root.interface';
 import { pictureFormData } from '@/utils/helpers/convertToFormData';
-import { useAxiosAuth } from '@/hooks/useAuthAxios';
-
-const axiosAuth = useAxiosAuth();
 
 export const pictureService = {
 	async create(data: IPictureCreate) {

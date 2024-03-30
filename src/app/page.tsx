@@ -4,12 +4,12 @@ import { Category } from '@/interfaces/product.interface';
 import { OrderingSection } from '@/modules/Home/OrderingSection/OrderingSection';
 import { productService } from '@/services/product.service';
 
-export default async function Home() {
+export default async function HomePage() {
 	const products = await productService.forMain();
 	return (
 		<main>
 			<Hero />
-			<div className="mx-auto  px-4 md:px-6 lg:px-8 py-16 md:py-[72px] lg:py-24 flex flex-col  gap-16 md:gap-[72px]  lg:gap-24 max-w-7xl min-h-screen">
+			<div className="mx-auto  px-4 md:px-6 lg:px-8 py-16 md:py-[72px] lg:py-24 flex flex-col  gap-16 md:gap-[72px]  lg:gap-24 max-w-[1600px] min-h-screen">
 				<CategorySection
 					products={products.classic}
 					title="Класичні торти"

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import google from '../../../../public/pic/google.png';
+import google from '../../../../public/icons/google.png';
 import { Button } from '@/ui/Button/Button';
 import styles from './GoogleButton.module.scss';
 import { signIn } from 'next-auth/react';

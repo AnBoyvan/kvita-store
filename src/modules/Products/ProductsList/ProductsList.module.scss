@@ -1,0 +1,7 @@
+.wrapper {
+	@apply flex flex-col items-center mt-8 lg:mt-16 gap-8 lg:gap-16;
+}
+
+.list {
+	@apply grid grid-cols-2  md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 w-full;
+}

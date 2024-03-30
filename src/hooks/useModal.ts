@@ -23,24 +23,25 @@ export const useModal = () => {
 	const [modalContent, setModalContent] = useState<ReactNode>(null);
 	const [modalOverlay, setModalOverlay] = useState<ReactNode>(null);
 
-	const bodyElement =
-		typeof document !== 'undefined' ? document.querySelector<'body'>('body') : null;
+	const htmlElement =
+		typeof document !== 'undefined' ? document.querySelector<'html'>('html') : null;
+
+	const isScrollBar =
+		typeof document !== 'undefined' ? document.body.scrollHeight > window.innerHeight : null;
 
 	const openModal = (content: ReactNode) => {
 		setIsOpen(true);
 		setModalContent(content);
-		if (bodyElement) {
-			bodyElement.style.overflow = 'hidden';
-			bodyElement.style.marginRight = '6px';
+		if (htmlElement && isScrollBar) {
+			htmlElement.classList.add('scrollblock');
 		}
 	};
 
 	const openOverlay = (content: ReactNode) => {
 		setIsOpen(true);
 		setModalOverlay(content);
-		if (bodyElement) {
-			bodyElement.style.overflow = 'hidden';
-			bodyElement.style.marginRight = '6px';
+		if (htmlElement && isScrollBar) {
+			htmlElement.classList.add('scrollblock');
 		}
 	};
 
@@ -48,9 +49,8 @@ export const useModal = () => {
 		setIsOpen(false);
 		setModalContent(null);
 		setModalOverlay(null);
-		if (bodyElement) {
-			bodyElement.style.overflow = 'auto';
-			bodyElement.style.marginRight = 'auto';
+		if (htmlElement) {
+			htmlElement.classList.remove('scrollblock');
 		}
 	};
 
@@ -62,26 +62,30 @@ export const useModal = () => {
 		};
 		if (isOpen) {
 			window.addEventListener('keydown', handleEscButton);
-			if (bodyElement) {
-				bodyElement.style.overflow = 'hidden';
-				bodyElement.style.marginRight = '6px';
+			if (htmlElement && isScrollBar) {
+				htmlElement.classList.add('scrollblock');
 			}
 		} else {
 			window.removeEventListener('keydown', handleEscButton);
-			if (bodyElement) {
-				bodyElement.style.overflow = 'auto';
-				bodyElement.style.marginRight = 'auto';
+			if (htmlElement) {
+				htmlElement.classList.remove('scrollblock');
 			}
 		}
 
 		return () => {
 			window.removeEventListener('keydown', handleEscButton);
-			if (bodyElement) {
-				bodyElement.style.overflow = 'auto';
-				bodyElement.style.marginRight = 'auto';
+			if (htmlElement) {
+				htmlElement.classList.remove('scrollblock');
 			}
 		};
 	}, [isOpen]);
 
-	return { isOpen, modalContent, openModal, closeModal, modalOverlay, openOverlay };
+	return {
+		isOpen,
+		modalContent,
+		modalOverlay,
+		openModal,
+		openOverlay,
+		closeModal,
+	};
 };

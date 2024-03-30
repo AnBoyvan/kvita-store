@@ -7,7 +7,6 @@ import { Button } from '@/ui/Button/Button';
 import { useState } from 'react';
 import { Register } from './Register/Register';
 import { Login } from './Login/Login';
-import { CloseModalButton } from '@/components/Modal/CloseModalButton/CloseModalButton';
 import { GoogleButton } from './GoogleButton/GoogleButton';
 
 export const Auth: React.FC = () => {

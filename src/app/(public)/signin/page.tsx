@@ -1,9 +1,13 @@
+import { AuthSkeleton } from '@/components/Skeletons';
 import { Auth } from '@/modules/Auth/Auth';
+import { Suspense } from 'react';
 
-export default function Signing() {
+export default function SigningPage() {
 	return (
-		<div className="flex justify-center">
-			<Auth />
-		</div>
+		<Suspense fallback={<AuthSkeleton />}>
+			<div className="flex justify-center">
+				<Auth />
+			</div>
+		</Suspense>
 	);
 }

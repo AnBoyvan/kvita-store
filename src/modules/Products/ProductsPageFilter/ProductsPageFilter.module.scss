@@ -1,0 +1,15 @@
+.filter {
+	@apply flex flex-col gap-5 items-center mt-8 lg:mt-16;
+}
+
+.form {
+	@apply flex flex-col gap-3  md:flex-row;
+}
+
+.search {
+	@apply flex flex-row gap-2 justify-center items-center;
+}
+
+.searchTitle {
+	@apply text-gray;
+}

@@ -5,9 +5,8 @@ import styles from './Header.module.scss';
 import { Icon } from '@/ui/Icon/Icon';
 import { Logo } from '@/ui/Logo/Logo';
 import { ModalContext } from '@/hooks/useModal';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { Auth } from '@/modules/Auth/Auth';
-import { Menu } from './Menu/Menu';
 import { ThemeSwitcher } from '@/ui/ThemeSwitcher/ThemeSwitcher';
 import { Navigation } from '@/components/Navigation/Navigation';
 import { SearchModal } from './SearchModal/SearchModal';
@@ -17,13 +16,15 @@ import Link from 'next/link';
 import { PAGES } from '@/configs/pages-url.config';
 import { CloseModalButton } from '@/components/Modal/CloseModalButton/CloseModalButton';
 import { CartModal } from './CartModal/CartModal';
+import { BurgerMenu } from './BurgerMenu/BurgerMenu';
+import { useUserStore } from '@/store/user.store';
 
 export const Header: React.FC = () => {
 	const { openModal, openOverlay } = useContext(ModalContext);
-	const { isLoggedIn } = useAuth();
+	const { user } = useUserStore();
 
 	const handleMenuClick = () => {
-		openOverlay(<Menu />);
+		openOverlay(<BurgerMenu />);
 	};
 
 	const handleSearchClick = () => {
@@ -58,7 +59,7 @@ export const Header: React.FC = () => {
 					<Icon name="ShoppingCart" />
 					<CartCount />
 				</Button>
-				{isLoggedIn ? (
+				{user.isLoggedIn ? (
 					<Link href={PAGES.CABINET_INFO} className={styles.cabinet}>
 						<Icon name="User" />
 					</Link>

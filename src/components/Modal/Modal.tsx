@@ -13,7 +13,6 @@ export const Modal: React.FC = props => {
 
 	useEffect(() => {
 		const handlePopState: () => void = () => {
-			window.history.go(1);
 			closeModal();
 		};
 

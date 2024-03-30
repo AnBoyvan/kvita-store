@@ -3,6 +3,7 @@
 		"browser": true,
 		"es2021": true
 	},
+	"parser": "@typescript-eslint/parser",
 	"extends": [
 		"eslint:recommended",
 		"next",
@@ -10,12 +11,7 @@
 		"plugin:@typescript-eslint/recommended",
 		"plugin:prettier/recommended"
 	],
-	"parser": "@typescript-eslint/parser",
-	"plugins": [
-		"@typescript-eslint/eslint-plugin",
-		"import",
-		"prettier"
-	],
+	"plugins": ["@typescript-eslint/eslint-plugin", "import", "prettier"],
 	"rules": {
 		"@typescript-eslint/interface-name-prefix": "off",
 		"@typescript-eslint/explicit-function-return-type": "off",
@@ -32,11 +28,7 @@
 					}
 				],
 				"pathGroupsExcludedImportTypes": ["builtin"],
-				"groups": [
-					["builtin", "external"],
-					"internal",
-					["parent", "sibling", "index"]
-				],
+				"groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
 				"newlines-between": "always",
 				"alphabetize": {
 					"order": "asc"

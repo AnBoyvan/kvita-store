@@ -1,11 +1,11 @@
 .h1 {
-	@apply font-secondary font-bold text-40 md:text-44 lg:text-48;
+	@apply font-secondary font-bold text-40 md:text-44 lg:text-48 text-center;
 }
 
 .h2 {
-	@apply font-secondary font-bold text-24 md:text-28 lg:text-32;
+	@apply font-secondary font-bold text-24 md:text-28 lg:text-32 text-center;
 }
 
 .h3 {
-	@apply font-secondary font-bold text-16 md:text-18 lg:text-20;
+	@apply font-secondary font-bold text-16 md:text-18 lg:text-20 text-center;
 }

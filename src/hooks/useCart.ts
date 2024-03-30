@@ -1,14 +1,14 @@
 import { useCartStore } from '@/store/cart.store';
-import { useAuth } from './useAuth';
-import { useAxiosAuth } from './useAuthAxios';
 import { ICartItem } from '@/interfaces/cart.interface';
 import { userService } from '@/services/user.service';
 import { toast } from 'sonner';
+import { useUserStore } from '@/store/user.store';
 
 export const useCart = () => {
-	const { isLoggedIn } = useAuth();
-	const axiosAuth = useAxiosAuth();
-	const { cart, updateStore, addToStore, removeFromStore, clearStore } = useCartStore();
+	const { user } = useUserStore();
+	const { isLoggedIn } = user;
+	const { cart, updateCartStore, addToCartStore, removeFromCartStore, clearCartStore } =
+		useCartStore();
 
 	const updateCart = async (data: ICartItem[]): Promise<void> => {
 		const list = data.map(({ productId }) => {
@@ -18,8 +18,8 @@ export const useCart = () => {
 			!list.includes(item.productId);
 		});
 		const newCart = [...data, ...addFromStore];
-		const { cart: userCart } = await userService.updateByUser({ cart: newCart }, axiosAuth);
-		updateStore(userCart);
+		const { cart: userCart } = await userService.updateByUser({ cart: newCart });
+		updateCartStore(userCart);
 	};
 
 	const addToCart = async (data: ICartItem): Promise<void> => {
@@ -32,18 +32,18 @@ export const useCart = () => {
 		}
 		if (isLoggedIn) {
 			const newCart = [...cart, data];
-			await userService.updateByUser({ cart: newCart }, axiosAuth);
+			await userService.updateByUser({ cart: newCart });
 		}
-		addToStore(data);
+		addToCartStore(data);
 		toast.success(`${data.productName} додано до кошика`, { closeButton: false });
 	};
 
 	const removeFromCart = async (id: string): Promise<void> => {
 		if (isLoggedIn) {
 			const newCart = cart.filter(({ productId }) => productId !== id);
-			await userService.updateByUser({ cart: newCart }, axiosAuth);
+			await userService.updateByUser({ cart: newCart });
 		}
-		removeFromStore(id);
+		removeFromCartStore(id);
 	};
 
 	const updateCartItem = async (updatedItem: ICartItem): Promise<void> => {
@@ -52,17 +52,17 @@ export const useCart = () => {
 			const newCart = [...cart];
 			newCart[itemIndex] = updatedItem;
 			if (isLoggedIn) {
-				await userService.updateByUser({ cart: newCart }, axiosAuth);
+				await userService.updateByUser({ cart: newCart });
 			}
-			updateStore(newCart);
+			updateCartStore(newCart);
 		}
 	};
 
 	const clearCart = async (): Promise<void> => {
 		if (isLoggedIn) {
-			await userService.updateByUser({ cart: [] }, axiosAuth);
+			await userService.updateByUser({ cart: [] });
 		}
-		clearStore();
+		clearCartStore();
 	};
 
 	return { updateCart, addToCart, removeFromCart, clearCart, updateCartItem };

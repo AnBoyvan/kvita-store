@@ -1,4 +1,4 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export interface MenuProps
+export interface BurgerMenuProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}

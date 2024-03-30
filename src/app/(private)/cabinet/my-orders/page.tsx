@@ -1,3 +1,3 @@
-export default function MyOrders() {
+export default function MyOrdersPage() {
 	return <h1>MyOrders</h1>;
 }

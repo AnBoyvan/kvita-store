@@ -1,14 +1,14 @@
-.menuOverlay {
-	@apply absolute top-0 left-0 h-screen w-screen;
-}
+// .menuOverlay {
+// 	@apply absolute top-0 left-0 h-screen w-screen;
+// }
 
-.menu {
-	@apply pt-24 px-6 flex flex-col items-center bg-bg-secondary w-80 h-full animate-openMenu;
+// .menu {
+// 	@apply pt-24 px-6 flex flex-col items-center bg-bg-secondary w-80 h-full animate-openMenu;
 
-	&.close {
-		@apply animate-closeMenu;
-	}
-}
+// 	&.close {
+// 		@apply animate-closeMenu;
+// 	}
+// }
 
 .closeBtn {
 	@apply absolute top-5 left-5;

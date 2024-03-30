@@ -45,6 +45,7 @@
 	box-sizing: border-box;
 
 	&::-webkit-scrollbar {
+		position: absolute;
 		width: 6px;
 	}
 
@@ -54,6 +55,10 @@
 	}
 
 	body {
-		@apply bg-bg-primary flex flex-col w-full text-typo-primary font-primary min-h-screen text-14 md:text-base;
+		@apply bg-bg-primary flex flex-col w-full text-typo-primary font-primary min-h-screen text-14 md:text-16;
 	}
+}
+
+.scrollblock {
+	@apply fixed w-full overflow-y-scroll;
 }

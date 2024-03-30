@@ -1,39 +1,36 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
 import styles from './LikeButton.module.scss';
 import { LikeButtonProps } from './LikeButton.props';
 import { clsx } from 'clsx';
 import { Icon } from '../Icon/Icon';
 import { useMutateProducts } from '@/hooks/useMutateProducts';
 import { useEffect, useState } from 'react';
+import { useUserStore } from '@/store/user.store';
 
 export const LikeButton: React.FC<LikeButtonProps> = ({
 	productId,
-	favorites,
 	className,
 	...props
 }: LikeButtonProps) => {
-	const { data: session } = useSession();
+	const { user } = useUserStore();
+	const { isLoggedIn, favorite } = user;
 	const { updFavorites } = useMutateProducts();
-	const [isLiked, setIsLiked] = useState<boolean>(
-		Boolean(favorites?.includes(session?.user?._id as string)),
-	);
+	const [isLiked, setIsLiked] = useState<boolean>(false);
 
-	const handleLikeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+	const handleLikeChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+		await updFavorites(productId);
 		setIsLiked(!isLiked);
-		updFavorites(productId);
 	};
 
 	useEffect(() => {
-		if (session?.user) {
-			setIsLiked(Boolean(favorites?.includes(session?.user?._id as string)));
-		}
-	}, [session]);
+		const liked = Boolean(favorite.includes(productId));
+		setIsLiked(liked);
+	}, [favorite]);
 
 	return (
 		<>
-			{session?.user && (
+			{isLoggedIn && (
 				<label className={styles.container}>
 					<input
 						type="checkbox"

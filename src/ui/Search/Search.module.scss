@@ -1,0 +1,31 @@
+.form {
+	@apply relative w-full justify-center max-w-[400px];
+}
+
+.input {
+	@apply bg-bg-primary w-full border-2 border-gray transition-all duration-200 text-base;
+
+	&:focus {
+		@apply border-active outline-none;
+	}
+}
+
+.primary {
+	@apply pl-6 h-12  rounded-tl-20 rounded-tr-50 rounded-br-20 rounded-bl-50;
+}
+
+.secondary {
+	@apply pl-11 h-10 rounded-10;
+}
+
+.resetBtn {
+	@apply absolute top-1/2 -translate-y-1/2 right-16 h-full;
+}
+
+.submitBtn {
+	@apply absolute top-0 right-0 h-full w-16;
+}
+
+.searchBtn {
+	@apply absolute left-0 top-1/2 -translate-y-1/2 transition-all duration-200;
+}
