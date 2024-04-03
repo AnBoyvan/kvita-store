@@ -1,7 +1,11 @@
+'use client';
+
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import ReactPaginate from 'react-paginate';
+
 import styles from './Pagination.module.scss';
 import { PaginationProps } from './Pagination.props';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+
 import { useQueryString } from '@/hooks/useQueryString';
 import { Icon } from '@/ui/Icon/Icon';
 

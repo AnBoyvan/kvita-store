@@ -1,12 +1,14 @@
 'use client';
 
+import { clsx } from 'clsx';
+import { useEffect, useState } from 'react';
+
 import styles from './LikeButton.module.scss';
 import { LikeButtonProps } from './LikeButton.props';
-import { clsx } from 'clsx';
-import { Icon } from '../Icon/Icon';
-import { useMutateProducts } from '@/hooks/useMutateProducts';
-import { useEffect, useState } from 'react';
-import { useUserStore } from '@/store/user.store';
+
+import { useMutateProducts } from '@/hooks';
+import { useUserStore } from '@/store';
+import { Icon } from '@/ui';
 
 export const LikeButton: React.FC<LikeButtonProps> = ({
 	productId,
@@ -31,9 +33,10 @@ export const LikeButton: React.FC<LikeButtonProps> = ({
 	return (
 		<>
 			{isLoggedIn && (
-				<label className={styles.container}>
+				<label className={clsx(className, styles.container)}>
 					<input
 						type="checkbox"
+						name="like"
 						checked={isLiked}
 						onChange={handleLikeChange}
 						className={styles.input}

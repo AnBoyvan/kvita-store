@@ -1,8 +1,10 @@
 'use client';
 
-import { ModalContext } from '@/hooks/useModal';
 import { useContext, useEffect } from 'react';
+
 import styles from './Modal.module.scss';
+
+import { ModalContext } from '@/hooks/useModal';
 
 export const Modal: React.FC = props => {
 	const { modalContent, closeModal, isOpen, modalOverlay } = useContext(ModalContext);

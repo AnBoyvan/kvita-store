@@ -1,0 +1,29 @@
+.images {
+	@apply flex flex-col md:w-[50%] gap-6;
+}
+
+.mainImage {
+	@apply w-full aspect-square object-cover rounded-10;
+
+	:global(.swiper-button-prev),
+	:global(.swiper-button-next) {
+		--swiper-navigation-color: #e3e3e3;
+		transition: all 150ms linear;
+
+		&:hover {
+			--swiper-navigation-color: #db0d45;
+		}
+	}
+}
+
+.swiper {
+	@apply w-full;
+
+	& .slide {
+		@apply aspect-square cursor-pointer hover:opacity-50 transition-opacity;
+	}
+}
+
+.image {
+	@apply block w-full h-full object-cover rounded-10;
+}

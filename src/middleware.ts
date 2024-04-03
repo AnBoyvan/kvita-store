@@ -1,6 +1,7 @@
-import { withAuth, NextRequestWithAuth } from 'next-auth/middleware';
-import { Role } from './interfaces/user.interface';
+import { NextRequestWithAuth, withAuth } from 'next-auth/middleware';
 import { NextResponse } from 'next/server';
+
+import { Role } from './interfaces/user.interface';
 
 export default withAuth(
 	function middleware(request: NextRequestWithAuth) {
@@ -15,6 +16,10 @@ export default withAuth(
 		}
 
 		if (!request.nextauth.token) return NextResponse.rewrite(new URL('/not-found', request.url));
+
+		if (request.nextUrl.pathname.startsWith('/signin') && request.nextauth.token) {
+			return NextResponse.redirect(new URL('/', request.url));
+		}
 	},
 	{
 		callbacks: {
@@ -23,4 +28,4 @@ export default withAuth(
 	},
 );
 
-export const config = { matcher: ['/cabinet/:path*', '/dashboard/:path*'] };
+export const config = { matcher: ['/cabinet/:path*', '/dashboard/:path*', '/signin'] };

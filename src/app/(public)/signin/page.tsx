@@ -1,6 +1,6 @@
-import { AuthSkeleton } from '@/components/Skeletons';
-import { Auth } from '@/modules/Auth/Auth';
 import { Suspense } from 'react';
+
+import { Auth, AuthSkeleton } from '@/components';
 
 export default function SigningPage() {
 	return (

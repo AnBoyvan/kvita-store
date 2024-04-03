@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
-import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
-import { ThemeSwitcherProps } from './ThemeSwitcher.props';
-import { useTheme } from 'next-themes';
+'use client';
 
-export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({
-	...props
-}: ThemeSwitcherProps) => {
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+
+import { ThemeSwitcherProps } from './ThemeSwitcher.props';
+
+import { Button, Icon } from '@/ui';
+
+export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ ...props }: ThemeSwitcherProps) => {
 	const { theme, setTheme } = useTheme();
 	const [icon, setIcon] = useState<'Moon' | 'Sun'>('Moon');
 

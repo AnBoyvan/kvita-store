@@ -1,8 +1,9 @@
-import Htag from '@/components/Htag/Htag';
-import { ProductsList } from '@/modules/Products/ProductsList/ProductsList';
-import { ProductsPageFilter } from '@/modules/Products/ProductsPageFilter/ProductsPageFilter';
-import { Spinner } from '@/ui/Spinner/Spinner';
 import { Suspense } from 'react';
+
+import { ProductsList, ProductsPageFilter } from './_components';
+
+import { Htag } from '@/components';
+import { Spinner } from '@/ui';
 
 export default async function ProductsPage({
 	searchParams,

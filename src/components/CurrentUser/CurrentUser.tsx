@@ -1,10 +1,11 @@
 'use client';
 
-import { useCart } from '@/hooks/useCart';
-import { authService } from '@/services/auth.service';
-import { useUserStore } from '@/store/user.store';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
+
+import { useCart } from '@/hooks';
+import { authService } from '@/services/kvita-api';
+import { useUserStore } from '@/store';
 
 export const CurrentUser: React.FC = () => {
 	const session = useSession();

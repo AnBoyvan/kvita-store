@@ -1,23 +1,19 @@
-import { BadgeProps } from './Badge.props';
-import styles from './Badge.module.scss';
 import clsx from 'clsx';
 
-export const Badge: React.FC<BadgeProps> = ({
-	variant,
-	className,
-	value,
-	...props
-}) => {
+import styles from './Badge.module.scss';
+import { BadgeProps } from './Badge.props';
+
+export const Badge: React.FC<BadgeProps> = ({ variant, className, value, ...props }) => {
 	switch (variant) {
 		case 'novelty':
 			return (
-				<div className={styles.novelty} {...props}>
+				<div className={clsx(styles.novelty, className)} {...props}>
 					новинка
 				</div>
 			);
 		case 'promo':
 			return (
-				<div className={styles.promo} {...props}>
+				<div className={clsx(styles.promo, className)} {...props}>
 					-{value}%
 				</div>
 			);

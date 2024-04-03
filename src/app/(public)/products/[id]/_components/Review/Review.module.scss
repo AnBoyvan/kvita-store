@@ -1,0 +1,19 @@
+.review {
+	@apply w-full flex flex-col rounded-10 border-gray border-2;
+}
+
+.header {
+	@apply flex flex-row justify-between items-center px-3 h-10 border-b-gray border-b-2;
+}
+
+.wrapper {
+	@apply flex flex-row items-center gap-2;
+}
+
+.comment {
+	@apply p-3 text-justify;
+}
+
+.editForm {
+	@apply w-[290px] md:w-[450px] p-0;
+}

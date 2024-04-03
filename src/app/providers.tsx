@@ -1,10 +1,9 @@
 'use client';
 
-import { ModalProvider } from '@/providers/ModalProvider';
-import { NextAuthProvider } from '@/providers/NextAuthProvider';
-import { QueryProvider } from '@/providers/QueryClientProvider';
 import { ThemeProvider } from 'next-themes';
 import { PropsWithChildren } from 'react';
+
+import { ModalProvider, NextAuthProvider, QueryProvider } from '@/providers';
 
 export function Providers({ children }: PropsWithChildren) {
 	return (

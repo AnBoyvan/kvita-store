@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './Logo.module.scss';
+
 import logo from '../../../public/icons/logo-icon.png';
+
 import { Kvita } from './Kvita';
+import styles from './Logo.module.scss';
 
 export const Logo = ({ ...props }): JSX.Element => {
 	return (

@@ -1,0 +1,27 @@
+.item {
+	@apply flex flex-col lg:flex-row gap-2.5 w-full lg:justify-between pb-1 md:pb-4 lg:pb-6 border-b-[1px] border-b-gray;
+}
+
+.info {
+	@apply relative flex flex-row items-center gap-3;
+}
+
+.image {
+	@apply h-12 md:h-[70px] w-12 md:w-[70px] rounded-10;
+}
+
+.name {
+	@apply items-center hover:text-hover transition-colors duration-200;
+}
+
+.details {
+	@apply flex flex-col md:flex-row gap-2.5;
+}
+
+.wrapper {
+	@apply flex flex-row  w-full items-center gap-4 lg:gap-6;
+}
+
+.sum {
+	@apply font-secondary font-bold text-16 md:text-18 lg:text-20 text-typo-primary;
+}

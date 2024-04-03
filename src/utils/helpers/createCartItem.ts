@@ -1,5 +1,4 @@
-import { ICartItem } from '@/interfaces/cart.interface';
-import { IProduct } from '@/interfaces/product.interface';
+import { ICartItem, IProduct } from '@/interfaces';
 
 export const createCartItem = (product: IProduct, quantity: number): ICartItem => {
 	const { _id, name, imageURL, price, promo, promoPrice } = product;

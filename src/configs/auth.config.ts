@@ -1,12 +1,10 @@
-import { authService } from '@/services/auth.service';
 import { AuthOptions } from 'next-auth';
-import GoogleProvider from 'next-auth/providers/google';
-import { authCallbacks } from './auth-callbacks';
 import Credentials from 'next-auth/providers/credentials';
-import { IAuthResponse } from '@/interfaces/auth.interface';
-import { IUser } from '@/interfaces/user.interface';
-import { errorCatch } from '@/utils/helpers/error';
-import { AxiosError } from 'axios';
+import GoogleProvider from 'next-auth/providers/google';
+
+import { authCallbacks } from '.';
+
+import { authService } from '@/services/kvita-api';
 
 export const authConfig: AuthOptions = {
 	session: {

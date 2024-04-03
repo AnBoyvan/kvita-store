@@ -1,0 +1,15 @@
+.info {
+	@apply flex flex-col gap-4 md:gap-6 lg:gap-8 w-full;
+
+	& .name {
+		@apply relative pr-10 text-start w-full;
+	}
+
+	& .like {
+		@apply right-0 top-1/2 -translate-y-1/2;
+	}
+}
+
+.description {
+	@apply text-justify;
+}

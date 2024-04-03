@@ -1,8 +1,7 @@
-import { ICartItem, ICartStore } from '@/interfaces/cart.interface';
-import { userService } from '@/services/user.service';
-import { toast } from 'sonner';
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
+
+import { ICartItem, ICartStore } from '@/interfaces';
 
 export const useCartStore = create<ICartStore>()(
 	devtools(

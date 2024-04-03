@@ -1,6 +1,7 @@
-import { sortOrders } from '@/configs/sort-orders.config';
 import { useSearchParams } from 'next/navigation';
 import { useCallback } from 'react';
+
+import { sortOrders } from '@/configs';
 
 export const useQueryString = () => {
 	const searchParams = useSearchParams();

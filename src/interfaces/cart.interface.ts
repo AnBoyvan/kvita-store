@@ -9,6 +9,12 @@ export interface ICartItem {
 	sum: number;
 }
 
+export interface ICartSum {
+	sum: number;
+	discount: number;
+	total: number;
+}
+
 export interface ICartStore {
 	cart: ICartItem[];
 	updateCartStore: (data: ICartItem[]) => void;

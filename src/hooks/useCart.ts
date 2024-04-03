@@ -1,8 +1,8 @@
-import { useCartStore } from '@/store/cart.store';
-import { ICartItem } from '@/interfaces/cart.interface';
-import { userService } from '@/services/user.service';
 import { toast } from 'sonner';
-import { useUserStore } from '@/store/user.store';
+
+import { ICartItem } from '@/interfaces';
+import { userService } from '@/services/kvita-api';
+import { useCartStore, useUserStore } from '@/store';
 
 export const useCart = () => {
 	const { user } = useUserStore();

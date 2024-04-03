@@ -1,11 +1,13 @@
 'use client';
 
 import clsx from 'clsx';
-import styles from './Navigation.module.scss';
-import { NavigationProps } from './Navigation.props';
-import { NAVIGATION } from '@/configs/navigation.config';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+import styles from './Navigation.module.scss';
+import { NavigationProps } from './Navigation.props';
+
+import { NAVIGATION } from '@/configs';
 
 export const Navigation: React.FC<NavigationProps> = ({ action, className, ...props }) => {
 	const pathname = usePathname();

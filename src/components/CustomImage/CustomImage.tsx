@@ -1,17 +1,32 @@
-import Image, { ImageProps } from 'next/image';
+import clsx from 'clsx';
+import Image from 'next/image';
 
-export const CustomImage: React.FC<ImageProps> = ({ src, className, ...props }) => {
+import styles from './CustomImage.module.scss';
+import { CustomImageProps } from './CustomImage.props';
+
+export const CustomImage: React.FC<CustomImageProps> = ({
+	sizes,
+	className,
+	style,
+	quality,
+	onClick,
+	square,
+	...props
+}) => {
 	const cardSizes =
 		'(min-width: 1700px) 288px, (min-width: 1040px) 17.5vw, (min-width: 780px) calc(25vw - 30px), calc(50vw - 24px)';
 
 	return (
-		<Image
-			src={src}
-			style={{ objectFit: 'cover', zIndex: '-2' }}
-			sizes={cardSizes}
-			fill
-			quality={70}
-			{...props}
-		/>
+		<div
+			className={clsx(styles.wrapper, square && styles.square, className && className)}
+			onClick={onClick}
+		>
+			<Image
+				sizes={sizes ? sizes : cardSizes}
+				fill
+				style={{ objectFit: 'cover', borderRadius: 'inherit', ...style }}
+				{...props}
+			/>
+		</div>
 	);
 };

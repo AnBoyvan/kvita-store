@@ -1,10 +1,10 @@
 'use client';
 
-import { createCartItem } from '@/utils/helpers/createCartItem';
-import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
 import { CartButtonProps } from './CartButtonProps';
-import { useCart } from '@/hooks/useCart';
+
+import { useCart } from '@/hooks';
+import { Button, Icon } from '@/ui';
+import { createCartItem } from '@/utils/helpers';
 
 export const CartButton: React.FC<CartButtonProps> = ({
 	mode,

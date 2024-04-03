@@ -3,35 +3,47 @@
 		"browser": true,
 		"es2021": true
 	},
-	"parser": "@typescript-eslint/parser",
 	"extends": [
-		"eslint:recommended",
-		"next",
 		"prettier",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:prettier/recommended"
+		"plugin:prettier/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:@next/next/recommended",
+		"plugin:react/jsx-runtime"
 	],
-	"plugins": ["@typescript-eslint/eslint-plugin", "import", "prettier"],
+	"plugins": ["import", "prettier", "react", "react-hooks"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
 	"rules": {
-		"@typescript-eslint/interface-name-prefix": "off",
-		"@typescript-eslint/explicit-function-return-type": "off",
-		"@typescript-eslint/explicit-module-boundary-types": "off",
-		"@typescript-eslint/no-explicit-any": "off",
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto"
+			}
+		],
+		"no-console": "warn",
+		"prefer-const": "error",
+
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off",
+		"react/display-name": "off",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "off",
+
 		"import/order": [
 			"error",
 			{
-				"pathGroups": [
-					{
-						"pattern": "src/**",
-						"group": "internal",
-						"position": "after"
-					}
-				],
-				"pathGroupsExcludedImportTypes": ["builtin"],
-				"groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
+				"groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
 				"newlines-between": "always",
 				"alphabetize": {
-					"order": "asc"
+					// "order": "asc",
+					"caseInsensitive": true
 				}
 			}
 		]

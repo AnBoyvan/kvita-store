@@ -1,8 +1,7 @@
-'use client';
+import { clsx } from 'clsx';
 
 import styles from './Button.module.scss';
 import { ButtonProps } from './Button.props';
-import { clsx } from 'clsx';
 
 export const Button: React.FC<ButtonProps> = ({
 	mode,
@@ -16,6 +15,7 @@ export const Button: React.FC<ButtonProps> = ({
 		event.currentTarget.blur();
 		props.onClick;
 	};
+
 	return (
 		<button
 			className={clsx(

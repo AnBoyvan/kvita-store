@@ -1,9 +1,8 @@
-'use client';
-
-import { CheckboxProps } from './Checkbox.props';
-import styles from './Checkbox.module.scss';
-import { ForwardedRef, forwardRef } from 'react';
 import clsx from 'clsx';
+import { ForwardedRef, forwardRef } from 'react';
+
+import styles from './Checkbox.module.scss';
+import { CheckboxProps } from './Checkbox.props';
 
 export const Checkbox = forwardRef(
 	(

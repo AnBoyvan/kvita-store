@@ -1,8 +1,7 @@
-import { CategorySection } from '@/modules/Home/CategorySection/CategorySection';
-import { Hero } from '@/modules/Home/Hero/Hero';
-import { Category } from '@/interfaces/product.interface';
-import { OrderingSection } from '@/modules/Home/OrderingSection/OrderingSection';
-import { productService } from '@/services/product.service';
+import { CategorySection, Hero, OrderingSection } from './_components';
+
+import { Category } from '@/interfaces';
+import { productService } from '@/services/kvita-api';
 
 export default async function HomePage() {
 	const products = await productService.forMain();

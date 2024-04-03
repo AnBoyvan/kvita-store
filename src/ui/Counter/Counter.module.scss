@@ -1,0 +1,7 @@
+.counter {
+	@apply flex flex-row w-full min-w-[100px] h-12 md:h-[70px] items-center justify-around border-2 border-gray rounded-10;
+}
+
+.count {
+	@apply font-secondary font-bold text-16 md:text-18 lg:text-20 text-primary;
+}

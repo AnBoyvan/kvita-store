@@ -1,10 +1,12 @@
 'use client';
 
-import styles from './Select.module.scss';
-import { ForwardedRef, forwardRef, useEffect, useRef, useState } from 'react';
-import { SelectProps } from './Select.props';
 import clsx from 'clsx';
-import { Icon } from '../Icon/Icon';
+import { ForwardedRef, forwardRef, useEffect, useRef, useState } from 'react';
+
+import styles from './Select.module.scss';
+import { SelectProps } from './Select.props';
+
+import { Icon } from '@/ui';
 
 export const Select = forwardRef(
 	(

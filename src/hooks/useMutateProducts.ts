@@ -1,14 +1,15 @@
 import { useMutation } from '@tanstack/react-query';
-import { productService } from '@/services/product.service';
 import { toast } from 'sonner';
-import { useUserStore } from '@/store/user.store';
+
+import { productService } from '@/services/kvita-api';
+import { useUserStore } from '@/store';
 
 export const useMutateProducts = () => {
 	const { updateFavorite } = useUserStore();
 
 	const { mutate: updFavorites } = useMutation({
 		mutationFn: (productId: string) => productService.updateFavorite(productId),
-		mutationKey: ['favorite'],
+		mutationKey: ['products-favorite'],
 		onSuccess: ({ message, userFavorites }) => {
 			updateFavorite(userFavorites);
 			toast.success(message, { closeButton: false });

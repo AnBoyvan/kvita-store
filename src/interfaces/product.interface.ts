@@ -16,11 +16,11 @@ export interface IProduct extends IBase {
 	description?: string;
 	category: string;
 	imageURL: string;
-	imageGallery?: string[];
-	calories?: number | null;
-	proteins?: number | null;
-	fats?: number | null;
-	carbohydrates?: number | null;
+	imageGallery: string[];
+	calories?: number;
+	proteins?: number;
+	fats?: number;
+	carbohydrates?: number;
 	favorite: string[];
 	isActive?: boolean;
 	isNewProduct?: boolean;

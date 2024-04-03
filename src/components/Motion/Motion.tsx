@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { IMotionProps } from './Motion.props';
 import { ForwardedRef, forwardRef } from 'react';
+
+import { IMotionProps } from './Motion.props';
 import { motionVariants } from './variants';
 
 export const Motion = forwardRef(

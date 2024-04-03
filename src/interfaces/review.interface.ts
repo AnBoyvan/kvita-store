@@ -12,3 +12,8 @@ export interface IReviewCreate {
 	productId: string;
 	comment: string;
 }
+
+export interface IReviewUpdate {
+	_id: string;
+	comment: string;
+}

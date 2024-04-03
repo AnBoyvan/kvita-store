@@ -1,4 +1,4 @@
-import { Container } from '@/modules/Layout/Container/Container';
+import { Container } from '@/components';
 
 export default function PublicLayout({
 	children,

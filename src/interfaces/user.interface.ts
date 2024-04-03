@@ -62,4 +62,5 @@ export interface IUserStore {
 	user: IUserState;
 	updateUser: (data: IUserState) => void;
 	updateFavorite: (data: string[]) => void;
+	logout: () => void;
 }

@@ -1,5 +1,6 @@
-import { authService } from '@/services/auth.service';
 import { CallbacksOptions } from 'next-auth';
+
+import { authService } from '@/services/kvita-api';
 
 export const authCallbacks: Partial<CallbacksOptions> = {
 	async signIn({ account, profile }) {

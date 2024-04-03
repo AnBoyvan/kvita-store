@@ -1,0 +1,7 @@
+.form {
+	@apply relative flex flex-col gap-4 md:gap-6 lg:gap-8 w-full h-full bg-bg-secondary p-4 md:p-6 lg:p-8 rounded-10;
+}
+
+.comment {
+	@apply w-full p-2 h-auto rounded-10 border-2 border-gray transition-all duration-200 resize-none;
+}

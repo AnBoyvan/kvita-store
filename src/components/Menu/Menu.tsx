@@ -1,9 +1,13 @@
+'use client';
+
+import clsx from 'clsx';
+import debounce from 'lodash.debounce';
 import { useContext, useEffect, useState } from 'react';
+
 import styles from './Menu.module.scss';
 import { MenuProps } from './Menu.props';
+
 import { ModalContext } from '@/hooks/useModal';
-import debounce from 'lodash.debounce';
-import clsx from 'clsx';
 
 export const Menu: React.FC<MenuProps> = ({ position, closed, className, children }: MenuProps) => {
 	const [close, setClose] = useState<boolean>(false);

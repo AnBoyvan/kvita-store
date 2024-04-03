@@ -1,13 +1,12 @@
-import { SITE_NAME } from '@/constants/seo.constants';
 import type { Metadata } from 'next';
 import { Marck_Script, Montserrat, Open_Sans } from 'next/font/google';
 import { Toaster } from 'sonner';
-import './globals.scss';
+
+import '@/styles/globals.scss';
 import { Providers } from './providers';
-import { Header } from '@/modules/Layout/Header/Header';
-import { Modal } from '@/components/Modal/Modal';
-import { Footer } from '@/modules/Layout/Footer/Footer';
-import { CurrentUser } from '@/components/CurrentUser/CurrentUser';
+
+import { CurrentUser, Footer, Header, Modal } from '@/components';
+import { SITE_NAME } from '@/constants';
 
 const openSans = Open_Sans({
 	subsets: ['latin', 'cyrillic'],

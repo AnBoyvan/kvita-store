@@ -1,9 +1,8 @@
-'use client';
-
+import { clsx } from 'clsx';
 import Link from 'next/link';
+
 import styles from './LinkButton.module.scss';
 import { LinkButtonProps } from './LinkButton.props';
-import { clsx } from 'clsx';
 
 export const LinkButton: React.FC<LinkButtonProps> = ({
 	mode,

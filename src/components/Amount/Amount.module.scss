@@ -1,0 +1,15 @@
+.amount {
+	@apply flex flex-col w-full min-w-[100px] h-12 md:h-[70px] items-center justify-center;
+
+	&.bordered {
+		@apply border-2 border-gray rounded-10;
+	}
+}
+
+.title {
+	@apply text-primary font-secondary;
+}
+
+.value {
+	@apply flex flex-row items-center justify-around w-full;
+}
