@@ -39,6 +39,10 @@ export const Search: React.FC = () => {
 		closeModal();
 	};
 
+	const handleClick = () => {
+		closeModal();
+	};
+
 	const onResetClick = () => {
 		setSearch('');
 	};
@@ -47,7 +51,7 @@ export const Search: React.FC = () => {
 		data &&
 		data.result.map(({ _id, name, imageURL }) => {
 			return (
-				<li key={_id}>
+				<li key={_id} onClick={handleClick}>
 					<Link href={`/products/${_id}`} className={styles.item}>
 						<div className={styles.imgWrapper}>
 							<Image

@@ -1,0 +1,3 @@
+.sidebar {
+	@apply fixed hidden lg:flex w-12 hover:w-60  flex-col bg-bg-secondary p-3 rounded-10 overflow-hidden transition-[width] duration-500 z-10;
+}

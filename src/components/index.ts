@@ -17,5 +17,4 @@ export { Navigation } from './Navigation/Navigation';
 export { Pagination } from './Pagination/Pagination';
 export { ProductCard } from './ProductCard/ProductCard';
 export { Search } from './Search/Search';
-export { Accept } from './Accept/Accept';
-export { Dialog } from './Dialog/Dialog';
+export { Sidebar } from './Sidebar/Sidebar';

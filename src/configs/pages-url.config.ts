@@ -14,7 +14,8 @@ class ROUTES {
 
 	DASHBOARD = `${this.root}/dashboard`;
 	DASHBOARD_PRODUCTS = `${this.DASHBOARD}/products`;
-	DASHBOARD_COMPOSE = `${this.DASHBOARD}/compose`;
+	DASHBOARD_COMPOSE = `${this.DASHBOARD}/${this.DASHBOARD_PRODUCTS}/compose`;
+	DASHBOARD_CAKES = `${this.DASHBOARD}/cakes`;
 	DASHBOARD_ORDERS = `${this.DASHBOARD}/orders`;
 	DASHBOARD_USERS = `${this.DASHBOARD}/users`;
 	DASHBOARD_GALLERY = `${this.DASHBOARD}/gallery`;

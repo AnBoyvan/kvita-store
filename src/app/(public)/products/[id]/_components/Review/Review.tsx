@@ -7,7 +7,7 @@ import { ReviewForm } from '..';
 import styles from './Review.module.scss';
 import { ReviewProps } from './Review.props';
 
-import { ModalContext } from '@/hooks';
+import { ModalContext, useMutateReviews, useToasts } from '@/hooks';
 import { useUserStore } from '@/store';
 import { Button, CloseModalButton, Icon } from '@/ui';
 import { isSuperuser } from '@/utils/helpers';
@@ -16,6 +16,8 @@ export const Review: React.FC<ReviewProps> = ({ review, ...props }) => {
 	const { _id, ownerName, ownerId, comment, date, productId } = review;
 	const { user } = useUserStore();
 	const { closeModal, openModal } = useContext(ModalContext);
+	const { acception } = useToasts();
+	const { removeReview } = useMutateReviews();
 
 	const isOwner = ownerId === user._id;
 
@@ -35,12 +37,12 @@ export const Review: React.FC<ReviewProps> = ({ review, ...props }) => {
 		);
 	};
 
-	const removeReview = () => {
-		console.log(_id);
+	const deleteReview = () => {
+		removeReview(_id);
 	};
 
 	const onRemove = () => {
-		// openModal(<Accept message="Видалити відгук?" onAccept={removeReview} />);
+		acception(deleteReview, 'Видалити відгук?');
 	};
 
 	return (

@@ -29,7 +29,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 			{...motionProps}
 		>
 			<li {...props} className={styles.card}>
-				<Link href={`/products/${_id}`}>
+				<Link href={`/products/${_id}`} className={styles.image}>
 					{isNewProduct && <Badge variant="novelty" />}
 					{Boolean(promo) && <Badge variant="promo" value={promo} />}
 					<CustomImage src={imageURL} alt={name} square style={{ zIndex: '-1' }} />

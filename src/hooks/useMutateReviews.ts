@@ -27,5 +27,15 @@ export const useMutateReviews = () => {
 		onError: err => toast.error(err.message, { closeButton: false }),
 	});
 
-	return { addReview, updateReview };
+	const { mutate: removeReview } = useMutation({
+		mutationFn: (id: string) => reviewService.remove(id),
+		mutationKey: ['reviews-remove'],
+		onSuccess: ({ message }) => {
+			queryClient.invalidateQueries({ queryKey: ['reviews'] });
+			toast.success(message);
+		},
+		onError: err => toast.error(err.message, { closeButton: false }),
+	});
+
+	return { addReview, updateReview, removeReview };
 };

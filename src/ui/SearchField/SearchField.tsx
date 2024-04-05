@@ -44,10 +44,11 @@ export const SearchField: React.FC<SearchFieldProps> = ({
 				</Button>
 			)}
 			<input
-				type="search"
+				type="text"
 				{...register('search')}
 				className={clsx(styles.input, styles[variant])}
 				placeholder="пошук..."
+				autoComplete="off"
 				autoFocus={autoFocus}
 			/>
 			{variant === 'primary' && (

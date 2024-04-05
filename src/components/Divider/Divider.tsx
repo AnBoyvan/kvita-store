@@ -1,5 +1,8 @@
-import styles from './Divider.module.scss';
+import clsx from 'clsx';
 
-export const Divider: React.FC = () => {
-	return <div className={styles.divider}></div>;
+import styles from './Divider.module.scss';
+import { DividerProps } from './Divider.props';
+
+export const Divider: React.FC<DividerProps> = ({ className, ...props }) => {
+	return <div className={clsx(styles.divider, className)} {...props}></div>;
 };

@@ -1,3 +1,4 @@
+export { Accept } from './Accept/Accept';
 export { BackButton } from './BackButton/BackButton';
 export { Badge } from './Badge/Badge';
 export { Button } from './Button/Button';
