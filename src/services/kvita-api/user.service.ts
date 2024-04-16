@@ -1,5 +1,5 @@
 import { API } from '@/configs';
-import {
+import type {
 	IUser,
 	IUserRemoveResponse,
 	IUserResponse,

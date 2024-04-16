@@ -1,4 +1,4 @@
-import { IUser, IUserUpdate } from './user.interface';
+import type { IUser } from './user.interface';
 
 export interface IRegisterForm extends IRegisterRequest {
 	confirmPassword: string;

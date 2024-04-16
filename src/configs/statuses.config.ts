@@ -1,4 +1,6 @@
-export const STATUSES = [
+import type { IConfig } from '@/interfaces';
+
+export const STATUSES: IConfig[] = [
 	{
 		value: 'new',
 		title: 'Нове',

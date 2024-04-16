@@ -2,7 +2,7 @@
 
 import { AnimatePresence } from 'framer-motion';
 
-import { Motion } from '@/components/Motion/Motion';
+import { Motion } from '@/components/Features';
 
 export default function Template({ children }: { children: React.ReactNode }) {
 	return (

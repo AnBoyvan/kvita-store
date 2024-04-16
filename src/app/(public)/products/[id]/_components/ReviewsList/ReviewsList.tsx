@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Review } from '..';
 
 import styles from './ReviewsList.module.scss';
-import { ReviewsListProps } from './ReviewsList.props';
+import type { ReviewsListProps } from './ReviewsList.props';
 
 import { reviewService } from '@/services/kvita-api';
 

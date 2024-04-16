@@ -1,5 +1,5 @@
-import { AuthSkeleton } from '@/components';
+import { Spinner } from '@/components/Shared';
 
 export default function Loading() {
-	return <AuthSkeleton />;
+	return <Spinner />;
 }

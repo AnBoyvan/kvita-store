@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
-import { IUserState, IUserStore } from '@/interfaces';
+import type { IUserState, IUserStore } from '@/interfaces';
 
 const defaultUser = {
 	isLoggedIn: false,

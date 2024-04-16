@@ -1,4 +1,6 @@
-export const CATEGORIES = [
+import type { IConfig } from '@/interfaces';
+
+export const CATEGORIES: IConfig[] = [
 	{
 		value: 'classic',
 		title: 'Класичні торти',

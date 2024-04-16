@@ -1,4 +1,4 @@
-import { Container, Sidebar } from '@/components';
+import { Container, Sidebar } from '@/components/Layout';
 
 export default function PublicLayout({
 	children,
@@ -8,7 +8,7 @@ export default function PublicLayout({
 	return (
 		<div className="relative w-full flex flex-row  mx-auto">
 			<Sidebar />
-			<div className="max-w-[1600px] lg:pl-12 w-full  mx-auto">
+			<div className="max-w-[1600px] pl-12 w-full  mx-auto">
 				<Container>{children}</Container>
 			</div>
 		</div>

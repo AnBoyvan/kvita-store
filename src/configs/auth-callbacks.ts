@@ -1,4 +1,4 @@
-import { CallbacksOptions } from 'next-auth';
+import type { CallbacksOptions } from 'next-auth';
 
 import { authService } from '@/services/kvita-api';
 

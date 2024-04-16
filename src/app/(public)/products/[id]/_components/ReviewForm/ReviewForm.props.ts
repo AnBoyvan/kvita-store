@@ -1,6 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-import { IReview } from '@/interfaces';
+import type { IReview } from '@/interfaces';
 
 export interface ReviewFormProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLFormElement>, HTMLFormElement> {

@@ -1,0 +1,11 @@
+.button {
+	@apply relative flex flex-row p-2 -ml-2 cursor-pointer lg:hover:text-typo-white lg:hover:bg-hover rounded-10 transition-colors duration-150;
+}
+
+.icon {
+	@apply w-6 h-6;
+}
+
+.title {
+	@apply absolute left-12 top-1/2 -translate-y-1/2 block text-nowrap;
+}

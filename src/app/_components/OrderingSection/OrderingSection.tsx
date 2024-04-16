@@ -1,8 +1,8 @@
 import styles from './OrderingSection.module.scss';
 
-import { Htag } from '@/components';
+import { Htag, Icon } from '@/components/Shared';
+import { LinkButton } from '@/components/UI';
 import { PAGES } from '@/configs';
-import { Icon, LinkButton } from '@/ui';
 
 export const OrderingSection: React.FC = () => {
 	return (

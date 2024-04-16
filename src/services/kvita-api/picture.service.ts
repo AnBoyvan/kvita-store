@@ -1,5 +1,5 @@
-import { API } from '@/configs/api-routes.config';
-import { IPicture, IPictureCreate, IRemoveResponse } from '@/interfaces';
+import { API } from '@/configs';
+import type { IPicture, IPictureCreate, IRemoveResponse } from '@/interfaces';
 import { axiosAuth, axiosClassic } from '@/services/kvita-api';
 import { pictureFormData } from '@/utils/helpers';
 

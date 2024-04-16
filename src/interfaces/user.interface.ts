@@ -1,5 +1,5 @@
-import { ICartItem } from './cart.interface';
-import { IBase } from './root.interface';
+import type { ICartItem } from './cart.interface';
+import type { IBase } from './root.interface';
 
 export enum Role {
 	Customer = 'customer',

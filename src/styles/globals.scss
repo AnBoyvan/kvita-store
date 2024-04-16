@@ -59,6 +59,10 @@
 	}
 }
 
-.scrollblock {
-	@apply fixed w-full overflow-y-scroll;
+html {
+	scrollbar-gutter: stable;
+
+	&:has(dialog[open]:modal) {
+		overflow: hidden;
+	}
 }

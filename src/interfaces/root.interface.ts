@@ -1,4 +1,4 @@
-import { icons } from 'lucide-react';
+import type { icons } from 'lucide-react';
 
 export interface IBase {
 	_id: string;
@@ -15,4 +15,9 @@ export interface ISidebarPage {
 	page: string;
 	title: string;
 	icon: keyof typeof icons;
+}
+
+export interface IConfig {
+	value: string | number | readonly string[] | undefined;
+	title: string;
 }

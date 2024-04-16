@@ -1,8 +1,8 @@
 import styles from './ProductInfo.module.scss';
-import { ProductInfoProps } from './ProductInfo.props';
+import type { ProductInfoProps } from './ProductInfo.props';
 
-import { Htag } from '@/components';
-import { LikeButton } from '@/ui';
+import { Htag } from '@/components/Shared';
+import { LikeButton } from '@/components/UI';
 
 export const ProductInfo: React.FC<ProductInfoProps> = ({ _id, name, description, ...props }) => {
 	return (

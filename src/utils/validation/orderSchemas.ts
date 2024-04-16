@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 import { regexpConstants } from '@/constants';
-import { IOrderCreateForm } from '@/interfaces';
+import type { IOrderCreateForm } from '@/interfaces';
 
 export const createOrdeSchema: Yup.ObjectSchema<IOrderCreateForm> = Yup.object().shape({
 	name: Yup.string().required('Вкажіть ім’я').max(20, 'Не більше 20 символів'),

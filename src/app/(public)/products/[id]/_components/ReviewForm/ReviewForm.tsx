@@ -1,16 +1,16 @@
 'use client';
 
 import clsx from 'clsx';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 
 import styles from './ReviewForm.module.scss';
-import { ReviewFormProps } from './ReviewForm.props';
+import type { ReviewFormProps } from './ReviewForm.props';
 
-import { Htag } from '@/components';
+import { Htag } from '@/components/Shared';
+import { Button } from '@/components/UI';
 import { useMutateReviews } from '@/hooks';
-import { IReviewCreate } from '@/interfaces';
+import type { IReviewCreate } from '@/interfaces';
 import { useUserStore } from '@/store';
-import { Button } from '@/ui';
 
 export const ReviewForm: React.FC<ReviewFormProps> = ({
 	review,

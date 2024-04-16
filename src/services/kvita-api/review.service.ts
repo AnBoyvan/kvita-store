@@ -1,5 +1,5 @@
 import { API } from '@/configs';
-import { IRemoveResponse, IReview, IReviewCreate } from '@/interfaces';
+import type { IRemoveResponse, IReview, IReviewCreate } from '@/interfaces';
 import { axiosAuth, axiosClassic } from '@/services/kvita-api';
 
 export const reviewService = {

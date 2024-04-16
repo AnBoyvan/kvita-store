@@ -1,5 +1,5 @@
 import styles from './ProductNutritions.module.scss';
-import { ProductNutritionsProps } from './ProductNutritions.props';
+import type { ProductNutritionsProps } from './ProductNutritions.props';
 
 export const ProductNutritions: React.FC<ProductNutritionsProps> = ({
 	calories,

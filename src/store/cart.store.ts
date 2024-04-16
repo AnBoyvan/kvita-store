@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
-import { ICartItem, ICartStore } from '@/interfaces';
+import type { ICartItem, ICartStore } from '@/interfaces';
 
 export const useCartStore = create<ICartStore>()(
 	devtools(

@@ -1,0 +1,19 @@
+.row {
+	@apply border border-gray;
+
+	&.link {
+		@apply hover:bg-bg-secondary;
+	}
+}
+
+.green {
+	@apply text-success;
+}
+
+.blue {
+	@apply text-blue;
+}
+
+.gray {
+	@apply text-gray;
+}

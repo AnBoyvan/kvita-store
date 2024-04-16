@@ -2,7 +2,7 @@ import { AuthOptions } from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
 
-import { authCallbacks } from '.';
+import { authCallbacks } from './auth-callbacks';
 
 import { authService } from '@/services/kvita-api';
 
@@ -34,5 +34,8 @@ export const authConfig: AuthOptions = {
 		}),
 	],
 	callbacks: authCallbacks,
-	pages: { signIn: '/signin' },
+	pages: {
+		signIn: '/signin',
+		signOut: '/',
+	},
 };

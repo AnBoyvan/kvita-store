@@ -1,4 +1,4 @@
-import { IBase } from './root.interface';
+import type { IBase } from './root.interface';
 
 export interface IReview extends IBase {
 	productId: string;

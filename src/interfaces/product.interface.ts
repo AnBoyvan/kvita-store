@@ -11,16 +11,16 @@ export enum Category {
 export interface IProduct extends IBase {
 	name: string;
 	price: number;
-	promo?: number | null;
-	promoPrice?: number | null;
+	promo?: number;
+	promoPrice?: number;
 	description?: string;
 	category: string;
 	imageURL: string;
 	imageGallery: string[];
-	calories?: number;
-	proteins?: number;
-	fats?: number;
-	carbohydrates?: number;
+	calories?: number | null;
+	proteins?: number | null;
+	fats?: number | null;
+	carbohydrates?: number | null;
 	favorite: string[];
 	isActive?: boolean;
 	isNewProduct?: boolean;

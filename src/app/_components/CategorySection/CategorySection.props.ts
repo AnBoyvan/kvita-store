@@ -1,6 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-import { IProduct } from '@/interfaces/product.interface';
+import type { IProduct } from '@/interfaces/product.interface';
 
 export interface CategorySectionProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement> {

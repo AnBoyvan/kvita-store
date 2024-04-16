@@ -1,7 +1,7 @@
 import styles from './ReviewsContainer.module.scss';
-import { ReviewsContainerProps } from './ReviewsContainer.props';
+import type { ReviewsContainerProps } from './ReviewsContainer.props';
 
-import { Htag } from '@/components';
+import { Htag } from '@/components/Shared';
 
 export const ReviewsContainer: React.FC<ReviewsContainerProps> = ({ children, ...props }) => {
 	return (

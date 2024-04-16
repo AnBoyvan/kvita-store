@@ -4,8 +4,8 @@ import hero from '../../../../public/images/hero.jpg';
 
 import styles from './Hero.module.scss';
 
+import { LinkButton } from '@/components/UI';
 import { PAGES } from '@/configs';
-import { LinkButton } from '@/ui';
 
 export const Hero: React.FC = () => {
 	return (

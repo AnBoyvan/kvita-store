@@ -4,10 +4,10 @@
 import { useState } from 'react';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as SwiperType } from 'swiper/types';
+import type { Swiper as SwiperType } from 'swiper/types';
 
 import styles from './ProductImages.module.scss';
-import { ProductImagesProps } from './ProductImages.props';
+import type { ProductImagesProps } from './ProductImages.props';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';

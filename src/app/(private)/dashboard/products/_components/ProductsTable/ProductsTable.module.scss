@@ -1,0 +1,7 @@
+.table {
+	@apply w-full border-2 border-gray;
+}
+
+.row {
+	@apply grid grid-cols-[auto_90px_40px] md:grid-cols-[3fr_repeat(3,_1fr)_40px] lg:grid-cols-[3fr_repeat(5,_1fr)_40px];
+}

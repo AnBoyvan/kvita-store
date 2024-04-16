@@ -11,9 +11,9 @@ import {
 	ReviewsList,
 } from './_components';
 
-import { Divider } from '@/components';
+import { Divider } from '@/components/Shared';
+import { BackButton } from '@/components/UI';
 import { productService } from '@/services/kvita-api';
-import { BackButton } from '@/ui';
 
 export default async function ProductPage({ params }: { params: { id: string } }) {
 	const product = await productService.findById(params.id);

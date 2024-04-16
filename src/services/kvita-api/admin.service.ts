@@ -1,5 +1,5 @@
 import { API } from '@/configs';
-import { ITags } from '@/interfaces';
+import type { ITags } from '@/interfaces';
 import { axiosAuth, axiosClassic } from '@/services/kvita-api';
 
 export const adminService = {

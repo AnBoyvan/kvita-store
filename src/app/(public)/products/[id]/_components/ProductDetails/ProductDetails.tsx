@@ -4,10 +4,10 @@ import clsx from 'clsx';
 import { useState } from 'react';
 
 import styles from './ProductDetails.module.scss';
-import { ProductDetailsProps } from './ProductDetails.props';
+import type { ProductDetailsProps } from './ProductDetails.props';
 
-import { Amount } from '@/components';
-import { Badge, CartButton, Counter } from '@/ui';
+import { Amount, Badge } from '@/components/Shared';
+import { CartButton, Counter } from '@/components/UI';
 
 export const ProductDetails: React.FC<ProductDetailsProps> = ({ product, ...props }) => {
 	const { promoPrice, promo, price } = product;

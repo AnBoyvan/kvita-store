@@ -1,6 +1,6 @@
 import { toast } from 'sonner';
 
-import { ICartItem } from '@/interfaces';
+import type { ICartItem } from '@/interfaces';
 import { userService } from '@/services/kvita-api';
 import { useCartStore, useUserStore } from '@/store';
 

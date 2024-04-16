@@ -1,5 +1,11 @@
 import { API } from '@/configs';
-import { IOrder, IOrderCreate, IOrderResponse, IOrderUpdate, IRemoveResponse } from '@/interfaces';
+import type {
+	IOrder,
+	IOrderCreate,
+	IOrderResponse,
+	IOrderUpdate,
+	IRemoveResponse,
+} from '@/interfaces';
 import { axiosAuth } from '@/services/kvita-api';
 
 export const orderService = {

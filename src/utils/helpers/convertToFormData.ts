@@ -1,4 +1,4 @@
-import { IPictureCreate, IProductUpdate } from '@/interfaces';
+import type { IPictureCreate, IProductUpdate } from '@/interfaces';
 
 export const productFormData = (data: IProductUpdate): FormData => {
 	const {

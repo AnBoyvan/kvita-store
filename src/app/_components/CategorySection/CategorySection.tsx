@@ -1,9 +1,10 @@
 import styles from './CategorySection.module.scss';
-import { CategorySectionProps } from './CategorySection.props';
+import type { CategorySectionProps } from './CategorySection.props';
 
-import { Motion, ProductCard } from '@/components';
+import { Motion } from '@/components/Features';
+import { Icon, ProductCard } from '@/components/Shared';
+import { LinkButton } from '@/components/UI';
 import { PAGES } from '@/configs';
-import { Icon, LinkButton } from '@/ui';
 
 export const CategorySection: React.FC<CategorySectionProps> = ({
 	title,

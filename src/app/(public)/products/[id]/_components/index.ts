@@ -7,3 +7,5 @@ export { ReviewsContainer } from './ReviewsContainer/ReviewsContainer';
 export { ReviewsList } from './ReviewsList/ReviewsList';
 export { ReviewForm } from './ReviewForm/ReviewForm';
 export { Review } from './Review/Review';
+export { ReviewRemove } from './ReviewRemove/ReviewRemove';
+export { ReviewEdit } from './ReviewEdit/ReviewEdit';

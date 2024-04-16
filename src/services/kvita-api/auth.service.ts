@@ -1,5 +1,5 @@
 import { API } from '@/configs';
-import { IAuthResponse, ILoginForm, IRegisterRequest, IUser } from '@/interfaces';
+import type { IAuthResponse, ILoginForm, IRegisterRequest, IUser } from '@/interfaces';
 import { axiosAuth, axiosClassic } from '@/services/kvita-api';
 
 export const authService = {

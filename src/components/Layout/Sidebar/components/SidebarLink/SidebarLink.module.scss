@@ -1,0 +1,15 @@
+.link {
+	@apply relative flex flex-row p-2 cursor-pointer lg:hover:text-typo-white lg:hover:bg-hover rounded-10 transition-colors duration-150;
+
+	&.active {
+		@apply text-active lg:hover:text-typo-white;
+	}
+}
+
+.icon {
+	@apply w-6 h-6;
+}
+
+.title {
+	@apply absolute left-12 top-1/2 -translate-y-1/2 block w-full text-nowrap;
+}

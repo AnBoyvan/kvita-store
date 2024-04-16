@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 import { regexpConstants } from '@/constants';
-import { ILoginForm, IRegisterForm } from '@/interfaces';
+import type { ILoginForm, IRegisterForm } from '@/interfaces';
 
 export const registerSchema: Yup.ObjectSchema<IRegisterForm> = Yup.object().shape({
 	name: Yup.string().required('Вкажіть ім’я').max(20, 'Не більше 20 символів'),

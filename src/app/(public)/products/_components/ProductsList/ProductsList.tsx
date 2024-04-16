@@ -4,12 +4,11 @@ import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 
 import styles from './ProductsList.module.scss';
-import { ProductsListProps } from './ProductsList.props';
+import type { ProductsListProps } from './ProductsList.props';
 
-import { Pagination, ProductCard } from '@/components';
-import { IProduct } from '@/interfaces';
+import { Pagination, ProductCard, Spinner } from '@/components/Shared';
+import type { IProduct } from '@/interfaces';
 import { productService } from '@/services/kvita-api';
-import { Spinner } from '@/ui';
 
 export const ProductsList: React.FC<ProductsListProps> = ({ query, page, limit }) => {
 	const [products, setProducts] = useState<IProduct[]>([]);

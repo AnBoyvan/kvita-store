@@ -5,7 +5,8 @@ import { Toaster } from 'sonner';
 import '@/styles/globals.scss';
 import { Providers } from './providers';
 
-import { CurrentUser, Footer, Header, Modal } from '@/components';
+import { CurrentUser } from '@/components/Features';
+import { Footer, Header } from '@/components/Layout';
 import { SITE_NAME } from '@/constants';
 
 const openSans = Open_Sans({
@@ -57,7 +58,6 @@ export default function RootLayout({
 					{children}
 					<Footer />
 					<Toaster position="top-right" richColors closeButton duration={1500} visibleToasts={1} />
-					<Modal />
 					<CurrentUser />
 				</Providers>
 			</body>

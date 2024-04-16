@@ -1,6 +1,6 @@
 import { PAGES } from './pages-url.config';
 
-import { ISidebarPage } from '@/interfaces';
+import type { ISidebarPage } from '@/interfaces';
 
 export const CABINET: ISidebarPage[] = [
 	{

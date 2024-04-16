@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
 
-import { IReview, IReviewCreate, IReviewUpdate } from '@/interfaces';
+import type { IReview, IReviewCreate, IReviewUpdate } from '@/interfaces';
 import { reviewService } from '@/services/kvita-api';
 
 export const useMutateReviews = () => {

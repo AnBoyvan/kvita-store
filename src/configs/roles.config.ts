@@ -1,4 +1,6 @@
-export const ROLES = [
+import type { IConfig } from '@/interfaces';
+
+export const ROLES: IConfig[] = [
 	{
 		value: 'customer',
 		title: 'Клієнт',

@@ -1,5 +1,5 @@
 import styles from './ProductContainer.module.scss';
-import { ProductContainerProps } from './ProductContainer.props';
+import type { ProductContainerProps } from './ProductContainer.props';
 
 export const ProductContainer: React.FC<ProductContainerProps> = ({ children, ...props }) => {
 	return (

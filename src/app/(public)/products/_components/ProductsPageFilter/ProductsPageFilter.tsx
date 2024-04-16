@@ -1,15 +1,16 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
 import { useForm } from 'react-hook-form';
 
 import styles from './ProductsPageFilter.module.scss';
-import { ProductsPageFilterProps } from './ProductsPageFilter.props';
+import type { ProductsPageFilterProps } from './ProductsPageFilter.props';
 
+import { Icon } from '@/components/Shared';
+import { Button, CustomSelect } from '@/components/UI';
 import { CATEGORIES } from '@/configs';
 import { useQueryString } from '@/hooks';
-import { Button, Icon, Select } from '@/ui';
 
 const categoryOptions = [{ title: 'Всі категорії', value: '' }, ...CATEGORIES];
 const sortOptions = [
@@ -56,13 +57,13 @@ export const ProductsPageFilter: React.FC<ProductsPageFilterProps> = () => {
 	return (
 		<div className={styles.filter}>
 			<form className={styles.form} onChange={handleChange}>
-				<Select
+				<CustomSelect
 					{...register('category')}
 					variant="products"
 					current={watch('category')}
 					options={categoryOptions}
 				/>
-				<Select
+				<CustomSelect
 					{...register('sort')}
 					variant="products"
 					current={watch('sort')}

@@ -2,8 +2,7 @@ import { Suspense } from 'react';
 
 import { ProductsList, ProductsPageFilter } from './_components';
 
-import { Htag } from '@/components';
-import { Spinner } from '@/ui';
+import { Htag, Spinner } from '@/components/Shared';
 
 export default async function ProductsPage({
 	searchParams,

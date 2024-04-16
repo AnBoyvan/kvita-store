@@ -1,0 +1,11 @@
+.accept {
+	@apply flex flex-col gap-4 lg:gap-6 items-center;
+}
+
+.actions {
+	@apply flex flex-row gap-8 min-w-64 items-center justify-center;
+}
+
+.button {
+	@apply w-20;
+}
