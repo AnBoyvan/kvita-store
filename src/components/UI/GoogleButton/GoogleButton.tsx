@@ -2,7 +2,7 @@ import { signIn } from 'next-auth/react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
-import google from '../../../public/icons/google.png';
+import google from '../../../../public/icons/google.png';
 
 import styles from './GoogleButton.module.scss';
 

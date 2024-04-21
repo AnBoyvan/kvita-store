@@ -1,13 +1,13 @@
 export const isActive = [
 	{ value: 'all', title: 'Всі' },
-	{ value: true, title: 'активні' },
-	{ value: false, title: 'неактивні' },
+	{ value: true, title: 'Активні' },
+	{ value: false, title: 'Неактивні' },
 ];
 
 export const isNew = [
 	{ value: 'all', title: 'Всі' },
-	{ value: true, title: 'новинки' },
-	{ value: false, title: 'крім новинок' },
+	{ value: true, title: 'Новинки' },
+	{ value: false, title: 'Крім новинок' },
 ];
 
 export const isPromo = [

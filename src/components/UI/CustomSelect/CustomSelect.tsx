@@ -1,10 +1,10 @@
 'use client';
 
 import clsx from 'clsx';
-import { ForwardedRef, forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useRef, useState, type ForwardedRef } from 'react';
 
+import styles from './CustomSelect.module.scss';
 import { CustomSelectProps } from './CustomSelect.props';
-import styles from './Select.module.scss';
 
 import { Icon } from '@/components/Shared';
 

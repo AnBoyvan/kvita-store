@@ -3,7 +3,7 @@ import { createColumnHelper, type ColumnDef } from '@tanstack/react-table';
 import { TableEditLink } from '@/components/Features';
 import { PAGES } from '@/configs';
 import type { IProduct } from '@/interfaces';
-import { formatDate, translate } from '@/utils/helpers';
+import { formatDate, isPositive, isSelected, translate, valuesIncludes } from '@/utils/helpers';
 
 const columnHelper = createColumnHelper<IProduct>();
 
@@ -14,8 +14,9 @@ export const productsColumns: ColumnDef<IProduct, any>[] = [
 	}),
 	columnHelper.accessor('category', {
 		header: 'Категорія',
-		cell: props => <div>{translate(props.getValue())}</div>,
+		cell: props => <div className="w-full text-center">{translate(props.getValue())}</div>,
 		meta: { visibility: 'md' },
+		filterFn: valuesIncludes,
 	}),
 	columnHelper.accessor('price', {
 		header: 'Ціна',
@@ -25,6 +26,7 @@ export const productsColumns: ColumnDef<IProduct, any>[] = [
 		header: 'Знижка',
 		cell: props => <div>{props.getValue() ? `${props.getValue()} %` : ''}</div>,
 		meta: { visibility: 'md' },
+		filterFn: isPositive,
 	}),
 	columnHelper.accessor('createdAt', {
 		header: 'Створено',
@@ -46,13 +48,10 @@ export const productsColumns: ColumnDef<IProduct, any>[] = [
 	}),
 	columnHelper.accessor('isNewProduct', {
 		header: '',
-		// filterFn: (row, columnId, filter) => {
-		// 	// const value = row.getValue(columnId);
-		// 	console.log({ row, columnId, filter });
-		// 	return false;
-		// },
+		filterFn: isSelected,
 	}),
 	columnHelper.accessor('isActive', {
 		header: '',
+		filterFn: isSelected,
 	}),
 ];

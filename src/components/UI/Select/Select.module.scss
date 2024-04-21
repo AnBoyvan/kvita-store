@@ -1,0 +1,15 @@
+.wrapper {
+	@apply relative w-full;
+}
+
+.select {
+	@apply appearance-none px-2 w-full h-10 rounded-10 border-2 border-gray transition-all duration-200 text-base hover:cursor-pointer hover:border-hover;
+}
+
+.option {
+	@apply cursor-pointer hover:bg-hover hover:text-typo-white;
+}
+
+.icon {
+	@apply absolute right-2 top-1/2 -translate-y-1/2 transition-all duration-200 pointer-events-none;
+}

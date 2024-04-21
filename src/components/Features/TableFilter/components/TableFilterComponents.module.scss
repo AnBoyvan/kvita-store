@@ -1,0 +1,39 @@
+.menuOverlay {
+	@apply fixed top-0 left-0 h-screen w-full z-10 bg-black bg-opacity-50 backdrop-blur-sm;
+
+	&.close {
+		@apply hidden;
+	}
+}
+
+.menu {
+	@apply absolute top-0 right-0 p-6 flex flex-col items-center justify-between bg-bg-secondary w-80 h-full animate-openMenuRight;
+
+	&.close {
+		@apply animate-closeMenuRight;
+	}
+}
+
+.filters {
+	@apply w-full flex flex-col items-start gap-3;
+}
+
+.menuButtons {
+	@apply flex gap-3 w-full;
+}
+
+.closeBtn {
+	@apply absolute top-5 right-5;
+}
+
+.title {
+	@apply font-bold font-secondary;
+}
+
+.search {
+	@apply md:w-[400px];
+}
+
+.filterItem {
+	@apply w-full;
+}

@@ -11,3 +11,5 @@ export { LinkButton } from './LinkButton/LinkButton';
 export { LogoutButton } from './LogoutButton/LogoutButton';
 export { Radio } from './Radio/Radio';
 export { ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher';
+export { CheckboxGroup } from './CheckboxGroup/CheckboxGroup';
+export { Select } from './Select/Select';

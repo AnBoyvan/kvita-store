@@ -4,13 +4,17 @@ import clsx from 'clsx';
 import debounce from 'lodash.debounce';
 import { useEffect, useState } from 'react';
 
-import styles from './BurgerMenu.module.scss';
-import type { BurgerMenuProps } from './BurgerMenu.props';
+import styles from './TableFilterComponents.module.scss';
+import { TableFilterMenuProps } from './TableFilterComponents.props';
 
-import { Icon, Navigation } from '@/components/Shared';
-import { Button, ThemeSwitcher } from '@/components/UI';
+import { Icon } from '@/components/Shared';
+import { Button } from '@/components/UI';
 
-export const BurgerMenu: React.FC<BurgerMenuProps> = ({ onClose }) => {
+export const TableFilterMenu: React.FC<TableFilterMenuProps> = ({
+	children,
+	resetFilter,
+	setIsOpen,
+}) => {
 	const [closed, setSlosed] = useState<boolean>(false);
 
 	const handleClose = () => {
@@ -29,7 +33,7 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ onClose }) => {
 	};
 
 	const closeModalWindow = debounce(() => {
-		onClose();
+		setIsOpen(false);
 	}, 300);
 
 	useEffect(() => {
@@ -58,11 +62,18 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ onClose }) => {
 	return (
 		<div className={styles.menuOverlay} onClick={handleMenuOverlayClick}>
 			<div className={clsx(styles.menu, closed && styles.close)}>
+				<div className={styles.filters}>{children}</div>
+				<div className={styles.menuButtons}>
+					<Button mode="wide" variant="primary" onClick={handleClose}>
+						Готово
+					</Button>
+					<Button mode="wide" variant="ghost" onClick={() => resetFilter([])}>
+						Скинути
+					</Button>
+				</div>
 				<Button mode="simple" className={styles.closeBtn} onClick={handleClose}>
 					<Icon name="X" />
 				</Button>
-				<ThemeSwitcher className={styles.switcher} />
-				<Navigation action={handleClose} className={styles.nav} />
 			</div>
 		</div>
 	);

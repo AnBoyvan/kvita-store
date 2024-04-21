@@ -1,9 +1,16 @@
 'use client';
 
-import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
+import {
+	flexRender,
+	getCoreRowModel,
+	getFilteredRowModel,
+	useReactTable,
+	type ColumnFiltersState,
+} from '@tanstack/react-table';
 import { useEffect, useState } from 'react';
 
 import { productsColumns } from '../products-table-columns';
+import { ProductsTableFilter } from '../ProductsTableFilter/ProductsTableFilter';
 
 import styles from './ProductsTable.module.scss';
 import type { ProductsTableProps } from './ProductsTable.props';
@@ -13,6 +20,7 @@ import { IProduct } from '@/interfaces';
 
 export const ProductsTable: React.FC<ProductsTableProps> = ({ products, ...props }) => {
 	const [data, setData] = useState<IProduct[]>([]);
+	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
 	const table = useReactTable({
 		data,
@@ -22,25 +30,19 @@ export const ProductsTable: React.FC<ProductsTableProps> = ({ products, ...props
 				isNewProduct: false,
 				isActive: false,
 			},
-			columnFilters: [
-				{
-					id: 'isNewProduct',
-					value: true,
-				},
-			],
+			columnFilters: columnFilters,
 		},
 		getCoreRowModel: getCoreRowModel(),
-		// getFilteredRowModel: getFilteredRowModel(),
+		getFilteredRowModel: getFilteredRowModel(),
 	});
 
 	useEffect(() => {
 		setData(products);
 	}, [products]);
 
-	// console.log(table.getState().columnFilters);
-
 	return (
 		<div className={styles.wrapper} {...props}>
+			<ProductsTableFilter filter={columnFilters} setFilter={setColumnFilters} />
 			<Table>
 				<TableHead>
 					{table.getHeaderGroups().map(headerGroup => (

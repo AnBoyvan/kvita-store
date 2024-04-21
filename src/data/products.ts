@@ -6,7 +6,7 @@ export const productsData = {
 			price: 150,
 			discount: 0,
 			description: '',
-			category: 'other',
+			category: 'classic',
 			imageURL:
 				'https://res.cloudinary.com/dhx0gntlm/image/upload/v1707336090/products/other/65c3c186f87fc4c17b5ef80f/8aba7d20-27f7-4327-98be-be71a97a6f90.webp',
 			imageGallery: [
@@ -80,7 +80,7 @@ export const productsData = {
 			price: 150,
 			discount: 0,
 			description: '',
-			category: 'other',
+			category: 'classic',
 			imageURL:
 				'https://res.cloudinary.com/dhx0gntlm/image/upload/v1707162044/products/other/65c139b961f35e3297b47a16/ef17fe3d-206a-490c-85af-3fb9c8a10df6.webp',
 			imageGallery: [
@@ -176,7 +176,7 @@ export const productsData = {
 			price: 150,
 			discount: 0,
 			description: '',
-			category: 'set',
+			category: 'classic',
 			imageURL:
 				'https://res.cloudinary.com/dhx0gntlm/image/upload/v1707161999/products/set/65c1398c61f35e3297b47a06/6ad4d9a3-696b-4cbc-ba4e-2160762474ff.webp',
 			imageGallery: [
@@ -235,6 +235,8 @@ export const productsData = {
 				'https://res.cloudinary.com/dhx0gntlm/image/upload/v1707161983/products/set/65c1397b61f35e3297b479fe/52894339-46f8-43b1-bfb4-2ab93691bc2c.webp',
 			],
 			calories: null,
+			promo: 0,
+			promoPrice: 0,
 			proteins: null,
 			fats: null,
 			carbohydrates: null,
@@ -250,7 +252,7 @@ export const productsData = {
 			price: 150,
 			discount: 0,
 			description: '',
-			category: 'set',
+			category: 'classic',
 			imageURL:
 				'https://res.cloudinary.com/dhx0gntlm/image/upload/v1707161973/products/set/65c1397261f35e3297b479fa/43d216a6-5325-4a89-895d-1fad1d779f08.webp',
 			imageGallery: [
@@ -322,7 +324,7 @@ export const productsData = {
 			price: 150,
 			discount: 0,
 			description: '',
-			category: 'dessert',
+			category: 'classic',
 			imageURL:
 				'https://res.cloudinary.com/dhx0gntlm/image/upload/v1707161909/products/dessert/65c1393261f35e3297b479ee/5948d645-8157-44d9-bae5-d95cc16e3490.webp',
 			imageGallery: [
@@ -370,7 +372,7 @@ export const productsData = {
 			price: 150,
 			discount: 0,
 			description: '',
-			category: 'dessert',
+			category: 'classic',
 			imageURL:
 				'https://res.cloudinary.com/dhx0gntlm/image/upload/v1707161861/products/dessert/65c1390361f35e3297b479e6/8975ce67-3a53-4dcd-b5bd-f7dbc66a2b81.webp',
 			imageGallery: [
@@ -418,7 +420,7 @@ export const productsData = {
 			price: 150,
 			discount: 0,
 			description: '',
-			category: 'cheesecake',
+			category: 'classic',
 			imageURL:
 				'https://res.cloudinary.com/dhx0gntlm/image/upload/v1707161784/products/cheesecake/65c138b661f35e3297b479de/89546b7b-a742-40ab-a023-6e6bf5f8fd1c.webp',
 			imageGallery: [

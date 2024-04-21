@@ -6,3 +6,4 @@ export { Modal } from './Modal/Modal';
 export { Motion } from './Motion/Motion';
 export { Search } from './Search/Search';
 export * from './TableComponents';
+export * from './TableFilter';

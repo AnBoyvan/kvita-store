@@ -1,0 +1,7 @@
+.filter {
+	@apply flex flex-col gap-4 md:flex-row justify-between;
+}
+
+.filterBtn {
+	@apply self-end;
+}
