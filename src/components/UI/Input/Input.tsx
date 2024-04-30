@@ -11,7 +11,7 @@ import { Button } from '@/components/UI';
 
 export const Input = forwardRef(
 	(
-		{ label, icon, error, type, className, ...props }: InputProps,
+		{ label, icon, error, type, grid, className, ...props }: InputProps,
 		ref: ForwardedRef<HTMLInputElement>,
 	): JSX.Element => {
 		const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -24,7 +24,7 @@ export const Input = forwardRef(
 
 		return (
 			<>
-				<div className={styles.wrapper}>
+				<div className={styles.wrapper} style={{ gridArea: grid }}>
 					<label htmlFor={props.name} className={styles.label}>
 						{label}
 					</label>
@@ -47,6 +47,7 @@ export const Input = forwardRef(
 								className ? className : '',
 							)}
 							type={showPassword ? 'text' : type}
+							autoComplete="off"
 							{...props}
 						/>
 						{error && <div className={styles.errorMessage}>*{error.message}</div>}

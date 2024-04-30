@@ -5,4 +5,5 @@ export interface AcceptProps
 	message: string;
 	onAccept: () => void;
 	onCancel: () => void;
+	type?: 'button' | 'submit' | 'reset';
 }

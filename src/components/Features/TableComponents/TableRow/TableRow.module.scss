@@ -1,6 +1,10 @@
 .row {
 	@apply border border-gray;
 
+	&.products {
+		@apply grid grid-cols-[auto_90px_40px] md:grid-cols-[3fr_repeat(3,_1fr)_40px] lg:grid-cols-[3fr_repeat(5,_1fr)_40px];
+	}
+
 	&.link {
 		@apply hover:bg-bg-secondary;
 	}

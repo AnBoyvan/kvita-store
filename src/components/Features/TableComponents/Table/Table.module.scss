@@ -1,3 +1,27 @@
 .table {
-	@apply w-full border-collapse border border-gray;
+	@apply w-full border-collapse border border-gray text-14;
+}
+
+.paginationWrapper {
+	@apply flex flex-col md:flex-row items-center justify-center md:justify-between;
+}
+
+.perPage {
+	@apply flex flex-row items-center text-nowrap;
+}
+
+.select {
+	@apply w-16;
+}
+
+.pagination {
+	@apply flex flex-row items-center;
+}
+
+.counter {
+	@apply text-14 text-nowrap px-2;
+}
+
+.paginationBtn {
+	@apply w-10 h-10;
 }

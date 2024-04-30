@@ -1,2 +1,3 @@
-export { loginSchema, passwordChangeSchema, registerSchema, requestSchema } from './authSchemas';
+export * from './authSchemas';
 export { createOrdeSchema } from './orderSchemas';
+export * from './productSchemas';

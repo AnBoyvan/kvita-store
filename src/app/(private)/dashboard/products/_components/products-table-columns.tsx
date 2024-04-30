@@ -3,7 +3,15 @@ import { createColumnHelper, type ColumnDef } from '@tanstack/react-table';
 import { TableEditLink } from '@/components/Features';
 import { PAGES } from '@/configs';
 import type { IProduct } from '@/interfaces';
-import { formatDate, isPositive, isSelected, translate, valuesIncludes } from '@/utils/helpers';
+import {
+	formatDate,
+	inPriceRange,
+	isPositive,
+	isSelected,
+	priceSorting,
+	translate,
+	valuesIncludes,
+} from '@/utils/helpers';
 
 const columnHelper = createColumnHelper<IProduct>();
 
@@ -20,7 +28,14 @@ export const productsColumns: ColumnDef<IProduct, any>[] = [
 	}),
 	columnHelper.accessor('price', {
 		header: 'Ціна',
-		cell: props => <div>{props.getValue()}&nbsp;грн</div>,
+		cell: props => (
+			<div>
+				{Boolean(props.row.original.promoPrice) ? props.row.original.promoPrice : props.getValue()}
+				&nbsp;грн
+			</div>
+		),
+		filterFn: inPriceRange,
+		sortingFn: priceSorting,
 	}),
 	columnHelper.accessor('promo', {
 		header: 'Знижка',
@@ -45,6 +60,7 @@ export const productsColumns: ColumnDef<IProduct, any>[] = [
 		cell: props => {
 			return <TableEditLink href={`${PAGES.DASHBOARD_COMPOSE}/${props.row.original._id}`} />;
 		},
+		enableSorting: false,
 	}),
 	columnHelper.accessor('isNewProduct', {
 		header: '',

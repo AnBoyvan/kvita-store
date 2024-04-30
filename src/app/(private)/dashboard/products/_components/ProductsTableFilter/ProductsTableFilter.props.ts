@@ -5,4 +5,6 @@ export interface ProductsTableFilterProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	filter: ColumnFiltersState;
 	setFilter: Dispatch<SetStateAction<ColumnFiltersState>>;
+	minPrice?: number;
+	maxPrice?: number;
 }

@@ -1,0 +1,50 @@
+.form {
+	@apply relative flex flex-col items-center gap-4 md:gap-6 lg:gap-8 mt-8 lg:mt-16;
+}
+
+.compose {
+	@apply flex flex-col w-full gap-4 md:gap-6 lg:gap-8 lg:flex-row;
+}
+
+.images {
+	@apply flex flex-col lg:w-1/2 md:flex-row lg:flex-col gap-4 md:gap-6;
+}
+
+.info {
+	@apply flex flex-col w-full gap-4 md:gap-6 lg:gap-8;
+}
+
+.block {
+	@apply grid md:flex flex-row  w-full gap-4 md:gap-6 lg:gap-8;
+	grid-template-areas:
+		'a a'
+		'b c';
+}
+
+.descrWrapper {
+	@apply w-full flex flex-col;
+}
+
+.descrTitle {
+	@apply pb-0.5 font-secondary text-14;
+}
+
+.descr {
+	@apply w-full px-2 h-auto rounded-10 border-2 border-gray transition-all duration-200 text-base resize-none;
+
+	&:focus {
+		@apply border-active outline-none;
+	}
+
+	&.valid {
+		@apply border-success;
+	}
+}
+
+.buttons {
+	@apply flex justify-center gap-4 md:gap-6 lg:gap-8;
+}
+
+.spinner {
+	@apply absolute -bottom-2 left-1/2 -translate-x-1/2;
+}

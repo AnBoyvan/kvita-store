@@ -7,6 +7,8 @@ export interface TableFilterComponentProps {
 	id: string;
 	title?: string;
 	data?: IConfig[];
+	min?: number;
+	max?: number;
 	filter: ColumnFiltersState;
 	setFilter: Dispatch<SetStateAction<ColumnFiltersState>>;
 }

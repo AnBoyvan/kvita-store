@@ -6,6 +6,7 @@ export { CONTACTS } from './contacts.config';
 export { NAVIGATION } from './navigation.config';
 export { PAGES } from './pages-url.config';
 export { ROLES } from './roles.config';
+export { SELECT } from './select.config';
 export { CABINET, DASBOARD } from './sidebar.config';
 export { sortOrders } from './sort-orders.config';
 export { STATUSES } from './statuses.config';

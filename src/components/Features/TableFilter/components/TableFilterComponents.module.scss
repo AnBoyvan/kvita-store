@@ -7,7 +7,7 @@
 }
 
 .menu {
-	@apply absolute top-0 right-0 p-6 flex flex-col items-center justify-between bg-bg-secondary w-80 h-full animate-openMenuRight;
+	@apply absolute top-0 right-0 p-6 pb-16 lg:pb-6 flex flex-col items-center justify-between bg-bg-secondary w-80 h-full animate-openMenuRight overflow-scroll;
 
 	&.close {
 		@apply animate-closeMenuRight;
@@ -15,11 +15,11 @@
 }
 
 .filters {
-	@apply w-full flex flex-col items-start gap-3;
+	@apply w-full flex flex-col items-start gap-4;
 }
 
 .menuButtons {
-	@apply flex gap-3 w-full;
+	@apply flex gap-3 w-full mt-4;
 }
 
 .closeBtn {
@@ -35,5 +35,17 @@
 }
 
 .filterItem {
-	@apply w-full;
+	@apply w-full flex flex-col gap-2;
+}
+
+.rangeInputs {
+	@apply flex flex-row gap-5 mb-1;
+}
+
+.rangeInputWrapper {
+	@apply flex flex-row items-center gap-1;
+}
+
+.group {
+	@apply w-full flex flex-col gap-2 items-start;
 }

@@ -1,13 +1,8 @@
 'use client';
 
-import {
-	flexRender,
-	getCoreRowModel,
-	getFilteredRowModel,
-	useReactTable,
-	type ColumnFiltersState,
-} from '@tanstack/react-table';
-import { useEffect, useState } from 'react';
+import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { type ColumnFiltersState } from '@tanstack/react-table';
+import { useState } from 'react';
 
 import { productsColumns } from '../products-table-columns';
 import { ProductsTableFilter } from '../ProductsTableFilter/ProductsTableFilter';
@@ -15,69 +10,40 @@ import { ProductsTableFilter } from '../ProductsTableFilter/ProductsTableFilter'
 import styles from './ProductsTable.module.scss';
 import type { ProductsTableProps } from './ProductsTable.props';
 
-import { Table, TableCell, TableHead, TableRow } from '@/components/Features';
-import { IProduct } from '@/interfaces';
+import { Table } from '@/components/Features';
+import { productService } from '@/services/kvita-api';
 
-export const ProductsTable: React.FC<ProductsTableProps> = ({ products, ...props }) => {
-	const [data, setData] = useState<IProduct[]>([]);
-	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-
-	const table = useReactTable({
-		data,
-		columns: productsColumns,
-		state: {
-			columnVisibility: {
-				isNewProduct: false,
-				isActive: false,
-			},
-			columnFilters: columnFilters,
-		},
-		getCoreRowModel: getCoreRowModel(),
-		getFilteredRowModel: getFilteredRowModel(),
+export const ProductsTable: React.FC<ProductsTableProps> = ({ ...props }) => {
+	const { data } = useQuery({
+		queryKey: ['products'],
+		queryFn: () => productService.find(),
+		placeholderData: keepPreviousData,
+		refetchInterval: 1000 * 60 * 2,
 	});
 
-	useEffect(() => {
-		setData(products);
-	}, [products]);
+	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+
+	const hiddenColumns = ['isNewProduct', 'isActive'];
 
 	return (
 		<div className={styles.wrapper} {...props}>
-			<ProductsTableFilter filter={columnFilters} setFilter={setColumnFilters} />
-			<Table>
-				<TableHead>
-					{table.getHeaderGroups().map(headerGroup => (
-						<TableRow key={headerGroup.id} className={styles.row}>
-							{headerGroup.headers.map(header => (
-								<TableCell
-									key={header.id}
-									header
-									visibility={header.column.columnDef.meta?.visibility}
-								>
-									{flexRender(header.column.columnDef.header, header.getContext())}
-								</TableCell>
-							))}
-						</TableRow>
-					))}
-				</TableHead>
-				<tbody>
-					{table.getRowModel().rows.map(row => (
-						<TableRow
-							key={row.id}
-							green={row.original.isNewProduct}
-							blue={Boolean(row.original.promo && row.original.promo > 0)}
-							gray={!row.original.isActive}
-							link
-							className={styles.row}
-						>
-							{row.getVisibleCells().map(cell => (
-								<TableCell key={cell.id} visibility={cell.column.columnDef.meta?.visibility}>
-									{flexRender(cell.column.columnDef.cell, cell.getContext())}
-								</TableCell>
-							))}
-						</TableRow>
-					))}
-				</tbody>
-			</Table>
+			{data && (
+				<>
+					<ProductsTableFilter
+						filter={columnFilters}
+						setFilter={setColumnFilters}
+						minPrice={data.minProductPrice}
+						maxPrice={data.maxProductPrice}
+					/>
+					<Table
+						tableData={data?.result}
+						dataType="products"
+						columns={productsColumns}
+						columnFilters={columnFilters}
+						hiddenColumns={hiddenColumns}
+					/>
+				</>
+			)}
 		</div>
 	);
 };

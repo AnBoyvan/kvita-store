@@ -23,3 +23,28 @@ export const isPositive: FilterFn<any> = (row, columnId: string, filterValue: st
 		return Boolean(!value || value === 0);
 	}
 };
+
+export const inPriceRange: FilterFn<any> = (
+	row,
+	columnId: string,
+	filterValue: [number, number],
+) => {
+	const [min, max] = filterValue;
+
+	if (isNaN(min) || isNaN(max)) {
+		return true;
+	}
+
+	const price = row.getValue<number | undefined>(columnId);
+
+	const promoPrice = row.original.promoPrice;
+
+	if (typeof price !== 'number' && typeof promoPrice !== 'number') {
+		return false;
+	}
+
+	return Boolean(
+		(price && price >= min && price <= max) ||
+			Boolean(promoPrice && promoPrice >= min && promoPrice <= max),
+	);
+};

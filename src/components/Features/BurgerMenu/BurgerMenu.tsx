@@ -56,7 +56,7 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ onClose }) => {
 	}, [closed]);
 
 	return (
-		<div className={styles.menuOverlay} onClick={handleMenuOverlayClick}>
+		<div className={styles.menuOverlay} onMouseDown={handleMenuOverlayClick}>
 			<div className={clsx(styles.menu, closed && styles.close)}>
 				<Button mode="simple" className={styles.closeBtn} onClick={handleClose}>
 					<Icon name="X" />

@@ -1,3 +1,4 @@
+import type { SortDirection } from '@tanstack/react-table';
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
 export interface TableCellProps
@@ -5,4 +6,7 @@ export interface TableCellProps
 	children: ReactNode;
 	header?: boolean;
 	visibility?: string;
+	canSort?: boolean;
+	sort?: (event: unknown) => void;
+	isSorted?: false | SortDirection;
 }

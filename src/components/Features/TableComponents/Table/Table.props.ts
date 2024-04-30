@@ -1,9 +1,23 @@
-import type { ColumnDef } from '@tanstack/react-table';
-import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import type { ColumnDef, ColumnFiltersState } from '@tanstack/react-table';
+import type { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export interface TableProps
-	extends DetailedHTMLProps<HTMLAttributes<HTMLTableElement>, HTMLTableElement> {
-	children: ReactNode;
+import type { IOrder, IProduct, IUser } from '@/interfaces';
+
+export interface TableProps<T extends object>
+	extends DetailedHTMLProps<HTMLAttributes<HTMLTableElement>, HTMLDivElement> {
+	tableData: T[];
 	hiddenColumns: string[];
-	columns: ColumnDef<T>;
+	dataType: IDataType;
+	columns: ColumnDef<T>[];
+	columnFilters: ColumnFiltersState;
 }
+
+export interface HiddenColumns {
+	[key: string]: boolean;
+}
+
+export interface IData extends IProduct, IUser, IOrder {}
+
+export type ITableData = IProduct[] | IUser[] | IOrder[];
+
+export type IDataType = 'products' | 'users' | 'orders';

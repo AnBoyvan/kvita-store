@@ -14,7 +14,7 @@ export interface IProduct extends IBase {
 	promo?: number;
 	promoPrice?: number;
 	description?: string;
-	category: string;
+	category: Category;
 	imageURL: string;
 	imageGallery: string[];
 	calories?: number | null;
@@ -35,10 +35,14 @@ export interface IProductCreate {
 	promoPrice?: number;
 	description?: string;
 	category: Category;
+	imageURL?: string;
+	imageGallery?: string[];
 	calories?: number;
 	proteins?: number;
 	fats?: number;
 	carbohydrates?: number;
+	isActive?: string;
+	isNewProduct?: string;
 }
 
 export interface IProductUpdate {
@@ -56,8 +60,8 @@ export interface IProductUpdate {
 	proteins?: number;
 	fats?: number;
 	carbohydrates?: number;
-	isActive?: boolean;
-	isNewProduct?: boolean;
+	isActive?: string;
+	isNewProduct?: string;
 }
 
 export interface IProductResponse {

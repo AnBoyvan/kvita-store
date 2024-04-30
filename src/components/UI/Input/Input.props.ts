@@ -7,4 +7,5 @@ export interface InputProps
 	label?: string;
 	error?: FieldError | undefined;
 	icon?: keyof typeof icons;
+	grid?: string;
 }

@@ -4,6 +4,9 @@ const plugin = require('tailwindcss/plugin');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 const config: Config = {
+	future: {
+		hoverOnlyWhenSupported: true,
+	},
 	content: [
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -98,6 +101,9 @@ const config: Config = {
 				openMenuRight: 'openMenuRight 0.3s ease-in-out forwards',
 				closeMenuRight: 'closeMenuRight 0.3s ease-in-out forwards',
 				like: 'like 0.4s ease forwards',
+			},
+			screens: {
+				mobile: { max: '767px' },
 			},
 		},
 	},

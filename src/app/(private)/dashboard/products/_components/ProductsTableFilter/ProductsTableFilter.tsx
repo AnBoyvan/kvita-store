@@ -1,19 +1,33 @@
-import { isActive, isNew, isPromo } from '../products-table-filters';
-
 import styles from './ProductsTableFilter.module.scss';
 import type { ProductsTableFilterProps } from './ProductsTableFilter.props';
 
-import { TableFilter, TableFilterGroup } from '@/components/Features';
-import { TableFilterSelect } from '@/components/Features/TableFilter/components/TableFilterSelect';
-import { CATEGORIES } from '@/configs';
+import {
+	TableFilter,
+	TableFilterGroup,
+	TableFilterRange,
+	TableFilterSelect,
+} from '@/components/Features';
+import { Icon } from '@/components/Shared';
+import { LinkButton } from '@/components/UI';
+import { CATEGORIES, PAGES, SELECT } from '@/configs';
 
 export const ProductsTableFilter: React.FC<ProductsTableFilterProps> = ({
 	filter,
 	setFilter,
-	...props
+	minPrice,
+	maxPrice,
 }) => {
 	return (
-		<div className={styles.filter} {...props}>
+		<div className={styles.filter}>
+			<LinkButton
+				mode="default"
+				variant="primary"
+				link={PAGES.DASHBOARD_COMPOSE}
+				className={styles.create}
+			>
+				<span>Створити</span>
+				<Icon name="Plus" />
+			</LinkButton>
 			<TableFilter searchId="name" filter={filter} setFilter={setFilter}>
 				<TableFilterGroup
 					title="Категорія:"
@@ -25,23 +39,31 @@ export const ProductsTableFilter: React.FC<ProductsTableFilterProps> = ({
 				<TableFilterSelect
 					id="isActive"
 					title="Статус:"
-					data={isActive}
+					data={SELECT.isActive}
 					filter={filter}
 					setFilter={setFilter}
 				/>
 				<TableFilterSelect
 					id="isNewProduct"
 					title="Новинки:"
-					data={isNew}
+					data={SELECT.isNew}
 					filter={filter}
 					setFilter={setFilter}
 				/>
 				<TableFilterSelect
 					id="promo"
 					title="Знижка:"
-					data={isPromo}
+					data={SELECT.isPromo}
 					filter={filter}
 					setFilter={setFilter}
+				/>
+				<TableFilterRange
+					id="price"
+					title="Ціна:"
+					filter={filter}
+					setFilter={setFilter}
+					min={minPrice}
+					max={maxPrice}
 				/>
 			</TableFilter>
 		</div>

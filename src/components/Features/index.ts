@@ -7,3 +7,4 @@ export { Motion } from './Motion/Motion';
 export { Search } from './Search/Search';
 export * from './TableComponents';
 export * from './TableFilter';
+export { ProductCompose } from './ProductCompose/ProductCompose';

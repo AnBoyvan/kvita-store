@@ -1,8 +1,10 @@
 import type { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
+import type { IConfig } from '@/interfaces';
+
 export interface CustomSelectProps
 	extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-	options: OptionProps[];
+	options: IConfig[];
 	variant?: 'products' | 'cabinet';
 	current?: string;
 }

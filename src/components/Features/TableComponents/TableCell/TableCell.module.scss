@@ -1,5 +1,5 @@
 .cell {
-	@apply flex p-2 gap-2 items-center justify-center;
+	@apply flex px-2 py-1 gap-2 items-center justify-center;
 
 	&.md {
 		@apply hidden md:flex;
@@ -11,5 +11,9 @@
 }
 
 .header {
-	@apply font-secondary font-semibold bg-gray-light text-typo-dark;
+	@apply h-8 text-base font-secondary font-semibold bg-gray-light text-typo-dark;
+
+	&.sort {
+		@apply cursor-pointer;
+	}
 }

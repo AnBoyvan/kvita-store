@@ -22,7 +22,7 @@ export const CustomSelect = forwardRef(
 					ref={ref}
 					{...props}
 					type="radio"
-					value={value}
+					value={value.toString()}
 					className={styles.input}
 					onClick={e => {
 						e.stopPropagation();

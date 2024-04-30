@@ -43,9 +43,9 @@ export const TableFilterGroup: React.FC<TableFilterComponentProps> = ({
 	));
 
 	return (
-		<div className={styles.group}>
+		<div className={styles.filterItem}>
 			<div className={styles.title}>{title}</div>
-			{group}
+			<div className={styles.group}>{group}</div>
 		</div>
 	);
 };

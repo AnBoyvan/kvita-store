@@ -1,0 +1,7 @@
+.label {
+	@apply block h-full w-full bg-contain bg-[url('../../../../public/images/photo-placeholder.png')] cursor-pointer;
+}
+
+.input {
+	@apply hidden;
+}

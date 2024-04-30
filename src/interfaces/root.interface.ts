@@ -18,6 +18,6 @@ export interface ISidebarPage {
 }
 
 export interface IConfig {
-	value: string | boolean;
+	value: string | boolean | number;
 	title: string;
 }

@@ -1,5 +1,5 @@
-.table {
-	@apply w-full border-2 border-gray;
+.wrapper {
+	@apply flex flex-col gap-4 md:gap-8 mt-8 lg:mt-16;
 }
 
 .row {

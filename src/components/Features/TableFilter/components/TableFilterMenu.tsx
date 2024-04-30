@@ -60,7 +60,7 @@ export const TableFilterMenu: React.FC<TableFilterMenuProps> = ({
 	}, [closed]);
 
 	return (
-		<div className={styles.menuOverlay} onClick={handleMenuOverlayClick}>
+		<div className={styles.menuOverlay} onMouseDown={handleMenuOverlayClick}>
 			<div className={clsx(styles.menu, closed && styles.close)}>
 				<div className={styles.filters}>{children}</div>
 				<div className={styles.menuButtons}>

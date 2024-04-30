@@ -16,10 +16,10 @@ export interface IUser extends IBase {
 	email: string;
 	phone: string;
 	role: string;
-	discount: number;
+	discount?: number;
 	cart: ICartItem[];
 	verify: boolean;
-	favorite: [];
+	favorite: string[];
 }
 
 export interface ISessionUser extends IUser {

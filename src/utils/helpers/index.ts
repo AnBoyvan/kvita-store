@@ -4,4 +4,7 @@ export { errorCatch } from './error';
 export { formatDate } from './formatDate';
 export * from './roleAccess';
 export * from './tableFilterFns';
+export { tablePagination } from './tablePagination';
+export { tableRowColor } from './tableRowColor';
+export * from './tableSortFns';
 export { translate } from './translate';

@@ -26,7 +26,7 @@ export const productFormData = (data: IProductUpdate): FormData => {
 	}
 	if (gallery) {
 		gallery.forEach(value => {
-			formData.append('gallery[]', value);
+			formData.append('gallery', value);
 		});
 	}
 	formData.append('name', name);
@@ -46,7 +46,7 @@ export const productFormData = (data: IProductUpdate): FormData => {
 	}
 	if (imageGallery) {
 		imageGallery.forEach(value => {
-			formData.append('imageGallery[]', value);
+			formData.append('imageGallery', value);
 		});
 	}
 	if (calories) {
@@ -62,7 +62,7 @@ export const productFormData = (data: IProductUpdate): FormData => {
 		formData.append('carbohydrates', String(carbohydrates));
 	}
 	if (isActive) {
-		formData.append('isNewProduct', String(isActive));
+		formData.append('isActive', String(isActive));
 	}
 	if (isNewProduct) {
 		formData.append('isNewProduct', String(isNewProduct));

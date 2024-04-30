@@ -2,12 +2,13 @@
 
 import { ProductsTable } from './_components';
 
-import { productsData } from '@/data/products';
+import { Htag } from '@/components/Shared';
 
 export default function ProductsDashboardPage() {
 	return (
 		<div>
-			<ProductsTable products={productsData.result} />
+			<Htag tag="h1">Продукція</Htag>
+			<ProductsTable />
 		</div>
 	);
 }

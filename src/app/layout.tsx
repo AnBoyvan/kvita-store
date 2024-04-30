@@ -57,7 +57,14 @@ export default function RootLayout({
 					<Header />
 					{children}
 					<Footer />
-					<Toaster position="top-right" richColors closeButton duration={1500} visibleToasts={1} />
+					<Toaster
+						position="top-right"
+						expand={true}
+						richColors
+						closeButton
+						duration={1500}
+						visibleToasts={3}
+					/>
 					<CurrentUser />
 				</Providers>
 			</body>

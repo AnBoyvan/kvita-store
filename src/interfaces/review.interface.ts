@@ -5,7 +5,6 @@ export interface IReview extends IBase {
 	ownerId: string;
 	ownerName: string;
 	comment: string;
-	date?: string;
 }
 
 export interface IReviewCreate {
