@@ -11,7 +11,7 @@ import { Button } from '@/components/UI';
 
 export const Modal = forwardRef(
 	(
-		{ centered, className, children, container, button, ...props }: ModalProps,
+		{ centered, className, children, container, button, onClose, ...props }: ModalProps,
 		ref: ForwardedRef<HTMLDialogElement>,
 	) => {
 		const handleClose = () => {
@@ -21,14 +21,17 @@ export const Modal = forwardRef(
 		};
 
 		const handleBackdropClick = (e: React.MouseEvent<HTMLDialogElement, MouseEvent>) => {
-			if (e.target === e.currentTarget) handleClose();
+			if (e.target === e.currentTarget) {
+				if (onClose) onClose();
+				handleClose();
+			}
 		};
 
 		return (
 			<dialog
 				ref={ref}
 				className={clsx(styles.dialog, (centered || container) && styles.centered, className)}
-				onClick={handleBackdropClick}
+				onMouseDown={handleBackdropClick}
 				{...props}
 			>
 				<div className={clsx(container && styles.container)}>{children}</div>

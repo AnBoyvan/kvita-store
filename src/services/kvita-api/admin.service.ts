@@ -1,5 +1,5 @@
 import { API } from '@/configs';
-import type { ITags } from '@/interfaces';
+import type { ITagsUpdate } from '@/interfaces';
 import { axiosAuth, axiosClassic } from '@/services/kvita-api';
 
 export const adminService = {
@@ -9,13 +9,13 @@ export const adminService = {
 		return response.data;
 	},
 
-	async addTags(data: ITags) {
+	async addTags(data: ITagsUpdate) {
 		const response = await axiosAuth.patch<string[]>(`${API.ADMIN}/add-tags`, data);
 
 		return response.data;
 	},
 
-	async removeTags(data: ITags) {
+	async removeTags(data: ITagsUpdate) {
 		const response = await axiosAuth.patch<string[]>(`${API.ADMIN}/remove-tags`, data);
 
 		return response.data;

@@ -1,0 +1,11 @@
+.form {
+	@apply relative flex flex-col gap-4 md:gap-6 lg:gap-8 w-80 md:w-[450px];
+}
+
+.buttons {
+	@apply flex flex-row gap-4 md:gap-6 lg:gap-8 justify-center;
+}
+
+.spinner {
+	@apply absolute -bottom-2 left-1/2 -translate-x-1/2;
+}

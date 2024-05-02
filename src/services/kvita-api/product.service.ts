@@ -50,15 +50,6 @@ export const productService = {
 		return response.data;
 	},
 
-	async removeGalleryImage(id: string, image: string) {
-		const response = await axiosAuth.patch<{
-			product: IProduct;
-			message: string;
-		}>(`${API.PRODUCTS}/${id}/delete`, { image });
-
-		return response.data;
-	},
-
 	async updateFavorite(id: string) {
 		const response = await axiosAuth.patch<{
 			product: IProduct;

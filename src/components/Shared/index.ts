@@ -12,3 +12,4 @@ export { ProductCard } from './ProductCard/ProductCard';
 export { SearchField } from './SearchField/SearchField';
 export { Spinner } from './Spinner/Spinner';
 export { TelegramLogo } from './TelegramLogo/TelegramLogo';
+export { TagsCheckbox } from './TagsCheckbox/TagsCheckbox';

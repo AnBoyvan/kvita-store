@@ -6,4 +6,5 @@ export interface ModalProps
 	centered?: boolean;
 	container?: boolean;
 	button?: boolean;
+	onClose?: () => void;
 }

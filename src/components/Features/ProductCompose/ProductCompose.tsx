@@ -93,10 +93,6 @@ export const ProductCompose: React.FC<ProductComposeProps> = ({ isNew, product, 
 		}
 	}, [createSuccess, updateSuccess]);
 
-	// useEffect(() => {
-	// 	if (product) reset(defaultValues);
-	// }, [product, reset]);
-
 	useEffect(() => {
 		setShowSpinner(isNew ? creating : updating);
 	}, [creating, updating]);

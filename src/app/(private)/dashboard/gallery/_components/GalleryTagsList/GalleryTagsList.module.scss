@@ -1,0 +1,11 @@
+.wrapper {
+	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mt-4 md:mt-6 lg:mt-8;
+}
+
+.tag {
+	@apply flex flex-row text-wrap justify-between items-center p-2 border border-gray rounded-10;
+}
+
+.button {
+	@apply text-error w-6 h-6;
+}

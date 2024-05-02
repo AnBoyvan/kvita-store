@@ -1,0 +1,11 @@
+.input {
+	@apply hidden;
+}
+
+.label {
+	@apply flex items-center justify-center text-wrap text-center px-2 border border-gray rounded-10 hover:text-hover hover:border-hover  cursor-pointer transition-colors;
+}
+
+.checked {
+	@apply text-active border-active;
+}
