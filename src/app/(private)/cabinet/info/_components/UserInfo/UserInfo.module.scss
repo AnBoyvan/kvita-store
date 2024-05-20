@@ -1,0 +1,7 @@
+.info {
+	@apply flex flex-col gap-4 md:gap-8 mt-4 md:mt-8;
+}
+
+.wrapper {
+	@apply flex flex-row gap-2 items-center;
+}

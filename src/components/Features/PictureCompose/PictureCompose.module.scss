@@ -38,6 +38,18 @@
 	@apply grid grid-cols-1 md:grid-cols-2 gap-3 overflow-x-scroll;
 }
 
+.input {
+	@apply hidden;
+}
+
+.label {
+	@apply flex items-center justify-center text-wrap text-center px-2 border border-gray rounded-10 hover:text-hover hover:border-hover  cursor-pointer transition-colors;
+}
+
+.checked {
+	@apply text-active border-active;
+}
+
 .buttons {
 	@apply flex flex-row gap-4 md:gap-6 lg:gap-8 justify-center;
 }

@@ -3,6 +3,7 @@ import { toast } from 'sonner';
 
 import type { ITagsUpdate, Tags } from '@/interfaces';
 import { adminService } from '@/services/kvita-api';
+import { errorCatch } from '@/utils/helpers';
 
 export const useMutateTags = () => {
 	const queryClient = useQueryClient();
@@ -32,7 +33,9 @@ export const useMutateTags = () => {
 			queryClient.invalidateQueries({ queryKey: ['tags'] });
 			toast.success('Тег видалено');
 		},
-		onError: err => toast.error(err.message, { closeButton: false }),
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
 	});
 
 	return { addTag, isAdding, isAdded, removeTag, isRemoving, isRemoved };

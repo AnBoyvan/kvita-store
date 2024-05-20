@@ -14,11 +14,6 @@ export const TableRow = ({ children, dataType, data, link }: TableRowProps) => {
 				styles.row,
 				dataType && styles[dataType],
 				colorSchema && colorSchema,
-				// dataType && data && styles[tableRowColor(dataType, data)],
-				// green && styles.green,
-				// blue && styles.blue,
-				// red && styles.red,
-				// gray && styles.gray,
 				link && styles.link,
 			)}
 		>

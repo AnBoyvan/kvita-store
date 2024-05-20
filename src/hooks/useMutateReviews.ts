@@ -3,6 +3,7 @@ import { toast } from 'sonner';
 
 import type { IReview, IReviewCreate, IReviewUpdate } from '@/interfaces';
 import { reviewService } from '@/services/kvita-api';
+import { errorCatch } from '@/utils/helpers';
 
 export const useMutateReviews = () => {
 	const queryClient = useQueryClient();
@@ -14,7 +15,9 @@ export const useMutateReviews = () => {
 			queryClient.invalidateQueries({ queryKey: ['reviews'] });
 			toast.success('Дякуємо Вам за відгук!');
 		},
-		onError: err => toast.error(err.message, { closeButton: false }),
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
 	});
 
 	const { mutate: updateReview } = useMutation({
@@ -24,7 +27,9 @@ export const useMutateReviews = () => {
 			queryClient.invalidateQueries({ queryKey: ['reviews'] });
 			toast.success('Відгук змінено');
 		},
-		onError: err => toast.error(err.message, { closeButton: false }),
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
 	});
 
 	const { mutate: removeReview } = useMutation({
@@ -34,7 +39,9 @@ export const useMutateReviews = () => {
 			queryClient.invalidateQueries({ queryKey: ['reviews'] });
 			toast.success(message);
 		},
-		onError: err => toast.error(err.message, { closeButton: false }),
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
 	});
 
 	return { addReview, updateReview, removeReview };

@@ -4,6 +4,7 @@ import { toast } from 'sonner';
 import type { IProductCreate, IProductUpdate } from '@/interfaces';
 import { productService } from '@/services/kvita-api';
 import { useUserStore } from '@/store';
+import { errorCatch } from '@/utils/helpers';
 
 export const useMutateProducts = () => {
 	const queryClient = useQueryClient();
@@ -20,7 +21,9 @@ export const useMutateProducts = () => {
 			queryClient.invalidateQueries({ queryKey: ['products'] });
 			toast.success(`${product.name} створено`, { closeButton: false });
 		},
-		onError: err => toast.error(err.message, { closeButton: false }),
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
 	});
 
 	const {
@@ -35,7 +38,9 @@ export const useMutateProducts = () => {
 			queryClient.invalidateQueries({ queryKey: ['products'] });
 			toast.success(`${product.name} змінено`, { closeButton: false });
 		},
-		onError: err => toast.error(err.message, { closeButton: false }),
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
 	});
 
 	const { mutate: updFavorites } = useMutation({
@@ -43,9 +48,12 @@ export const useMutateProducts = () => {
 		mutationKey: ['products-favorite'],
 		onSuccess: ({ message, userFavorites }) => {
 			updateFavorite(userFavorites);
+			queryClient.invalidateQueries({ queryKey: ['products'] });
 			toast.success(message, { closeButton: false });
 		},
-		onError: err => toast.error(err.message, { closeButton: false }),
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
 	});
 
 	return { create, creating, createSuccess, update, updating, updateSuccess, updFavorites };

@@ -13,7 +13,7 @@ export const OrdersCounter: React.FC = () => {
 	const { data } = useQuery({
 		queryKey: ['orders', 'new'],
 		queryFn: () => orderService.find('status=new'),
-		staleTime: 5 * 60 * 1000,
+		refetchInterval: 1000 * 60 * 5,
 	});
 
 	const isNew = data && data?.count > 0;

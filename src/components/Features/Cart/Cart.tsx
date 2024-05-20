@@ -33,7 +33,8 @@ export const Cart: React.FC = () => {
 			{ sumWithPromo: 0, sumWithoutPromo: 0 },
 		);
 
-		const discount = user?.discount > 0 ? (sumWithoutPromo / 100) * user.discount : 0;
+		const discount =
+			user?.discount && user?.discount > 0 ? (sumWithoutPromo / 100) * user.discount : 0;
 
 		setOrderSum({
 			sum: sumWithPromo + sumWithoutPromo,
@@ -56,7 +57,7 @@ export const Cart: React.FC = () => {
 							</CartList>
 							<CartDetails
 								orderSum={orderSum}
-								userDiscount={user ? user.discount : 0}
+								userDiscount={user.discount ? user.discount : 0}
 								setOrdering={setOrdering}
 							/>
 						</>

@@ -1,0 +1,27 @@
+.filterBtn {
+	@apply ml-auto;
+}
+
+.filter {
+	@apply flex flex-col w-72 md:w-[536px] lg:w-[736px] gap-4 md:gap-6 lg:gap-8;
+}
+
+.tags {
+	@apply grid grid-cols-1 md:grid-cols-2 gap-3 overflow-x-scroll;
+}
+
+.buttons {
+	@apply flex flex-row gap-4 md:gap-6 lg:gap-8 justify-center;
+}
+
+.input {
+	@apply hidden;
+}
+
+.label {
+	@apply flex items-center justify-center text-wrap text-center px-2 border border-gray rounded-10 hover:text-hover hover:border-hover  cursor-pointer transition-colors;
+}
+
+.checked {
+	@apply text-active border-active;
+}

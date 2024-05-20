@@ -11,6 +11,13 @@ export interface IRemoveResponse {
 	message: string;
 }
 
+export interface IErrorResponse {
+	statusCode: number;
+	message: string | string[];
+	timestamp: string;
+	path: string;
+}
+
 export interface ISidebarPage {
 	page: string;
 	title: string;

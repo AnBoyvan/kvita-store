@@ -1,3 +1,12 @@
+import { UserInfo } from './_components';
+
+import { Htag } from '@/components/Shared';
+
 export default function InfoPage() {
-	return <h1>Info</h1>;
+	return (
+		<>
+			<Htag tag="h1">Особиста інформація</Htag>
+			<UserInfo />
+		</>
+	);
 }

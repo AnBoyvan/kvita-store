@@ -23,7 +23,7 @@
 }
 
 .closeBtn {
-	@apply absolute top-5 right-5;
+	@apply absolute top-2 right-2;
 }
 
 .title {
@@ -48,4 +48,40 @@
 
 .group {
 	@apply w-full flex flex-col gap-2 items-start;
+}
+
+.datePickers {
+	@apply w-full flex flex-col gap-4;
+}
+
+.pickerWrapper {
+	@apply w-full flex flex-row items-center gap-1;
+}
+
+.picker {
+	@apply w-full px-2 h-10  rounded-10 border-2 border-gray transition-all duration-200 text-base;
+
+	&:focus {
+		@apply border-active outline-none;
+	}
+}
+
+.control {
+	@apply w-full px-2 bg-bg-primary h-10 rounded-10 border-2 border-gray transition-all duration-200 text-base hover:cursor-pointer hover:border-hover;
+
+	&.focus {
+		@apply border-active outline-none;
+	}
+}
+
+.options {
+	@apply bg-bg-primary;
+}
+
+.option {
+	@apply p-2 hover:bg-hover hover:text-typo-white;
+
+	&.focus {
+		@apply cursor-pointer bg-active text-typo-white hover:bg-hover hover:text-typo-white;
+	}
 }

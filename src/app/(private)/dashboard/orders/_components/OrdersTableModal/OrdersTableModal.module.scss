@@ -1,0 +1,31 @@
+.form {
+	@apply w-full md:w-[536px] lg:w-[736px] flex flex-col gap-4 md:gap-6 lg:gap-8;
+}
+
+.customer {
+	@apply w-full flex flex-col gap-4;
+}
+
+.comment {
+	@apply text-justify;
+}
+
+.annotation {
+	@apply w-full mt-1 px-2 h-auto rounded-10 border-2 border-gray transition-all duration-200 text-base resize-none;
+
+	&:focus {
+		@apply border-active outline-none;
+	}
+
+	&.valid {
+		@apply border-success;
+	}
+
+	&.error {
+		@apply border-error;
+	}
+}
+
+.buttons {
+	@apply flex justify-center gap-4 md:gap-6 lg:gap-8;
+}

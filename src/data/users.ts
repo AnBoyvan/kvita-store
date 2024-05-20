@@ -1,4 +1,6 @@
-export const users = [
+import { IUser } from '@/interfaces';
+
+export const users: IUser[] = [
 	{
 		_id: '65eb39b32e4b2d298689e251',
 		name: 'Andrii Boyvan',
@@ -31,6 +33,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-07T21:38:49.353Z',
 		updatedAt: '2024-04-03T16:13:44.431Z',
+		favorite: [],
 	},
 	{
 		_id: '65e21b30dbae29a09932b857',
@@ -113,7 +116,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-27T09:46:07.000Z',
 		updatedAt: '2023-11-22T20:14:15.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '728505268-X',
@@ -126,7 +129,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-22T20:02:52.000Z',
 		updatedAt: '2023-07-06T17:16:36.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '303504415-5',
@@ -139,7 +142,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-02T16:13:12.000Z',
 		updatedAt: '2024-04-05T14:05:10.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '670389272-5',
@@ -152,7 +155,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-01T07:10:26.000Z',
 		updatedAt: '2023-11-16T23:45:18.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '071168954-7',
@@ -165,7 +168,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-24T20:09:54.000Z',
 		updatedAt: '2024-01-26T16:05:32.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '847177199-3',
@@ -178,7 +181,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-09T03:39:52.000Z',
 		updatedAt: '2023-08-28T08:36:34.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '480035872-8',
@@ -191,7 +194,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-16T05:39:54.000Z',
 		updatedAt: '2023-11-07T11:25:15.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '943186308-1',
@@ -204,7 +207,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-24T11:59:03.000Z',
 		updatedAt: '2023-06-17T07:22:18.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '772499772-1',
@@ -217,7 +220,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-09T09:53:17.000Z',
 		updatedAt: '2023-08-25T15:12:49.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '154236318-7',
@@ -230,7 +233,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-14T15:41:21.000Z',
 		updatedAt: '2024-02-04T18:28:45.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '514581939-0',
@@ -243,7 +246,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-24T04:45:23.000Z',
 		updatedAt: '2023-12-10T15:40:38.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '319371147-0',
@@ -256,7 +259,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-05T22:05:24.000Z',
 		updatedAt: '2023-10-25T17:02:50.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '801514389-6',
@@ -269,7 +272,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-04T08:03:00.000Z',
 		updatedAt: '2023-09-13T13:31:15.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '175414215-X',
@@ -282,7 +285,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-30T17:44:06.000Z',
 		updatedAt: '2023-10-20T01:08:50.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '625885531-8',
@@ -295,7 +298,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-07T03:59:16.000Z',
 		updatedAt: '2024-02-18T23:33:59.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '120717711-3',
@@ -308,7 +311,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-07-22T19:26:53.000Z',
 		updatedAt: '2023-07-17T11:04:49.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '786270309-X',
@@ -321,7 +324,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-11T04:21:01.000Z',
 		updatedAt: '2023-12-06T18:39:54.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '729139093-1',
@@ -334,7 +337,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-01T09:01:26.000Z',
 		updatedAt: '2023-11-13T18:32:44.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '190130550-3',
@@ -347,7 +350,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-23T21:29:04.000Z',
 		updatedAt: '2023-06-30T19:55:14.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '747467964-7',
@@ -360,7 +363,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-07-05T15:10:26.000Z',
 		updatedAt: '2023-07-23T12:56:52.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '552946900-0',
@@ -373,7 +376,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-15T13:12:23.000Z',
 		updatedAt: '2023-09-05T06:04:10.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '526342640-2',
@@ -386,7 +389,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-30T22:22:30.000Z',
 		updatedAt: '2023-04-22T02:50:03.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '586476409-4',
@@ -399,7 +402,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-01T00:14:52.000Z',
 		updatedAt: '2023-09-23T21:03:26.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '148234966-3',
@@ -412,7 +415,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-09T17:39:21.000Z',
 		updatedAt: '2024-03-20T04:31:23.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '839341736-8',
@@ -425,7 +428,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-13T18:35:45.000Z',
 		updatedAt: '2023-05-22T04:42:16.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '986098587-1',
@@ -438,7 +441,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-04T16:39:50.000Z',
 		updatedAt: '2023-07-21T21:36:49.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '949598241-3',
@@ -451,7 +454,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-28T00:29:06.000Z',
 		updatedAt: '2024-01-05T04:41:18.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '373563119-3',
@@ -464,7 +467,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-18T19:59:10.000Z',
 		updatedAt: '2023-04-29T16:54:45.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '379622074-6',
@@ -477,7 +480,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-04T09:12:10.000Z',
 		updatedAt: '2023-07-31T19:17:59.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '092143555-X',
@@ -490,7 +493,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-22T18:26:22.000Z',
 		updatedAt: '2024-04-08T06:02:14.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '077515849-6',
@@ -503,7 +506,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-21T12:40:32.000Z',
 		updatedAt: '2023-06-06T19:50:23.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '013860909-8',
@@ -516,7 +519,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-06T08:40:26.000Z',
 		updatedAt: '2024-02-26T08:10:52.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '807402166-1',
@@ -529,7 +532,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-16T10:19:17.000Z',
 		updatedAt: '2024-02-28T02:06:17.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '229804724-3',
@@ -542,7 +545,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-05T04:23:15.000Z',
 		updatedAt: '2023-10-25T18:34:31.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '314771065-3',
@@ -555,7 +558,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-28T17:43:43.000Z',
 		updatedAt: '2023-10-07T09:49:42.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '856906836-0',
@@ -568,7 +571,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-30T18:06:23.000Z',
 		updatedAt: '2023-10-04T03:43:02.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '415777936-3',
@@ -581,7 +584,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-23T23:24:28.000Z',
 		updatedAt: '2024-03-15T21:51:31.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '839017102-3',
@@ -594,7 +597,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-20T02:52:47.000Z',
 		updatedAt: '2023-08-17T02:22:03.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '376672941-1',
@@ -607,7 +610,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-16T20:03:02.000Z',
 		updatedAt: '2023-10-11T14:55:47.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '058509769-0',
@@ -620,7 +623,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-03T18:51:31.000Z',
 		updatedAt: '2023-09-07T11:10:28.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '310070310-3',
@@ -633,7 +636,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-29T20:47:08.000Z',
 		updatedAt: '2024-02-19T19:58:19.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '810856725-4',
@@ -646,7 +649,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-07-06T08:18:39.000Z',
 		updatedAt: '2023-12-04T17:03:52.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '496737884-6',
@@ -659,7 +662,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-04-12T04:35:42.000Z',
 		updatedAt: '2023-07-12T03:09:08.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '517572792-3',
@@ -672,7 +675,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-08T21:00:40.000Z',
 		updatedAt: '2023-07-26T14:54:05.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '274387556-9',
@@ -685,7 +688,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-03T05:14:41.000Z',
 		updatedAt: '2023-07-17T15:49:47.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '348420754-X',
@@ -698,7 +701,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-07-06T21:40:56.000Z',
 		updatedAt: '2023-05-26T22:31:28.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '057959633-8',
@@ -711,7 +714,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-01T06:19:23.000Z',
 		updatedAt: '2024-01-31T08:21:41.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '160679841-3',
@@ -724,7 +727,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-11T14:59:32.000Z',
 		updatedAt: '2023-11-18T12:29:11.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '273603014-1',
@@ -737,7 +740,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-03T16:17:29.000Z',
 		updatedAt: '2023-04-14T22:48:56.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '037999886-6',
@@ -750,7 +753,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-04-30T09:51:31.000Z',
 		updatedAt: '2023-07-27T19:32:35.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '056565372-5',
@@ -763,7 +766,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-18T15:11:46.000Z',
 		updatedAt: '2023-04-27T06:59:08.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '140531620-9',
@@ -776,7 +779,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-06T20:32:46.000Z',
 		updatedAt: '2023-09-20T01:01:32.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '894011598-8',
@@ -789,7 +792,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-22T15:36:50.000Z',
 		updatedAt: '2023-10-04T02:46:33.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '626394387-4',
@@ -802,7 +805,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-04-02T08:15:38.000Z',
 		updatedAt: '2023-11-30T08:07:10.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '468645433-6',
@@ -815,7 +818,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-19T19:33:17.000Z',
 		updatedAt: '2023-09-15T12:27:05.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '921149497-4',
@@ -828,7 +831,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-25T20:59:07.000Z',
 		updatedAt: '2023-09-13T18:52:15.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '235397349-3',
@@ -841,7 +844,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-09T18:03:49.000Z',
 		updatedAt: '2023-11-01T18:01:53.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '431952801-8',
@@ -854,7 +857,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-28T12:30:41.000Z',
 		updatedAt: '2024-03-08T21:18:05.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '979116592-0',
@@ -867,7 +870,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-07-01T13:18:51.000Z',
 		updatedAt: '2024-02-24T05:58:09.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '903556849-4',
@@ -880,7 +883,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-15T02:18:02.000Z',
 		updatedAt: '2024-01-03T10:25:26.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '168420950-1',
@@ -893,7 +896,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-23T13:59:03.000Z',
 		updatedAt: '2023-08-29T05:21:34.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '259111182-0',
@@ -906,7 +909,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-21T03:25:41.000Z',
 		updatedAt: '2023-10-14T20:17:02.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '889836280-3',
@@ -919,7 +922,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-13T14:38:58.000Z',
 		updatedAt: '2023-08-09T05:50:53.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '030678298-7',
@@ -932,7 +935,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-24T14:02:01.000Z',
 		updatedAt: '2024-01-06T02:17:42.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '576005777-4',
@@ -945,7 +948,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-09T12:00:39.000Z',
 		updatedAt: '2024-02-12T09:44:49.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '884771030-8',
@@ -958,7 +961,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-06T01:20:46.000Z',
 		updatedAt: '2023-04-17T21:52:23.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '800989193-2',
@@ -971,7 +974,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-11T08:53:09.000Z',
 		updatedAt: '2024-02-17T09:55:21.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '800225204-7',
@@ -984,7 +987,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-30T20:38:18.000Z',
 		updatedAt: '2024-03-11T20:32:34.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '938754271-8',
@@ -997,7 +1000,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-18T11:25:07.000Z',
 		updatedAt: '2024-02-11T15:05:24.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '437985520-1',
@@ -1010,7 +1013,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-08T18:13:02.000Z',
 		updatedAt: '2024-01-26T14:59:35.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '756026018-7',
@@ -1023,7 +1026,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-31T09:18:04.000Z',
 		updatedAt: '2023-11-10T21:18:57.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '102849095-X',
@@ -1036,7 +1039,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-22T16:54:04.000Z',
 		updatedAt: '2023-06-01T14:25:41.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '445593447-2',
@@ -1049,7 +1052,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-09T13:58:00.000Z',
 		updatedAt: '2023-12-20T05:08:39.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '930433449-7',
@@ -1062,7 +1065,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-06T11:03:31.000Z',
 		updatedAt: '2024-01-29T02:11:36.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '947703704-4',
@@ -1075,7 +1078,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-27T12:53:28.000Z',
 		updatedAt: '2023-08-13T05:33:18.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '143252409-7',
@@ -1088,7 +1091,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-04-20T15:47:11.000Z',
 		updatedAt: '2023-09-11T17:21:25.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '347757399-4',
@@ -1101,7 +1104,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-30T20:01:08.000Z',
 		updatedAt: '2023-04-19T08:01:13.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '978191000-3',
@@ -1114,7 +1117,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-26T05:54:20.000Z',
 		updatedAt: '2023-06-15T16:04:47.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '323155818-2',
@@ -1127,7 +1130,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-02T22:57:54.000Z',
 		updatedAt: '2024-01-24T18:16:52.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '152588212-0',
@@ -1140,7 +1143,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-02T02:24:24.000Z',
 		updatedAt: '2024-03-28T03:08:23.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '564408908-8',
@@ -1153,7 +1156,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-29T22:38:57.000Z',
 		updatedAt: '2023-05-18T21:32:01.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '757806584-X',
@@ -1166,7 +1169,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-23T02:51:40.000Z',
 		updatedAt: '2023-10-15T19:03:49.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '314543653-8',
@@ -1179,7 +1182,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-08T15:11:42.000Z',
 		updatedAt: '2023-06-05T08:36:52.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '189787763-3',
@@ -1192,7 +1195,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-21T10:47:02.000Z',
 		updatedAt: '2023-11-02T12:57:44.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '639365013-3',
@@ -1205,7 +1208,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-11T15:06:46.000Z',
 		updatedAt: '2023-09-06T15:18:36.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '645312817-9',
@@ -1218,7 +1221,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-20T13:48:02.000Z',
 		updatedAt: '2023-05-26T07:59:20.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '462855095-6',
@@ -1231,7 +1234,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-29T19:35:44.000Z',
 		updatedAt: '2023-09-04T05:06:59.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '815892914-1',
@@ -1244,7 +1247,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-15T10:03:46.000Z',
 		updatedAt: '2024-02-13T15:47:22.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '230522216-5',
@@ -1257,7 +1260,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-07T11:39:42.000Z',
 		updatedAt: '2023-08-07T15:31:00.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '769583925-6',
@@ -1270,7 +1273,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-07T06:05:38.000Z',
 		updatedAt: '2023-10-27T00:19:30.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '460670428-4',
@@ -1283,7 +1286,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-12T22:18:19.000Z',
 		updatedAt: '2023-04-18T11:03:53.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '061632713-7',
@@ -1296,7 +1299,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-19T22:17:23.000Z',
 		updatedAt: '2023-04-24T21:59:31.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '555856406-7',
@@ -1309,7 +1312,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-23T05:36:01.000Z',
 		updatedAt: '2023-06-06T17:38:28.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '851016294-8',
@@ -1322,7 +1325,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-10T00:21:42.000Z',
 		updatedAt: '2023-09-14T06:39:55.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '706573958-9',
@@ -1335,7 +1338,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-04-14T04:19:38.000Z',
 		updatedAt: '2023-04-21T13:43:52.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '645578538-X',
@@ -1348,7 +1351,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-11T18:45:31.000Z',
 		updatedAt: '2024-01-16T12:00:13.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '744689909-3',
@@ -1361,7 +1364,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-16T03:26:44.000Z',
 		updatedAt: '2023-04-22T01:08:30.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '806791864-3',
@@ -1374,7 +1377,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-29T22:18:02.000Z',
 		updatedAt: '2023-09-11T11:17:23.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '681804236-8',
@@ -1387,7 +1390,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-14T02:00:20.000Z',
 		updatedAt: '2023-04-09T05:16:11.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '000940155-5',
@@ -1400,7 +1403,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-30T13:26:44.000Z',
 		updatedAt: '2023-04-20T10:44:07.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '016456529-9',
@@ -1413,7 +1416,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-23T04:08:13.000Z',
 		updatedAt: '2023-09-27T05:06:49.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '201939890-7',
@@ -1426,7 +1429,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-07-27T00:17:08.000Z',
 		updatedAt: '2023-08-24T09:32:42.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '645880520-9',
@@ -1439,7 +1442,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-11T04:00:54.000Z',
 		updatedAt: '2023-10-04T10:10:37.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '378964816-7',
@@ -1452,7 +1455,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-04-24T07:29:35.000Z',
 		updatedAt: '2023-09-20T23:58:02.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '115843324-7',
@@ -1465,7 +1468,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-14T20:08:51.000Z',
 		updatedAt: '2023-09-08T20:24:54.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '229982106-6',
@@ -1478,7 +1481,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-20T22:58:10.000Z',
 		updatedAt: '2023-10-21T07:35:22.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '530011881-8',
@@ -1491,7 +1494,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-10T11:13:16.000Z',
 		updatedAt: '2023-12-25T09:54:19.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '260719565-9',
@@ -1504,7 +1507,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-20T03:04:19.000Z',
 		updatedAt: '2023-10-31T18:39:42.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '421348026-7',
@@ -1517,7 +1520,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-30T03:57:38.000Z',
 		updatedAt: '2024-02-08T22:04:35.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '038730765-6',
@@ -1530,7 +1533,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-21T02:22:25.000Z',
 		updatedAt: '2024-04-07T08:23:05.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '748326234-6',
@@ -1543,7 +1546,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-16T05:15:29.000Z',
 		updatedAt: '2023-12-16T19:24:02.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '336440038-5',
@@ -1556,7 +1559,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-03T03:14:37.000Z',
 		updatedAt: '2024-01-23T17:28:24.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '268548866-9',
@@ -1569,7 +1572,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-09T06:29:59.000Z',
 		updatedAt: '2023-08-15T13:07:17.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '100213977-5',
@@ -1582,7 +1585,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-11T10:48:51.000Z',
 		updatedAt: '2023-05-13T05:05:41.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '475087987-8',
@@ -1595,7 +1598,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-18T15:05:25.000Z',
 		updatedAt: '2023-11-26T23:42:36.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '467833338-X',
@@ -1608,7 +1611,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-11T19:54:28.000Z',
 		updatedAt: '2023-07-03T00:21:25.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '628468907-1',
@@ -1621,7 +1624,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-06T16:13:12.000Z',
 		updatedAt: '2024-02-27T10:38:49.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '823589715-6',
@@ -1634,7 +1637,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-05T12:27:32.000Z',
 		updatedAt: '2023-12-07T22:24:58.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '406134089-1',
@@ -1647,7 +1650,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-29T13:52:23.000Z',
 		updatedAt: '2024-02-13T10:09:11.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '319670934-5',
@@ -1660,7 +1663,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-04-11T00:34:28.000Z',
 		updatedAt: '2023-12-08T14:41:28.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '764328186-6',
@@ -1673,7 +1676,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-26T10:26:23.000Z',
 		updatedAt: '2024-03-17T17:55:54.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '617334670-2',
@@ -1686,7 +1689,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-26T02:24:57.000Z',
 		updatedAt: '2023-08-03T22:45:53.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '484420037-2',
@@ -1699,7 +1702,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-28T19:32:38.000Z',
 		updatedAt: '2023-12-28T14:45:23.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '524692309-6',
@@ -1712,7 +1715,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-30T01:02:09.000Z',
 		updatedAt: '2023-11-09T00:14:30.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '884637569-6',
@@ -1725,7 +1728,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-07-02T23:32:18.000Z',
 		updatedAt: '2024-01-08T04:11:06.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '233352926-1',
@@ -1738,7 +1741,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-09T16:16:40.000Z',
 		updatedAt: '2023-06-28T22:12:58.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '893949252-8',
@@ -1751,7 +1754,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-20T21:47:32.000Z',
 		updatedAt: '2024-01-09T03:03:44.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '083748800-1',
@@ -1764,7 +1767,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-01T21:14:11.000Z',
 		updatedAt: '2023-12-18T22:35:23.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '733767693-X',
@@ -1777,7 +1780,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-29T19:53:02.000Z',
 		updatedAt: '2023-09-12T11:00:05.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '279150100-2',
@@ -1790,7 +1793,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-03T07:54:27.000Z',
 		updatedAt: '2023-08-27T22:19:57.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '094567248-9',
@@ -1803,7 +1806,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-04-20T04:53:08.000Z',
 		updatedAt: '2023-11-19T09:44:32.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '796988252-8',
@@ -1816,7 +1819,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-04-10T01:43:23.000Z',
 		updatedAt: '2023-12-19T00:41:30.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '497366890-7',
@@ -1829,7 +1832,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-01T06:34:17.000Z',
 		updatedAt: '2023-06-18T06:14:09.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '207376078-3',
@@ -1842,7 +1845,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-14T04:15:05.000Z',
 		updatedAt: '2023-11-09T14:59:13.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '038128514-6',
@@ -1855,7 +1858,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-09T16:54:11.000Z',
 		updatedAt: '2023-07-29T20:05:11.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '741337638-5',
@@ -1868,7 +1871,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-04T07:47:12.000Z',
 		updatedAt: '2024-01-06T06:36:25.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '811404741-0',
@@ -1881,7 +1884,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-09-30T22:12:56.000Z',
 		updatedAt: '2023-05-29T07:51:46.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '142882851-6',
@@ -1894,7 +1897,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-23T18:38:45.000Z',
 		updatedAt: '2024-01-15T05:59:28.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '247379613-0',
@@ -1907,7 +1910,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-11T22:11:01.000Z',
 		updatedAt: '2023-06-08T14:22:56.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '429088809-7',
@@ -1920,7 +1923,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-06-07T17:58:06.000Z',
 		updatedAt: '2023-12-24T00:09:09.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '201943540-3',
@@ -1933,7 +1936,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-10-08T02:43:25.000Z',
 		updatedAt: '2023-08-19T10:28:02.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '762387592-2',
@@ -1946,7 +1949,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-03-24T16:13:43.000Z',
 		updatedAt: '2024-04-05T18:39:01.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '813460222-3',
@@ -1959,7 +1962,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-11-05T01:53:02.000Z',
 		updatedAt: '2023-05-05T17:03:25.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '331348159-0',
@@ -1972,7 +1975,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-05-05T09:35:44.000Z',
 		updatedAt: '2023-12-27T12:07:27.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '652238736-0',
@@ -1985,7 +1988,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-28T13:08:30.000Z',
 		updatedAt: '2024-03-05T01:40:34.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '341273683-X',
@@ -1998,7 +2001,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-02-08T17:29:52.000Z',
 		updatedAt: '2024-03-28T03:48:48.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '442171353-8',
@@ -2011,7 +2014,7 @@ export const users = [
 		cart: [],
 		createdAt: '2024-01-26T20:52:48.000Z',
 		updatedAt: '2023-05-01T06:16:15.000Z',
-		favorite: false,
+		favorite: [],
 	},
 	{
 		_id: '803727264-8',
@@ -2024,7 +2027,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-08-05T13:18:30.000Z',
 		updatedAt: '2023-10-14T07:12:22.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '180193699-4',
@@ -2037,7 +2040,7 @@ export const users = [
 		cart: [],
 		createdAt: '2023-07-25T16:24:45.000Z',
 		updatedAt: '2023-10-19T01:19:03.000Z',
-		favorite: true,
+		favorite: [],
 	},
 	{
 		_id: '452764894-2',
@@ -2050,6 +2053,6 @@ export const users = [
 		cart: [],
 		createdAt: '2023-12-11T09:11:54.000Z',
 		updatedAt: '2023-08-18T04:59:22.000Z',
-		favorite: false,
+		favorite: [],
 	},
 ];

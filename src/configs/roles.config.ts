@@ -22,10 +22,6 @@ export const ROLES: IConfig[] = [
 		title: 'SuperUser',
 	},
 	{
-		value: 'customer',
-		title: 'Клієнт',
-	},
-	{
 		value: 'banned',
 		title: 'Забанений',
 	},

@@ -1,0 +1,19 @@
+.modal {
+	@apply flex flex-col gap-4;
+}
+
+.value {
+	@apply font-semibold font-secondary;
+}
+
+.form {
+	@apply flex flex-col gap-4;
+}
+
+.wrapper {
+	@apply w-full flex flex-row gap-4 md:gap-6 lg:gap-8;
+}
+
+.buttons {
+	@apply flex justify-center gap-4 md:gap-6 lg:gap-8;
+}

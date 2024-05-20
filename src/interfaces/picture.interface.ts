@@ -18,3 +18,8 @@ export interface IPicture extends IBase {
 	description?: string;
 	tags?: Tags;
 }
+
+export interface IPictureResponse {
+	result: IPicture[];
+	count: number;
+}

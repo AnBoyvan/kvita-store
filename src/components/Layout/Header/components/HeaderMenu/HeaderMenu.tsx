@@ -16,12 +16,12 @@ export const HeaderMenu: React.FC = () => {
 	};
 
 	return (
-		<>
-			<Button mode="simple" onClick={handleClick} className={styles.menuBtn}>
+		<div className={styles.menuBtn}>
+			<Button mode="simple" onClick={handleClick}>
 				<Icon name="Menu" />
 			</Button>
 
 			{isOpen && <BurgerMenu onClose={handleClick} />}
-		</>
+		</div>
 	);
 };

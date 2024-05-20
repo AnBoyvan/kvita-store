@@ -1,6 +1,9 @@
 export { useCart } from './useCart';
 export { useModal } from './useModal';
+export { useMutateOrders } from './useMutateOrders';
+export { useMutatePictures } from './useMutatePictures';
 export { useMutateProducts } from './useMutateProducts';
 export { useMutateReviews } from './useMutateReviews';
 export { useMutateTags } from './useMutateTags';
+export { useMutateUsers } from './useMutateUsers';
 export { useQueryString } from './useQueryString';

@@ -1,0 +1,15 @@
+.button {
+	@apply self-start;
+}
+
+.form {
+	@apply relative w-[270px] md:w-[350px] flex flex-col items-center  gap-4;
+}
+
+.buttons {
+	@apply flex flex-row gap-4 md:gap-6 lg:gap-8 justify-center;
+}
+
+.spinner {
+	@apply absolute -bottom-2 left-1/2 -translate-x-1/2;
+}

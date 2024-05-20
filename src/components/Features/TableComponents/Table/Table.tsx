@@ -8,6 +8,7 @@ import {
 	getSortedRowModel,
 	useReactTable,
 } from '@tanstack/react-table';
+import clsx from 'clsx';
 import { useEffect, useState, type ChangeEvent } from 'react';
 
 import { TableCell } from '../TableCell/TableCell';
@@ -28,6 +29,8 @@ export const Table = <T extends object>({
 	dataType,
 	columns,
 	columnFilters,
+	className,
+	hidePagination,
 }: TableProps<T>) => {
 	const [data, setData] = useState<T[]>([]);
 
@@ -66,7 +69,7 @@ export const Table = <T extends object>({
 
 	return (
 		<>
-			<table className={styles.table}>
+			<table className={clsx(styles.table, className && className)}>
 				<TableHead>
 					{table.getHeaderGroups().map(headerGroup => (
 						<TableRow key={headerGroup.id} dataType={dataType}>
@@ -80,6 +83,7 @@ export const Table = <T extends object>({
 										header.column.getCanSort() ? header.column.getToggleSortingHandler() : undefined
 									}
 									isSorted={header.column.getIsSorted()}
+									dataType={dataType}
 								>
 									{flexRender(header.column.columnDef.header, header.getContext())}
 								</TableCell>
@@ -99,56 +103,58 @@ export const Table = <T extends object>({
 					))}
 				</tbody>
 			</table>
-			<div className={styles.paginationWrapper}>
-				<div className={styles.perPage}>
-					На сторінці:&nbsp;
-					<Select
-						value={table.getState().pagination.pageSize}
-						options={rowsPerPage}
-						className={styles.select}
-						onChange={(e: ChangeEvent<HTMLSelectElement>) =>
-							table.setPageSize(Number(e.target.value))
-						}
-					/>
-				</div>
-				<div className={styles.pagination}>
-					<Button
-						mode="simple"
-						className={styles.paginationBtn}
-						disabled={!table.getCanPreviousPage()}
-						onClick={() => table.firstPage()}
-					>
-						<Icon name="ChevronFirst" />
-					</Button>
-					<Button
-						mode="simple"
-						className={styles.paginationBtn}
-						disabled={!table.getCanPreviousPage()}
-						onClick={() => table.previousPage()}
-					>
-						<Icon name="ChevronLeft" />
-					</Button>
-					<div className={styles.counter}>
-						{firstOnPage}-{lastOnPage}&nbsp;з&nbsp;{table.getRowCount()}
+			{!hidePagination && (
+				<div className={styles.paginationWrapper}>
+					<div className={styles.perPage}>
+						На сторінці:&nbsp;
+						<Select
+							value={table.getState().pagination.pageSize}
+							options={rowsPerPage}
+							className={styles.select}
+							onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+								table.setPageSize(Number(e.target.value))
+							}
+						/>
 					</div>
-					<Button
-						mode="simple"
-						className={styles.paginationBtn}
-						disabled={!table.getCanNextPage()}
-						onClick={() => table.nextPage()}
-					>
-						<Icon name="ChevronRight" />
-					</Button>
-					<Button
-						mode="simple"
-						className={styles.paginationBtn}
-						disabled={!table.getCanNextPage()}
-						onClick={() => table.lastPage()}
-					>
-						<Icon name="ChevronLast" />
-					</Button>
+					<div className={styles.pagination}>
+						<Button
+							mode="simple"
+							className={styles.paginationBtn}
+							disabled={!table.getCanPreviousPage()}
+							onClick={() => table.firstPage()}
+						>
+							<Icon name="ChevronFirst" />
+						</Button>
+						<Button
+							mode="simple"
+							className={styles.paginationBtn}
+							disabled={!table.getCanPreviousPage()}
+							onClick={() => table.previousPage()}
+						>
+							<Icon name="ChevronLeft" />
+						</Button>
+						<div className={styles.counter}>
+							{firstOnPage}-{lastOnPage}&nbsp;з&nbsp;{table.getRowCount()}
+						</div>
+						<Button
+							mode="simple"
+							className={styles.paginationBtn}
+							disabled={!table.getCanNextPage()}
+							onClick={() => table.nextPage()}
+						>
+							<Icon name="ChevronRight" />
+						</Button>
+						<Button
+							mode="simple"
+							className={styles.paginationBtn}
+							disabled={!table.getCanNextPage()}
+							onClick={() => table.lastPage()}
+						>
+							<Icon name="ChevronLast" />
+						</Button>
+					</div>
 				</div>
-			</div>
+			)}
 		</>
 	);
 };

@@ -21,4 +21,10 @@ export const SELECT = {
 		{ value: true, title: 'Зі знижкою' },
 		{ value: false, title: 'Без знижки' },
 	],
+
+	isDelivery: [
+		{ value: 'all', title: 'Всі' },
+		{ value: true, title: 'З доставкою' },
+		{ value: false, title: 'Без доставки' },
+	],
 };

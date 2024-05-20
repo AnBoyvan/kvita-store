@@ -7,6 +7,7 @@ export interface TableFilterComponentProps {
 	id: string;
 	title?: string;
 	data?: IConfig[];
+	items?: SelectOption[];
 	min?: number;
 	max?: number;
 	filter: ColumnFiltersState;
@@ -18,4 +19,9 @@ export interface TableFilterMenuProps
 	children: ReactNode;
 	setIsOpen: Dispatch<SetStateAction<boolean>>;
 	resetFilter: Dispatch<SetStateAction<ColumnFiltersState>>;
+}
+
+export interface SelectOption {
+	value: string;
+	label: string;
 }

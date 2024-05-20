@@ -13,6 +13,7 @@ export const TableCell: React.FC<TableCellProps> = ({
 	sort,
 	isSorted,
 	className,
+	dataType,
 	...props
 }) => {
 	return (
@@ -21,6 +22,7 @@ export const TableCell: React.FC<TableCellProps> = ({
 				className,
 				styles.cell,
 				header && styles.header,
+				dataType && header && styles[dataType],
 				visibility && styles[visibility],
 				canSort && styles.sort,
 			)}

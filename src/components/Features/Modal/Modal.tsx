@@ -18,11 +18,11 @@ export const Modal = forwardRef(
 			if (ref && 'current' in ref && ref.current) {
 				ref.current.close();
 			}
+			if (onClose) onClose();
 		};
 
 		const handleBackdropClick = (e: React.MouseEvent<HTMLDialogElement, MouseEvent>) => {
 			if (e.target === e.currentTarget) {
-				if (onClose) onClose();
 				handleClose();
 			}
 		};
@@ -34,13 +34,13 @@ export const Modal = forwardRef(
 				onMouseDown={handleBackdropClick}
 				{...props}
 			>
-				<div className={clsx(container && styles.container)}>{children}</div>
-
 				{button && (
 					<Button mode="simple" onClick={handleClose} className={styles.closeBtn}>
 						<Icon name="X" />
 					</Button>
 				)}
+
+				<div className={clsx(container ? styles.container : styles.wrapper)}>{children}</div>
 			</dialog>
 		);
 	},

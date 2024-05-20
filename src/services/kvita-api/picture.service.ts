@@ -1,5 +1,5 @@
 import { API } from '@/configs';
-import type { IPicture, IPictureCreate, IRemoveResponse } from '@/interfaces';
+import type { IPicture, IPictureCreate, IPictureResponse, IRemoveResponse } from '@/interfaces';
 import { axiosAuth, axiosClassic } from '@/services/kvita-api';
 import { pictureFormData } from '@/utils/helpers';
 
@@ -15,10 +15,14 @@ export const pictureService = {
 		return response.data;
 	},
 
-	async find(query: string = '') {
-		const response = await axiosClassic.get<IPicture[]>(`${API.PICTURES}?${query}`);
+	async find({ queryKey, pageParam }: { queryKey: string[]; pageParam: number }) {
+		const tags = queryKey[1];
 
-		return response.data;
+		const response = await axiosClassic.get<IPictureResponse>(
+			`${API.PICTURES}?${tags ? `tags=${tags}` : ''}&page=${pageParam}&limit=12`,
+		);
+
+		return response.data.result;
 	},
 
 	async findById(id: string) {

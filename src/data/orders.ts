@@ -1,4 +1,6 @@
-export const orders = [
+import type { IOrder } from '@/interfaces';
+
+export const orders: IOrder[] = [
 	{
 		_id: '66110d2fead12c8c734fd133',
 		publicId: '240977fa5',

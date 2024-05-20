@@ -42,6 +42,7 @@ export const productsColumns: ColumnDef<IProduct, any>[] = [
 		cell: props => <div>{props.getValue() ? `${props.getValue()} %` : ''}</div>,
 		meta: { visibility: 'md' },
 		filterFn: isPositive,
+		sortingFn: 'alphanumeric',
 	}),
 	columnHelper.accessor('createdAt', {
 		header: 'Створено',

@@ -1,24 +1,25 @@
 'use client';
 
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useEffect, useState } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
-import { toast } from 'sonner';
 
 import styles from './OrderForm.module.scss';
 import type { OrderFormProps } from './OrderFormProps';
 
-import { Htag } from '@/components/Shared';
+import { Htag, Spinner } from '@/components/Shared';
 import { Button, Checkbox, Input } from '@/components/UI';
-import { useCart, useModal } from '@/hooks';
+import { useModal, useMutateOrders } from '@/hooks';
 import type { IOrderCreateForm } from '@/interfaces';
-import { orderService } from '@/services/kvita-api';
 import { useUserStore } from '@/store';
 import { createOrdeSchema } from '@/utils/validation';
 
 export const OrderForm: React.FC<OrderFormProps> = ({ onBack, cart, total, discountSum }) => {
 	const { user } = useUserStore();
-	const { clearCart } = useCart();
 	const { closeModal } = useModal();
+	const { create, createSuccess, creating, createError } = useMutateOrders();
+
+	const [showSpinner, setShowSpinner] = useState<boolean>(false);
 
 	const {
 		register,
@@ -63,16 +64,24 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onBack, cart, total, disco
 			delivery: Boolean(delivery),
 			deliveryAddress,
 		};
-		try {
-			const result = await orderService.create(newOrder);
-			if (result) toast.success('Замовлення відправлено', { closeButton: false });
-			await clearCart();
-			reset();
-			closeModal();
-		} catch (error) {
-			toast.error('Помилка пристворенні замовлення', { closeButton: false });
-		}
+
+		create(newOrder);
 	};
+
+	const reject = () => {
+		reset();
+		closeModal();
+	};
+
+	useEffect(() => {
+		if (createSuccess || createError) {
+			reject();
+		}
+	}, [createSuccess, createError]);
+
+	useEffect(() => {
+		setShowSpinner(creating);
+	}, [creating]);
 
 	return (
 		<>
@@ -147,6 +156,11 @@ export const OrderForm: React.FC<OrderFormProps> = ({ onBack, cart, total, disco
 						Оформити
 					</Button>
 				</div>
+				{showSpinner && (
+					<div className={styles.spinner}>
+						<Spinner />
+					</div>
+				)}
 			</form>
 		</>
 	);

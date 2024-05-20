@@ -1,0 +1,23 @@
+.product {
+	@apply flex flex-col items-center md:flex-row gap-4 md:gap-8 pb-4 md:pb-8 border-b border-gray;
+}
+
+.title {
+	@apply flex flex-row justify-center md:justify-start items-center gap-3 w-full;
+}
+
+.image {
+	@apply h-[70px] w-[70px] rounded-10 hover:opacity-75 transition-opacity;
+}
+
+.name {
+	@apply items-center hover:text-hover transition-colors duration-200;
+}
+
+.details {
+	@apply flex flex-row gap-4 md:gap-8 justify-between;
+}
+
+.wrapper {
+	@apply flex flex-col gap-1 items-center;
+}

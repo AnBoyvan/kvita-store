@@ -5,11 +5,12 @@ import type {
 	IUserResponse,
 	IUserUpdate,
 	IUserUpdateByAdmin,
+	IUserUpdatePassword,
 } from '@/interfaces';
 import { axiosAuth, axiosClassic } from '@/services/kvita-api';
 
 export const userService = {
-	async find(query: string) {
+	async find(query: string = '') {
 		const response = await axiosAuth.get<IUserResponse>(`${API.USERS}?${query}`);
 
 		return response.data;
@@ -22,7 +23,24 @@ export const userService = {
 	},
 
 	async updateByUser(data: IUserUpdate) {
-		const response = await axiosAuth.patch<IUser>(`${API.USERS}`, data);
+		const response = await axiosAuth.patch<IUser>(`${API.USERS}/update/own`, data);
+
+		return response.data;
+	},
+
+	async updatePassword(data: IUserUpdatePassword) {
+		const response = await axiosAuth.patch<{ message: string }>(
+			`${API.USERS}/update/password`,
+			data,
+		);
+
+		return response.data;
+	},
+
+	async removeOwn(password: string) {
+		const response = await axiosAuth.patch<{ message: string }>(`${API.USERS}/update/remove`, {
+			password,
+		});
 
 		return response.data;
 	},
@@ -45,7 +63,7 @@ export const userService = {
 	},
 
 	async updateByAdmin(id: string, data: IUserUpdateByAdmin) {
-		const response = await axiosAuth.patch<IUser>(`${API.USERS}/${id}`, data);
+		const response = await axiosAuth.patch<IUser>(`${API.USERS}/update/admin/${id}`, data);
 
 		return response.data;
 	},

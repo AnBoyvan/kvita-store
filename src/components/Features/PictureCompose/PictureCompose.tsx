@@ -1,17 +1,18 @@
 'use client';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import clsx from 'clsx';
+import { ChangeEvent, useEffect, useState } from 'react';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 
 import styles from './PictureCompose.module.scss';
 import type { PictureComposeProps } from './PictureCompose.props';
 import { PictureComposeImage } from './components';
 
-import { CustomImage, Spinner, TagsCheckbox } from '@/components/Shared';
+import { CustomImage, Htag, Spinner } from '@/components/Shared';
 import { Button, Input } from '@/components/UI';
-import { useMutatePictures } from '@/hooks/useMutatePictures';
-import type { IPictureCreate, IPictureUpdate, Tags } from '@/interfaces';
+import { useMutatePictures } from '@/hooks';
+import type { IPictureCreate, IPictureUpdate } from '@/interfaces';
 import { createPictureSchema, updatePictureSchema } from '@/utils/validation';
 
 export const PictureCompose: React.FC<PictureComposeProps> = ({
@@ -19,18 +20,16 @@ export const PictureCompose: React.FC<PictureComposeProps> = ({
 	isNew,
 	tags,
 	onClose,
-	...props
 }) => {
 	const { create, creating, update, updating } = useMutatePictures();
 
 	const [showSpinner, setShowSpinner] = useState<boolean>(false);
-	const [checkedTags, setCheckedTags] = useState<Tags>(picture?.tags || []);
 
 	const defaultValues = {
 		image: null,
 		title: picture?.title || '',
 		description: picture?.description || '',
-		tags: checkedTags,
+		tags: picture?.tags || [],
 	};
 
 	const {
@@ -48,12 +47,27 @@ export const PictureCompose: React.FC<PictureComposeProps> = ({
 		resolver: yupResolver(isNew ? createPictureSchema : updatePictureSchema),
 	});
 
+	const changeTags = (e: ChangeEvent<HTMLInputElement>) => {
+		const value = e.target.value;
+
+		if (watch('tags')?.includes(value)) {
+			setValue(
+				'tags',
+				watch('tags')?.filter(tag => tag !== value),
+			);
+		} else {
+			const checked = watch('tags') || [];
+
+			setValue('tags', [...checked, value]);
+		}
+	};
+
 	const onSubmit: SubmitHandler<IPictureCreate | IPictureUpdate> = async data => {
 		if (isNew) {
-			await create(data as IPictureCreate);
+			create(data as IPictureCreate);
 		}
 		if (!isNew && picture) {
-			await update({
+			update({
 				id: picture._id,
 				data: {
 					...picture,
@@ -63,6 +77,8 @@ export const PictureCompose: React.FC<PictureComposeProps> = ({
 				},
 			});
 		}
+
+		reject();
 	};
 
 	const reject = () => {
@@ -74,16 +90,13 @@ export const PictureCompose: React.FC<PictureComposeProps> = ({
 		setShowSpinner(isNew ? creating : updating);
 	}, [creating, updating]);
 
-	useEffect(() => {
-		setValue('tags', checkedTags);
-	}, [checkedTags]);
-
 	return (
 		<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+			<Htag tag="h2">{isNew ? 'Нове фото' : 'Редагування'}</Htag>
 			<div className={styles.wrapper}>
 				{picture ? (
 					<div className={styles.image}>
-						<CustomImage src={picture.imageURL} square alt="image" style={{ zIndex: '-1' }} />
+						<CustomImage src={picture.imageURL} square alt="image" />
 					</div>
 				) : (
 					<PictureComposeImage
@@ -113,12 +126,27 @@ export const PictureCompose: React.FC<PictureComposeProps> = ({
 					</div>
 				</div>
 			</div>
-			<TagsCheckbox
-				tags={tags}
-				checkedTags={watch('tags') || []}
-				setCheckedTags={setCheckedTags}
-				className={styles.tags}
-			/>
+			<ul className={styles.tags}>
+				{tags &&
+					tags?.map((tag, index) => (
+						<li key={index} className={styles.item}>
+							<input
+								id={tag}
+								value={tag}
+								checked={watch('tags')?.includes(tag)}
+								type="checkbox"
+								className={styles.input}
+								onChange={changeTags}
+							/>
+							<label
+								htmlFor={tag}
+								className={clsx(styles.label, watch('tags')?.includes(tag) ? styles.checked : '')}
+							>
+								{tag}
+							</label>
+						</li>
+					))}
+			</ul>
 			<div className={styles.buttons}>
 				<Button disabled={showSpinner} type="submit" mode="default" variant="primary">
 					Готово

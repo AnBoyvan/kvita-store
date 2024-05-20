@@ -15,7 +15,7 @@ export interface IUser extends IBase {
 	name: string;
 	email: string;
 	phone: string;
-	role: string;
+	role: Role;
 	discount?: number;
 	cart: ICartItem[];
 	verify: boolean;
@@ -38,6 +38,15 @@ export interface IUserUpdate {
 	cart?: ICartItem[];
 }
 
+export interface IUserUpdatePassword {
+	password: string;
+	newPassword: string;
+}
+
+export interface IUserUpdatePasswordForm extends IUserUpdatePassword {
+	confirmNewPassword: string;
+}
+
 export interface IUserResponse {
 	result: IUser[];
 	count: number;
@@ -56,7 +65,7 @@ export interface IUserState {
 	name: string;
 	email: string;
 	phone: string;
-	discount: number;
+	discount?: number;
 }
 export interface IUserStore {
 	user: IUserState;

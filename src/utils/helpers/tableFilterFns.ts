@@ -1,5 +1,16 @@
 import type { FilterFn } from '@tanstack/react-table';
 
+import { ICartItem } from '@/interfaces';
+
+export const itemsIncludes: FilterFn<any> = (row, columnId: string, filterValue: string) => {
+	if (filterValue.length === 0) return true;
+
+	const items = row.getValue<ICartItem[]>(columnId);
+	const products = items.map(i => i.productId);
+
+	return Boolean(products.includes(filterValue));
+};
+
 export const valuesIncludes: FilterFn<any> = (row, columnId: string, filterValue: string[]) => {
 	if (filterValue.length === 0) return true;
 
@@ -47,4 +58,25 @@ export const inPriceRange: FilterFn<any> = (
 		(price && price >= min && price <= max) ||
 			Boolean(promoPrice && promoPrice >= min && promoPrice <= max),
 	);
+};
+
+export const inDateRange: FilterFn<any> = (
+	row,
+	columnId: string,
+	filterValue: [number, number],
+) => {
+	const [min, max] = filterValue;
+
+	if (isNaN(min) || isNaN(max)) {
+		return true;
+	}
+
+	const date = new Date(row.getValue<Date>(columnId));
+	const time = date.getTime();
+
+	if (typeof time !== 'number') {
+		return false;
+	}
+
+	return Boolean(time && time >= min && time <= max);
 };

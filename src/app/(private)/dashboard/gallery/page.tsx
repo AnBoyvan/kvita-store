@@ -1,12 +1,10 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
 
 import { GalleryActions, GalleryTags } from './_components';
 
 import { Htag } from '@/components/Shared';
-import { Tags } from '@/interfaces';
 import { adminService } from '@/services/kvita-api';
 
 export default function GalleryDashboardPage() {
@@ -14,7 +12,6 @@ export default function GalleryDashboardPage() {
 		queryKey: ['tags'],
 		queryFn: () => adminService.getTags(),
 	});
-	const [checkedTags, setCheckedTags] = useState<Tags>(data || []);
 
 	return (
 		<div>

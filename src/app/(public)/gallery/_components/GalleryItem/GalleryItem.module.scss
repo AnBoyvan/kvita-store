@@ -1,0 +1,11 @@
+.item {
+	@apply relative rounded-10 h-full hover:opacity-75 transition-opacity cursor-pointer;
+}
+
+.image {
+	@apply relative rounded-10 overflow-hidden  cursor-pointer aspect-[4_/_5];
+}
+
+.buttons {
+	@apply absolute right-2 top-2 gap-2 flex flex-row;
+}

@@ -3,6 +3,7 @@ import { toast } from 'sonner';
 
 import type { IPicture, IPictureCreate } from '@/interfaces';
 import { pictureService } from '@/services/kvita-api';
+import { errorCatch } from '@/utils/helpers';
 
 export const useMutatePictures = () => {
 	const queryClient = useQueryClient();
@@ -18,7 +19,9 @@ export const useMutatePictures = () => {
 			queryClient.invalidateQueries({ queryKey: ['pictures'] });
 			toast.success(`Фото додано до галереї`, { closeButton: false });
 		},
-		onError: err => toast.error(err.message, { closeButton: false }),
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
 	});
 
 	const {
@@ -32,8 +35,36 @@ export const useMutatePictures = () => {
 			queryClient.invalidateQueries({ queryKey: ['pictures'] });
 			toast.success(`Деталі фото змінено`, { closeButton: false });
 		},
-		onError: err => toast.error(err.message, { closeButton: false }),
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
 	});
 
-	return { create, creating, createSuccess, update, updating, updateSuccess };
+	const {
+		mutate: remove,
+		isSuccess: removeSuccess,
+		isPending: removing,
+	} = useMutation({
+		mutationFn: (id: string) => pictureService.remove(id),
+		mutationKey: ['pictures-remove'],
+		onSuccess: picture => {
+			queryClient.invalidateQueries({ queryKey: ['pictures'] });
+			toast.success(`Фото видалено`, { closeButton: false });
+		},
+		onError: err => {
+			toast.error(errorCatch(err), { closeButton: false });
+		},
+	});
+
+	return {
+		create,
+		creating,
+		createSuccess,
+		update,
+		updating,
+		updateSuccess,
+		remove,
+		removeSuccess,
+		removing,
+	};
 };

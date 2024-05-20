@@ -13,6 +13,10 @@
 .header {
 	@apply h-8 text-base font-secondary font-semibold bg-gray-light text-typo-dark;
 
+	&.items {
+		@apply text-14;
+	}
+
 	&.sort {
 		@apply cursor-pointer;
 	}

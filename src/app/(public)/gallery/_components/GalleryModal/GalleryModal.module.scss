@@ -1,0 +1,25 @@
+.wrapper {
+	@apply w-full h-full flex items-center justify-center;
+}
+
+.swiper {
+	@apply flex items-center justify-center max-w-[90vw] max-h-[90vh];
+
+	:global(.swiper-button-prev),
+	:global(.swiper-button-next) {
+		--swiper-navigation-color: #e3e3e3;
+		transition: all 150ms linear;
+
+		&:hover {
+			--swiper-navigation-color: #db0d45;
+		}
+	}
+}
+
+.slide {
+	@apply flex items-center justify-center;
+}
+
+.image {
+	@apply max-w-[90vw] max-h-[90vh] self-center;
+}

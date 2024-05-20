@@ -64,11 +64,11 @@ export interface IOrderUpdate {
 	annotation?: string;
 	delivery?: boolean;
 	deliveryAddress?: string;
-	paid?: boolean;
-	paymentDetails?: IPaymentDetails;
 }
 
 export interface IOrderResponse {
 	result: IOrder[];
 	count: number;
+	minTotal: number;
+	maxTotal: number;
 }

@@ -14,10 +14,14 @@
 	@apply top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2;
 }
 
+.wrapper {
+	@apply w-auto h-auto;
+}
+
 .container {
 	@apply relative p-4 md:p-6 bg-bg-secondary rounded-10 max-h-full overflow-y-auto;
 }
 
 .closeBtn {
-	@apply absolute top-3 right-3;
+	@apply absolute top-3 right-3 z-50;
 }
