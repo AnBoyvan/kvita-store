@@ -20,7 +20,7 @@ export default function EditDashboardPage() {
 	return (
 		<div>
 			<Htag tag="h1">Редагування</Htag>
-			{isFetched && <ProductCompose isNew={false} product={data} />}
+			{isFetched && data && <ProductCompose isNew={false} product={data} />}
 		</div>
 	);
 }

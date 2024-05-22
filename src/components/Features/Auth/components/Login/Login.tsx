@@ -8,10 +8,13 @@ import { toast } from 'sonner';
 import styles from './Login.module.scss';
 
 import { Button, Input } from '@/components/UI';
+import { useModal } from '@/hooks';
 import type { ILoginForm } from '@/interfaces';
 import { loginSchema } from '@/utils/validation';
 
 export const Login: React.FC = () => {
+	const { closeModal } = useModal();
+
 	const {
 		register,
 		handleSubmit,
@@ -59,7 +62,7 @@ export const Login: React.FC = () => {
 					value={watch('password')}
 					icon="LockKeyhole"
 				/>
-				<Link href="/password" className={styles.link}>
+				<Link href="/password" className={styles.link} onClick={closeModal}>
 					Забули пароль?
 				</Link>
 				<Button mode="wide" variant="primary">

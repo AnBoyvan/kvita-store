@@ -23,9 +23,12 @@ export const productService = {
 	},
 
 	async find(query: string = '') {
-		const response = await axiosClassic.get<IProductResponse>(`${API.PRODUCTS}?${query}`);
-
-		return response.data;
+		try {
+			const response = await axiosClassic.get<IProductResponse>(`${API.PRODUCTS}?${query}`);
+			return response.data;
+		} catch (error) {
+			return null;
+		}
 	},
 
 	async favorite() {
@@ -35,8 +38,12 @@ export const productService = {
 	},
 
 	async findById(id: string) {
-		const response = await axiosClassic.get<IProduct>(`${API.PRODUCTS}/${id}`);
-		return response.data;
+		try {
+			const response = await axiosClassic.get<IProduct>(`${API.PRODUCTS}/${id}`);
+			return response.data;
+		} catch (error) {
+			return null;
+		}
 	},
 
 	async update(id: string, data: IProductUpdate) {

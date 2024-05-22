@@ -38,3 +38,22 @@ export const updPasswordSchema: Yup.ObjectSchema<IUserUpdatePasswordForm> = Yup.
 export const removeAccountSchema: Yup.ObjectSchema<{ password: string }> = Yup.object().shape({
 	password: Yup.string().required('Вкажіть пароль'),
 });
+
+export const passwordRequestSchema: Yup.ObjectSchema<{ email: string }> = Yup.object().shape({
+	email: Yup.string()
+		.required('Вкажіть пошту')
+		.matches(regexpConstants.EMAIL, 'Пошту вказано невірно'),
+});
+
+export const changePasswordSchema: Yup.ObjectSchema<{
+	newPassword: string;
+	confirmNewPassword: string;
+}> = Yup.object().shape({
+	newPassword: Yup.string()
+		.required('Вкажіть новий пароль')
+		.min(6, 'Не менше 6 символів')
+		.matches(regexpConstants.PASSWORD, 'Пароль повинен містити цифри та латинські літери'),
+	confirmNewPassword: Yup.string()
+		.required('Вкажіть пароль')
+		.oneOf([Yup.ref<string>('newPassword')], 'Паролі не співпадають'),
+});

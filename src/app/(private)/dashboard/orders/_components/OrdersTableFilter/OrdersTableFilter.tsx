@@ -26,14 +26,14 @@ export const OrdersTableFilter: React.FC<OrdersTableFilterProps> = ({
 		queryFn: () => productService.find(query),
 	});
 
-	const items =
-		data &&
-		data.result.map(i => {
-			return {
-				value: i._id,
-				label: i.name,
-			};
-		});
+	const items = data
+		? data.result.map(i => {
+				return {
+					value: i._id,
+					label: i.name,
+				};
+			})
+		: [];
 
 	return (
 		<>
