@@ -74,9 +74,7 @@ export const inDateRange: FilterFn<any> = (
 	const date = new Date(row.getValue<Date>(columnId));
 	const time = date.getTime();
 
-	if (typeof time !== 'number') {
-		return false;
-	}
+	if (isNaN(time)) return false;
 
 	return Boolean(time && time >= min && time <= max);
 };

@@ -11,7 +11,7 @@
 }
 
 .select {
-	@apply relative appearance-none px-2 w-full h-10 rounded-10 border-2 border-gray transition-all duration-200 text-base enabled:hover:cursor-pointer enabled:hover:border-hover disabled:opacity-50 disabled:cursor-default disabled:hover:border-gray;
+	@apply relative appearance-none px-2 w-full min-w-16 h-10 rounded-10 border-2 border-gray transition-all duration-200 text-base enabled:hover:cursor-pointer enabled:hover:border-hover disabled:opacity-50 disabled:cursor-default disabled:hover:border-gray;
 
 	&.error {
 		@apply border-error;

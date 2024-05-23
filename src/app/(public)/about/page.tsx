@@ -1,3 +1,11 @@
+import { Suspense } from 'react';
+
+import { Spinner } from '@/components/Shared';
+
 export default function AboutPage() {
-	return <h1>About</h1>;
+	return (
+		<Suspense fallback={<Spinner />}>
+			<h1>About</h1>;
+		</Suspense>
+	);
 }

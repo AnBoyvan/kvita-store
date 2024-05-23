@@ -1,14 +1,16 @@
 'use client';
 
+import { Suspense } from 'react';
+
 import { ProductsTable } from './_components';
 
-import { Htag } from '@/components/Shared';
+import { Htag, Spinner } from '@/components/Shared';
 
 export default function ProductsDashboardPage() {
 	return (
-		<div>
+		<Suspense fallback={<Spinner />}>
 			<Htag tag="h1">Продукція</Htag>
 			<ProductsTable />
-		</div>
+		</Suspense>
 	);
 }

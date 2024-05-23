@@ -6,11 +6,9 @@ import { Htag, Spinner } from '@/components/Shared';
 
 export default function GalleryPage() {
 	return (
-		<>
+		<Suspense fallback={<Spinner />}>
 			<Htag tag="h1">Галерея</Htag>
-			<Suspense fallback={<Spinner />}>
-				<Gallery />
-			</Suspense>
-		</>
+			<Gallery />
+		</Suspense>
 	);
 }

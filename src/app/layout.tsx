@@ -1,8 +1,9 @@
+import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 import { Marck_Script, Montserrat, Open_Sans } from 'next/font/google';
+import { Suspense } from 'react';
 import { Toaster } from 'sonner';
 
-import '@/styles/globals.scss';
 import { Providers } from './providers';
 
 import { CurrentUser } from '@/components/Features';
@@ -55,7 +56,7 @@ export default function RootLayout({
 			<body>
 				<Providers>
 					<Header />
-					{children}
+					<Suspense>{children}</Suspense>
 					<Footer />
 					<Toaster
 						position="top-right"

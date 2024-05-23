@@ -1,12 +1,14 @@
+import { Suspense } from 'react';
+
 import { PasswordRequest } from './_components';
 
-import { Htag } from '@/components/Shared';
+import { Htag, Spinner } from '@/components/Shared';
 
 export default function PasswordPage() {
 	return (
-		<div>
+		<Suspense fallback={<Spinner />}>
 			<Htag tag="h1">Зміна пароля</Htag>
 			<PasswordRequest />
-		</div>
+		</Suspense>
 	);
 }

@@ -3,6 +3,9 @@
 const nextConfig = {
 	transpilePackages: ['lucide-react'],
 	reactStrictMode: true,
+	experimental: {
+		missingSuspenseWithCSRBailout: false,
+	},
 	images: {
 		remotePatterns: [
 			{

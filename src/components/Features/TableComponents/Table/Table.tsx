@@ -110,7 +110,6 @@ export const Table = <T extends object>({
 						<Select
 							value={table.getState().pagination.pageSize}
 							options={rowsPerPage}
-							className={styles.select}
 							onChange={(e: ChangeEvent<HTMLSelectElement>) =>
 								table.setPageSize(Number(e.target.value))
 							}

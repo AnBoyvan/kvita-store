@@ -1,12 +1,14 @@
+import { Suspense } from 'react';
+
 import { UsersTable } from './_components';
 
-import { Htag } from '@/components/Shared';
+import { Htag, Spinner } from '@/components/Shared';
 
 export default function UsersDashboardPage() {
 	return (
-		<div>
+		<Suspense fallback={<Spinner />}>
 			<Htag tag="h1">Користувачі</Htag>
 			<UsersTable />
-		</div>
+		</Suspense>
 	);
 }
