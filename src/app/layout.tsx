@@ -54,20 +54,22 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 			<body>
-				<Providers>
-					<Header />
-					<Suspense>{children}</Suspense>
-					<Footer />
-					<Toaster
-						position="top-right"
-						expand={true}
-						richColors
-						closeButton
-						duration={1500}
-						visibleToasts={3}
-					/>
-					<CurrentUser />
-				</Providers>
+				<Suspense>
+					<Providers>
+						<Header />
+						{children}
+						<Footer />
+						<Toaster
+							position="top-right"
+							expand={true}
+							richColors
+							closeButton
+							duration={1500}
+							visibleToasts={3}
+						/>
+						<CurrentUser />
+					</Providers>
+				</Suspense>
 			</body>
 		</html>
 	);

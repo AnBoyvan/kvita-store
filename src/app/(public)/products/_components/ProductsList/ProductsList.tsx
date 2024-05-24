@@ -1,7 +1,7 @@
 'use client';
 
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 import styles from './ProductsList.module.scss';
 import type { ProductsListProps } from './ProductsList.props';
@@ -34,7 +34,9 @@ export const ProductsList: React.FC<ProductsListProps> = ({ query, page, limit }
 							<ProductCard order={index + 1} key={product._id} product={product} />
 						))}
 					</ul>
-					{data && data.count > limit && <Pagination count={data.count} perPage={limit} />}
+					<Suspense>
+						{data && data.count > limit && <Pagination count={data.count} perPage={limit} />}
+					</Suspense>
 				</>
 			)}
 		</div>

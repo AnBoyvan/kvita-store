@@ -16,10 +16,12 @@ export default async function ProductsPage({
 		: `isActive=true&limit=${limit}`;
 
 	return (
-		<Suspense fallback={<Spinner />}>
+		<>
 			<Htag tag="h1">Наша продукція</Htag>
-			<ProductsPageFilter />
+			<Suspense fallback={<Spinner />}>
+				<ProductsPageFilter />
+			</Suspense>
 			<ProductsList query={queryString} page={page} limit={limit} />
-		</Suspense>
+		</>
 	);
 }

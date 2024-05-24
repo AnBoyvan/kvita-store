@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 
 import styles from './Auth.module.scss';
 import { Login, Register } from './components';
 
-import { Divider, Htag } from '@/components/Shared';
+import { Divider, Htag, Spinner } from '@/components/Shared';
 import { Button, GoogleButton } from '@/components/UI';
 
 export const Auth: React.FC = () => {
@@ -19,7 +19,7 @@ export const Auth: React.FC = () => {
 		<>
 			<div className={styles.auth}>
 				<Htag tag="h2">{!isLoginForm ? 'Вхід' : 'Реєстрація'}</Htag>
-				{!isLoginForm ? <Login /> : <Register />}
+				<Suspense fallback={<Spinner />}>{!isLoginForm ? <Login /> : <Register />}</Suspense>
 				<Button mode="link" onClick={changeAuthToggle} className={styles.button}>
 					{!isLoginForm ? 'Зареєструватися' : 'Я вже зареєстрований'}
 				</Button>
