@@ -1,8 +1,17 @@
+import { Metadata } from 'next';
 import { Suspense } from 'react';
 
 import { ProductsList, ProductsPageFilter } from './_components';
 
 import { Htag, Spinner } from '@/components/Shared';
+
+export const metadata: Metadata = {
+	title: 'Наша продукція',
+	openGraph: {
+		title: 'Наша продукція',
+		url: `${process.env.NEXT_PUBLIC_BASE_URL}/products`,
+	},
+};
 
 export default async function ProductsPage({
 	searchParams,

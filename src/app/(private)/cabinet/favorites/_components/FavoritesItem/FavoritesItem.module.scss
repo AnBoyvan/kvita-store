@@ -1,5 +1,5 @@
 .item {
-	@apply relative flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 p-4 md:p-6 bg-bg-secondary;
+	@apply relative flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 p-4 md:p-6 bg-bg-secondary rounded-10;
 }
 
 .button {

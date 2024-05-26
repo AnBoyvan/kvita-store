@@ -1,4 +1,9 @@
-export const NO_INDEX_PAGE = {
-	robots: { index: false, follow: false },
-};
+export const ORGANIZATION = 'Кондитерська студія "КВіТа"';
+
 export const SITE_NAME = 'КВіТа';
+
+export const SITE_DESCRIPTION =
+	'Кондитерська студія "КВіТа". Для Вас ми зробимо все - від цукерки до торта';
+
+export const KEYWORDS =
+	'квіта, магазин, цукерки, печиво, замовити, доставка, солодощі, смаколики, кондитерські вироби, торт, весілля, день народження, десерт';

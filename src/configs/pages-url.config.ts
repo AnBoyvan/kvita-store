@@ -6,6 +6,8 @@ class ROUTES {
 	ORDERING = `${this.root}/ordering`;
 	GALLERY = `${this.root}/gallery`;
 	ABOUT = `${this.root}/about`;
+	SIGNIN = `${this.root}/signin`;
+	PASSWORD = `${this.root}/password`;
 
 	CABINET = `${this.root}/cabinet`;
 	CABINET_INFO = `${this.CABINET}/info`;

@@ -1,14 +1,16 @@
 import '@/styles/globals.scss';
+import { GoogleTagManager } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { Marck_Script, Montserrat, Open_Sans } from 'next/font/google';
 import { Suspense } from 'react';
 import { Toaster } from 'sonner';
 
 import { Providers } from './providers';
+import { Scripts } from './scripts';
 
 import { CurrentUser } from '@/components/Features';
 import { Footer, Header } from '@/components/Layout';
-import { SITE_NAME } from '@/constants';
+import { KEYWORDS, ORGANIZATION, SITE_DESCRIPTION, SITE_NAME } from '@/constants';
 
 const openSans = Open_Sans({
 	subsets: ['latin', 'cyrillic'],
@@ -32,14 +34,26 @@ const markScript = Marck_Script({
 });
 
 export const metadata: Metadata = {
-	icons: {
-		icon: './favicon.ico',
-	},
+	metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || ''),
 	title: {
-		default: SITE_NAME,
-		template: `%s | ${SITE_NAME}`,
+		default: ORGANIZATION,
+		template: `%s | ${ORGANIZATION}`,
 	},
-	description: 'Кондитерська студія "КВіТа"',
+	description: SITE_DESCRIPTION,
+	twitter: {
+		card: 'summary_large_image',
+	},
+	keywords: KEYWORDS,
+	openGraph: {
+		title: {
+			default: ORGANIZATION,
+			template: `%s | ${ORGANIZATION}`,
+		},
+		description: SITE_DESCRIPTION,
+		type: 'website',
+		url: process.env.NEXT_PUBLIC_BASE_URL,
+		siteName: SITE_NAME,
+	},
 };
 
 export default function RootLayout({
@@ -53,6 +67,7 @@ export default function RootLayout({
 			className={`${openSans.variable} ${montserrat.variable} ${markScript.variable}`}
 			suppressHydrationWarning
 		>
+			<GoogleTagManager gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}`} />
 			<body>
 				<Suspense>
 					<Providers>
@@ -70,6 +85,7 @@ export default function RootLayout({
 						<CurrentUser />
 					</Providers>
 				</Suspense>
+				<Scripts />
 			</body>
 		</html>
 	);

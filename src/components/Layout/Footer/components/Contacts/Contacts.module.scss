@@ -11,4 +11,12 @@
 
 .link {
 	@apply p-0 h-10 w-10 flex justify-center items-center transition-colors duration-200 hover:text-hover;
+
+	&.desktop {
+		@apply hidden lg:flex;
+	}
+
+	&.mobile {
+		@apply lg:hidden;
+	}
 }
