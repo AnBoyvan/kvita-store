@@ -7,7 +7,6 @@ export function Scripts() {
 		<>
 			<Analytics />
 			<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID || ''} />
-			NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
 			<Script id="clarity-script" type="text/javascript" strategy="afterInteractive">
 				{`
         (function(c,l,a,r,i,t,y){
