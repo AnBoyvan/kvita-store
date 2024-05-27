@@ -10,6 +10,7 @@ import { Scripts } from './scripts';
 
 import { CurrentUser } from '@/components/Features';
 import { Footer, Header } from '@/components/Layout';
+import { Spinner } from '@/components/Shared';
 import { KEYWORDS, ORGANIZATION, SITE_DESCRIPTION, SITE_NAME } from '@/constants';
 
 const openSans = Open_Sans({
@@ -69,7 +70,7 @@ export default function RootLayout({
 		>
 			<GoogleTagManager gtmId={`${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}`} />
 			<body>
-				<Suspense>
+				<Suspense fallback={<Spinner />}>
 					<Providers>
 						<Header />
 						{children}
