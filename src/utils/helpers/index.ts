@@ -1,6 +1,7 @@
 export { pictureFormData, productFormData } from './convertToFormData';
 export { createCartItem } from './createCartItem';
 export { errorCatch } from './errorCatch';
+export { fetchProduct } from './fetchProduct';
 export { formatDate } from './formatDate';
 export * from './roleAccess';
 export * from './tableFilterFns';

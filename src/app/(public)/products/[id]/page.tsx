@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { cache } from 'react';
 
 import {
 	ProductContainer,
@@ -15,15 +14,10 @@ import {
 
 import { Divider } from '@/components/Shared';
 import { BackButton } from '@/components/UI';
-import { productService } from '@/services/kvita-api';
-
-const getProduct = cache(async (id: string) => {
-	const product = await productService.findById(id);
-	return product;
-});
+import { fetchProduct } from '@/utils/helpers';
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-	const product = await getProduct(params.id);
+	const product = await fetchProduct(params.id);
 
 	if (!product) return {};
 
@@ -44,7 +38,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 export default async function ProductPage({ params }: { params: { id: string } }) {
-	const product = await getProduct(params.id);
+	const product = await fetchProduct(params.id);
 	if (!product) notFound();
 
 	const {

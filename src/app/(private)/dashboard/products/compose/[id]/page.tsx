@@ -1,30 +1,27 @@
-import { useQuery } from '@tanstack/react-query';
 import { Metadata } from 'next';
-import { useParams } from 'next/navigation';
 
 import { ProductCompose } from '@/components/Features';
 import { Htag } from '@/components/Shared';
-import { productService } from '@/services/kvita-api';
+import { fetchProduct } from '@/utils/helpers';
 
-export const metadata: Metadata = {
-	title: 'Редагування',
-	robots: { index: false, follow: false },
-};
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+	const product = await fetchProduct(params.id);
 
-export default function EditDashboardPage() {
-	const params = useParams<{ id: string }>();
+	if (!product) return {};
 
-	const { data, isFetched } = useQuery({
-		queryKey: ['products', params.id],
-		queryFn: () => productService.findById(params.id),
-		staleTime: 0,
-		refetchOnMount: true,
-	});
+	return {
+		title: `Редагування | ${product.name}`,
+		robots: { index: false, follow: false },
+	};
+}
+
+export default async function EditDashboardPage({ params }: { params: { id: string } }) {
+	const product = await fetchProduct(params.id);
 
 	return (
 		<div>
 			<Htag tag="h1">Редагування</Htag>
-			{isFetched && data && <ProductCompose isNew={false} product={data} />}
+			{product && <ProductCompose isNew={false} product={product} />}
 		</div>
 	);
 }
