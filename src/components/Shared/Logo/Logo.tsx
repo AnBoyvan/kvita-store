@@ -3,8 +3,9 @@ import Link from 'next/link';
 
 import logo from '../../../../public/icons/logo-icon.png';
 
-import { Kvita } from './Kvita';
 import styles from './Logo.module.scss';
+
+import { Kvita } from '@/components/Shared';
 
 export const Logo = ({ ...props }): JSX.Element => {
 	return (

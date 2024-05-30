@@ -1,10 +1,12 @@
 export { Accept } from './Accept/Accept';
 export { Amount } from './Amount/Amount';
 export { Badge } from './Badge/Badge';
+export { Contacts } from './Contacts/Contacts';
 export { CustomImage } from './CustomImage/CustomImage';
 export { Divider } from './Divider/Divider';
 export { Htag } from './Htag/Htag';
 export { Icon } from './Icon/Icon';
+export { Kvita } from './Kvita/Kvita';
 export { Logo } from './Logo/Logo';
 export { Navigation } from './Navigation/Navigation';
 export { Pagination } from './Pagination/Pagination';

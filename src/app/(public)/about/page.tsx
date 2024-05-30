@@ -1,5 +1,9 @@
 import { Metadata } from 'next';
 
+import { About, AboutContacts } from './_components';
+
+import { Htag } from '@/components/Shared';
+
 export const metadata: Metadata = {
 	title: 'Про нас',
 	openGraph: {
@@ -11,7 +15,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
 	return (
 		<>
-			<h1>About</h1>;
+			<Htag tag="h1">Про нас</Htag>
+			<About />
+			<AboutContacts />
 		</>
 	);
 }
