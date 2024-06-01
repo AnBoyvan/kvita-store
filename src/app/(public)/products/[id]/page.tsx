@@ -16,7 +16,7 @@ import { Divider } from '@/components/Shared';
 import { BackButton } from '@/components/UI';
 import { fetchProduct } from '@/utils/helpers';
 
-export const revalidate = 3600;
+export const revalidate = 10;
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
 	const product = await fetchProduct(params.id);
