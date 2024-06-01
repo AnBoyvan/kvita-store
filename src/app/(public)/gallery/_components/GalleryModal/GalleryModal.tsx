@@ -36,7 +36,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({ current, pictures, s
 	};
 
 	useEffect(() => {
-		if (current) openModal();
+		if (current !== null) openModal();
 	}, [current]);
 
 	return (
