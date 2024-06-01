@@ -13,7 +13,6 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
-// import './swiper.scss';
 
 export const ProductImages: React.FC<ProductImagesProps> = ({ name, image, gallery, ...props }) => {
 	const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);

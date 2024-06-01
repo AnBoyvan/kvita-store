@@ -1,5 +1,6 @@
 import { CategorySection, Hero, OrderingSection } from './_components';
 
+import { CallButton } from '@/components/UI';
 import { Category } from '@/interfaces';
 import { productService } from '@/services/kvita-api';
 
@@ -23,6 +24,7 @@ export default async function HomePage() {
 				<CategorySection products={products.set} title="Набори" category={Category.Set} />
 			</div>
 			<OrderingSection />
+			<CallButton />
 		</main>
 	);
 }

@@ -5,6 +5,8 @@ import { Marck_Script, Montserrat, Open_Sans } from 'next/font/google';
 import { Suspense } from 'react';
 import { Toaster } from 'sonner';
 
+import openGraphImage from '../../public/images/opengraph-image.png';
+
 import { Providers } from './providers';
 import { Scripts } from './scripts';
 
@@ -50,6 +52,11 @@ export const metadata: Metadata = {
 			default: ORGANIZATION,
 			template: `%s | ${ORGANIZATION}`,
 		},
+		images: [
+			{
+				url: openGraphImage.src,
+			},
+		],
 		description: SITE_DESCRIPTION,
 		type: 'website',
 		url: process.env.NEXT_PUBLIC_BASE_URL,

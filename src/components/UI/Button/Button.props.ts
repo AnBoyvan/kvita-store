@@ -5,5 +5,4 @@ export interface ButtonProps
 	children?: ReactNode;
 	mode: 'default' | 'wide' | 'round' | 'simple' | 'link';
 	variant?: 'primary' | 'secondary' | 'ghost';
-	active?: boolean;
 }

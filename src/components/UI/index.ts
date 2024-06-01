@@ -13,3 +13,4 @@ export { LinkButton } from './LinkButton/LinkButton';
 export { Radio } from './Radio/Radio';
 export { Select } from './Select/Select';
 export { ThemeSwitcher } from './ThemeSwitcher/ThemeSwitcher';
+export { CallButton } from './CallButton/CallButton';

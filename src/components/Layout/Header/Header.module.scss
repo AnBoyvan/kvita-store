@@ -23,11 +23,7 @@
 }
 
 .cabinet {
-	@apply p-0 h-10 w-10 flex justify-center items-center;
-
-	&:hover {
-		@apply text-hover;
-	}
+	@apply p-0 h-10 w-10 flex justify-center items-center hover:text-hover;
 }
 
 .switcher {

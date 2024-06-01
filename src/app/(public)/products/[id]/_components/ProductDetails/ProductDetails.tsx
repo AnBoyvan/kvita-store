@@ -10,7 +10,7 @@ import { Amount, Badge } from '@/components/Shared';
 import { CartButton, Counter } from '@/components/UI';
 
 export const ProductDetails: React.FC<ProductDetailsProps> = ({ product, ...props }) => {
-	const { promoPrice, promo, price } = product;
+	const { promoPrice, promo, price, isActive } = product;
 	const [count, setCount] = useState<number>(1);
 
 	const productPrice = promoPrice && promoPrice > 0 ? promoPrice : price;
@@ -39,6 +39,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product, ...prop
 					variant="primary"
 					product={product}
 					quantity={count}
+					disabled={isActive ? false : true}
 					className={styles.cartButton}
 				/>
 			</div>

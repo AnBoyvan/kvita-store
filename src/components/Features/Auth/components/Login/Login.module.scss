@@ -1,20 +1,7 @@
 .form {
-	@apply w-full flex flex-col items-center  gap-4;
+	@apply w-full flex flex-col items-center gap-4;
 }
 
 .link {
-	@apply p-0 font-normal self-start text-14;
-
-	&:hover {
-		@apply text-hover;
-	}
-
-	&:active,
-	&.active {
-		@apply text-active;
-	}
-
-	&:disabled {
-		@apply text-gray;
-	}
+	@apply p-0 font-normal flex justify-center items-center disabled:text-gray hover:text-hover active:text-active;
 }

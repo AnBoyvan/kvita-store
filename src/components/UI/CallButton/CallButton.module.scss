@@ -1,0 +1,7 @@
+.link {
+	@apply fixed bottom-6 left-6 flex justify-center items-center md:hidden w-14 h-14 rounded-full bg-primary;
+}
+
+.ping {
+	@apply animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75;
+}

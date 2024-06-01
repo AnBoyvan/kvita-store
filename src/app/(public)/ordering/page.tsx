@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 
+import ph from '../../../../public/images/photo-placeholder.png';
+
 export const metadata: Metadata = {
 	title: 'Замовлення',
 	openGraph: {

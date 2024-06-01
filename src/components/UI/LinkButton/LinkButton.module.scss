@@ -1,5 +1,5 @@
 .button {
-	@apply px-5  py-2.5  border-2 border-transparent flex items-center justify-center gap-2.5  transition-all duration-150 font-semibold font-secondary text-base;
+	@apply px-5 py-2.5 border-2 border-transparent flex items-center justify-center gap-2.5 transition-all duration-150 font-semibold font-secondary text-base disabled:pointer-events-none;
 }
 
 .default {
@@ -14,6 +14,14 @@
 	@apply p-2 rounded-full;
 }
 
+.default,
+.wide,
+.round {
+	@apply disabled:border-gray disabled:text-gray disabled:bg-gray-light
+  hover:bg-hover hover:shadow-hov hover:text-typo-white hover:border-transparent
+	active:bg-active active:shadow-act active:text-typo-white active:border-transparent;
+}
+
 .primary {
 	@apply bg-primary border-2 border-transparent text-typo-white;
 }
@@ -22,36 +30,6 @@
 	@apply bg-transparent border-2 border-primary text-primary;
 }
 
-.default,
-.wide,
-.round {
-	&:disabled {
-		@apply border-2 border-gray text-gray bg-gray-light;
-	}
-
-	&:not(:disabled):hover {
-		@apply bg-hover shadow-hov text-typo-white border-2 border-transparent;
-	}
-
-	&:not(:disabled):active,
-	&:not(:disabled).active {
-		@apply bg-active shadow-act text-typo-white border-2 border-transparent;
-	}
-}
-
 .simple {
-	@apply p-0 h-10 w-10 flex justify-center items-center;
-
-	&:hover {
-		@apply text-hover;
-	}
-
-	&:active,
-	&.active {
-		@apply text-active;
-	}
-
-	&:disabled {
-		@apply text-gray;
-	}
+	@apply p-0 h-10 w-10 flex justify-center items-center disabled:text-gray hover:text-hover active:text-active;
 }

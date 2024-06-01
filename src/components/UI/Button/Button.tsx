@@ -7,7 +7,6 @@ export const Button: React.FC<ButtonProps> = ({
 	mode,
 	variant,
 	children,
-	active,
 	className,
 	...props
 }: ButtonProps) => {
@@ -18,13 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
 
 	return (
 		<button
-			className={clsx(
-				styles.button,
-				styles[mode],
-				variant && styles[variant],
-				active && styles.active,
-				className,
-			)}
+			className={clsx(styles.button, styles[mode], variant && styles[variant], className)}
 			onClick={handleClick}
 			{...props}
 		>
