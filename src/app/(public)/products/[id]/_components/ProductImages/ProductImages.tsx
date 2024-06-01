@@ -23,6 +23,8 @@ export const ProductImages: React.FC<ProductImagesProps> = ({ name, image, galle
 		</SwiperSlide>
 	));
 
+	const current = gallery.indexOf(image);
+
 	const perView = gallery.length < 5 ? gallery.length : 5;
 
 	return (
@@ -31,6 +33,7 @@ export const ProductImages: React.FC<ProductImagesProps> = ({ name, image, galle
 				spaceBetween={16}
 				loop={true}
 				navigation={true}
+				initialSlide={current}
 				thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
 				modules={[FreeMode, Navigation, Thumbs]}
 				className={styles.mainImage}
